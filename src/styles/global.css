@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+:root {
+  --clr-bg: #f4f5f7;
+  --clr-surface: #ffffff;
+  --clr-text: #0b0d13;
+  --clr-muted: #4b4f5b;
+  --clr-border: #e0e3ea;
+  --clr-accent: #00bfa6;
+  --clr-accent-dark: #00907d;
+  --clr-highlight: #ff8a00;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--clr-bg);
+  color: var(--clr-text);
+  font-family: 'Inter', 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-weight: 500;
+  margin: 0;
+}
+
+p {
+  color: var(--clr-muted);
+}
+
+a {
+  color: inherit;
+}
+
+.btn-primary {
+  background: var(--clr-accent);
+  color: #fff;
+  border-radius: 999px;
+  padding: 0.9rem 1.75rem;
+  font-weight: 600;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 30px rgba(0, 191, 166, 0.3);
+}
+
+.btn-secondary {
+  border: 1px solid var(--clr-accent);
+  border-radius: 999px;
+  padding: 0.9rem 1.75rem;
+  font-weight: 600;
+  color: var(--clr-accent);
+}
+
+.section-shell {
+  padding: 5rem 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .section-shell {
+    padding: 6rem 2rem;
+  }
+}
+
+.bg-surface {
+  background: var(--clr-bg);
+}
+
+.card {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 30px 80px rgba(11, 13, 19, 0.05);
+}
+
+.gradient-band {
+  background: linear-gradient(120deg, var(--clr-accent) 0%, #00a38c 100%);
+  color: #fff;
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+}
+
+.hero-visual {
+  position: relative;
+  border-radius: 24px;
+  background: linear-gradient(135deg, var(--clr-bg), #e2e6ee);
+  min-height: 320px;
+  overflow: hidden;
+}
+
+.hero-visual::after {
+  content: '';
+  position: absolute;
+  inset: 25%;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  filter: blur(1px);
+}

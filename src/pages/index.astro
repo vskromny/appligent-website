@@ -2,86 +2,84 @@
 import Layout from '../layouts/Layout.astro';
 
 const navLinks = [
-  { label: 'Home', href: '#home' },
   { label: 'Expertise', href: '#expertise' },
-  { label: 'How We Help', href: '#process' },
-  { label: 'Register', href: '#register' },
+  { label: 'Approach', href: '#process' },
+  { label: 'Proof', href: '#proof' },
+];
+
+const heroBullets = [
+  'Prototype new copilots in days, not months.',
+  'Ship automation + native apps with telemetry baked in.',
+  'Stay in control—single point of contact, zero fluff.',
 ];
 
 const servicePillars = [
-  { title: 'AI Automation', copy: 'Deploy trustworthy automation across ops, finance, and CX workflows.' },
-  { title: 'Setup & Integration', copy: 'Connect models, APIs, and data pipelines to your existing systems.' },
-  { title: 'AI Solution Implementation', copy: 'Ship custom copilots, assistants, or scoring systems with guardrails.' },
-  { title: 'Data & AI Strategy', copy: 'Translate business goals into measurable AI roadmaps and KPIs.' },
-  { title: 'Mobile Development', copy: 'Native iOS, Android, and web apps that extend your AI stack into the field.' },
-  { title: 'Support & Refactoring', copy: 'Stabilize legacy apps, tighten infra, and keep releases humming.' },
-  { title: 'Rapid App Prototyping', copy: 'Weekend-ready prototypes for stakeholder demos and validation.' },
+  { eyebrow: 'Automation', title: 'Intelligence in your ops', copy: 'Workflow agents, routing brains, and copilots tuned to your KPIs.' },
+  { eyebrow: 'Integrations', title: 'Glue for messy stacks', copy: 'APIs, data sync, and orchestration so models talk to your systems.' },
+  { eyebrow: 'Solutions', title: 'Tailored copilots & apps', copy: 'Field-ready experiences across iOS, Android, and web.' },
+  { eyebrow: 'Advisory', title: 'Strategy & safeguards', copy: 'Playbooks, measurement, and guardrails to keep releases on course.' },
 ];
 
-const processSteps = [
-  { label: 'Discover', detail: 'Deep-dive workshop, current-state audit, success definition.', duration: 'Week 1' },
-  { label: 'Architect', detail: 'Flows, data touchpoints, KPIs, and technical plan locked.', duration: 'Week 2' },
-  { label: 'Build', detail: 'Sprint-sized increments with continuous demos + telemetry.', duration: 'Weeks 3-6' },
-  { label: 'Support', detail: 'Handover, docs, and optional ops-on-retainer.', duration: 'Ongoing' },
+const processStatements = [
+  { name: 'Prototype in days', detail: 'Sprint zero creates a live interactive pilot with telemetry + feedback hooks.' },
+  { name: 'Automate in weeks', detail: 'Layered agents and UI packaged into weekly releases with demo-ready builds.' },
+  { name: 'Evolve continuously', detail: 'Instrumentation, post-launch tuning, and optional ops-on-retainer.' },
 ];
 
 const proof = {
-  quote: '“Appligent distilled months of experimentation into a polished AI workflow in under six weeks.”',
-  author: 'Klara F., COO at SwissTrade',
+  quote: '“Vlad treated our automation backlog like a product launch. Two weeks later we had a working copilot and a native companion app.”',
+  author: 'Selina Weber, COO · Alpine Freight',
   stats: [
-    { label: 'Apps shipped', value: '45+' },
-    { label: 'Automation ROI', value: '4.2x' },
-    { label: 'Avg. sprint', value: '10 days' },
+    { label: 'Automation hours saved', value: '420+' },
+    { label: 'Mobile launches', value: '45 apps' },
+    { label: 'Avg. payback', value: '10 weeks' },
   ],
 };
 
 const year = new Date().getFullYear();
 ---
-<Layout title="Appligent AI — AI Automation & Mobile Studio">
+<Layout title="Appligent AI — Automation & Mobile Studio">
   <main class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-    <header id="home" class="section-shell pb-2">
+    <header class="section-shell" id="home">
       <div class="flex flex-wrap items-center justify-between gap-4">
         <div class="flex items-center gap-3">
-          <div class="h-12 w-12 rounded-2xl bg-white shadow-md flex items-center justify-center text-lg font-semibold text-slate-900">AA</div>
-          <div>
-            <p class="text-sm uppercase tracking-[0.3em] text-slate-500">Zurich · SME focused</p>
-            <h1 class="text-4xl sm:text-5xl lg:text-[56px] font-semibold text-slate-900 max-w-2xl mt-4">AI automation & mobile execution without enterprise drag.</h1>
-          </div>
+          <div class="h-12 w-12 rounded-2xl bg-white/70 dark:bg-white/10 shadow-md flex items-center justify-center text-lg font-semibold text-slate-900">AA</div>
+          <p class="text-sm uppercase tracking-[0.4em] text-slate-500">Appligent AI</p>
         </div>
-        <nav class="w-full sm:w-auto">
-          <ul class="flex flex-wrap items-center gap-3 text-sm font-medium text-slate-600 justify-end">
-            {navLinks.map((link) => (
-              <li><a class="px-4 py-2 rounded-full hover:bg-white/70" href={link.href}>{link.label}</a></li>
-            ))}
-          </ul>
-        </nav>
+        <div class="theme-switcher" data-theme-switcher>
+          <button type="button" data-theme-value="light" aria-pressed="true">☀️</button>
+          <button type="button" data-theme-value="dark" aria-pressed="false">🌙</button>
+          <button type="button" data-theme-value="system" aria-pressed="false">⚙️</button>
+        </div>
       </div>
-      <div class="mt-10 grid gap-8 lg:grid-cols-[3fr,2fr] items-center">
-        <div class="space-y-6">
-          <p class="text-lg text-slate-600 max-w-xl">One-person studio delivering AI automation, integrations, and native apps for Swiss SMEs. Tight scope, transparent timelines, obsessive quality.</p>
-          <div class="flex flex-wrap gap-3">
-            <a class="btn-primary" href="#register" data-event="cta_click" data-location="hero">Start a project</a>
-            <a class="btn-secondary" href="#expertise">See capabilities</a>
+      <div class="hero-shell mt-10 p-8 sm:p-12 relative overflow-hidden">
+        <div class="hero-glow"></div>
+        <div class="grid gap-10 lg:grid-cols-[3fr,2fr] relative">
+          <div class="space-y-6">
+            <p class="text-sm uppercase tracking-[0.5em] text-slate-500">Zurich · Swiss SMEs</p>
+            <h1 class="text-4xl sm:text-5xl lg:text-[56px] font-semibold text-slate-900 dark:text-white">On-call automation & mobile shipping partner.</h1>
+            <p class="text-lg text-slate-600 dark:text-slate-300 max-w-xl">Appligent AI weds deep platform experience with ruthless focus on outcomes. No agencies, no hand-offs—just Vlad + selectively paired specialists when needed.</p>
+            <ul class="space-y-2 text-slate-600 dark:text-slate-300">
+              {heroBullets.map((item) => (
+                <li>• {item}</li>
+              ))}
+            </ul>
+            <div class="flex flex-wrap gap-3">
+              <a class="btn-primary" href="#register" data-event="cta_click" data-location="hero">Book a working session</a>
+              <a class="btn-ghost" href="#expertise">See capabilities</a>
+            </div>
           </div>
-          <div class="flex gap-6 text-sm text-slate-500">
+          <div class="rounded-3xl border border-[var(--border)] bg-white/80 dark:bg-white/5 backdrop-blur-xl p-6 shadow-lg flex flex-col gap-6">
             <div>
-              <p class="text-2xl font-semibold text-slate-900">14+</p>
-              <p>years shipping mobile + AI</p>
+              <p class="text-sm uppercase tracking-[0.3em] text-slate-500">Signals</p>
+              <p class="text-2xl font-semibold text-slate-900 dark:text-white mt-2">Weekend prototype · 8 dashboards wired</p>
+              <p class="text-sm text-slate-500">Status: shipped</p>
             </div>
             <div>
-              <p class="text-2xl font-semibold text-slate-900">2-6 wks</p>
-              <p>from kickoff to launch</p>
+              <p class="text-sm uppercase tracking-[0.3em] text-slate-500">Active runway</p>
+              <p class="text-4xl font-semibold text-slate-900 dark:text-white">03&nbsp;projects</p>
+              <p class="text-sm text-slate-500">Room for 1 more in April</p>
             </div>
-          </div>
-        </div>
-        <div class="hero-visual p-8 flex flex-col justify-between">
-          <div>
-            <p class="text-sm uppercase tracking-[0.4em] text-slate-500">Stack</p>
-            <p class="mt-2 text-lg text-slate-700">OpenAI · Anthropic · Firebase · Plausible · GitHub Actions</p>
-          </div>
-          <div class="text-right">
-            <p class="text-slate-500 text-sm">Next deployment in</p>
-            <p class="text-4xl font-semibold text-slate-900">03:14:27</p>
           </div>
         </div>
       </div>
@@ -90,55 +88,57 @@ const year = new Date().getFullYear();
     <section id="expertise" class="section-shell">
       <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
         <div>
-          <p class="text-sm uppercase tracking-[0.35em] text-slate-500">Expertise</p>
-          <h2 class="text-3xl sm:text-4xl font-semibold mt-4">The stack we deploy for you</h2>
+          <p class="text-sm uppercase tracking-[0.4em] text-slate-500">Expertise</p>
+          <h2 class="text-3xl sm:text-4xl font-semibold mt-3">Systems thinking across the stack</h2>
         </div>
-        <p class="max-w-md text-slate-600">Seven modules you can mix to match your roadmap. Each engagement is scoped to outcomes, not vanity deliverables.</p>
+        <nav class="flex flex-wrap gap-3 text-sm text-slate-500">
+          {navLinks.map((link) => (
+            <a class="px-4 py-2 rounded-full border border-[var(--border)]" href={link.href}>{link.label}</a>
+          ))}
+        </nav>
       </div>
       <div class="mt-10 grid gap-6 md:grid-cols-2">
         {servicePillars.map((pillar) => (
-          <article class="card" data-event="service_card">
-            <div class="flex items-center justify-between">
-              <h3 class="text-2xl font-semibold text-slate-900">{pillar.title}</h3>
-              <span class="text-sm uppercase tracking-[0.25em] text-slate-400">{pillar.title.split(' ')[0]}</span>
-            </div>
-            <p class="mt-3 text-slate-600">{pillar.copy}</p>
+          <article class="service-pill">
+            <p class="text-xs uppercase tracking-[0.5em] text-slate-500">{pillar.eyebrow}</p>
+            <h3 class="text-xl font-semibold text-slate-900 dark:text-white mt-2">{pillar.title}</h3>
+            <p class="mt-3">{pillar.copy}</p>
           </article>
         ))}
       </div>
     </section>
 
     <section id="process" class="section-shell">
-      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
-        <div>
-          <p class="text-sm uppercase tracking-[0.35em] text-slate-500">How we help</p>
-          <h2 class="text-3xl sm:text-4xl font-semibold mt-4">Clarity first, sprints second</h2>
-        </div>
-        <p class="max-w-md text-slate-600">Every builder-friendly project gets a plan, telemetry, and an exit ramp. No retainers without proof.</p>
+      <div class="flex flex-col gap-4">
+        <p class="text-sm uppercase tracking-[0.4em] text-slate-500">Approach</p>
+        <h2 class="text-3xl sm:text-4xl font-semibold">Speed first, rigor always.</h2>
       </div>
-      <div class="mt-10 grid gap-4 lg:grid-cols-4">
-        {processSteps.map((step, index) => (
-          <div class="card relative" data-event="process_step">
-            <span class="absolute -top-4 left-6 text-sm font-semibold text-slate-400">0{index + 1}</span>
-            <h3 class="text-xl font-semibold text-slate-900 mt-4">{step.label}</h3>
-            <p class="mt-3 text-slate-600">{step.detail}</p>
-            <p class="mt-4 text-sm font-medium text-slate-500">{step.duration}</p>
-          </div>
+      <div class="mt-8 grid gap-5 lg:grid-cols-3">
+        {processStatements.map((step) => (
+          <article class="card">
+            <h3 class="text-2xl font-semibold text-slate-900 dark:text-white">{step.name}</h3>
+            <p class="mt-3">{step.detail}</p>
+          </article>
         ))}
       </div>
     </section>
 
-    <section class="section-shell">
+    <section id="proof" class="section-shell">
       <div class="grid gap-8 lg:grid-cols-[3fr,2fr] items-center">
-        <div class="card">
-          <p class="text-sm uppercase tracking-[0.35em] text-slate-500">Proof</p>
-          <p class="mt-4 text-2xl text-slate-900">{proof.quote}</p>
-          <p class="mt-4 text-sm font-medium text-slate-500">{proof.author}</p>
-        </div>
-        <div class="grid grid-cols-3 gap-4 text-center">
+        <article class="card space-y-5">
+          <div class="flex items-center gap-4">
+            <div class="proof-avatar">SW</div>
+            <div>
+              <p class="text-lg text-slate-900 dark:text-white">{proof.author}</p>
+              <p class="text-sm text-slate-500">Swiss logistics · AI program lead</p>
+            </div>
+          </div>
+          <p class="text-2xl text-slate-900 dark:text-white">{proof.quote}</p>
+        </article>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {proof.stats.map((stat) => (
-            <div class="py-6 rounded-xl bg-white shadow-sm">
-              <p class="text-3xl font-semibold text-slate-900">{stat.value}</p>
+            <div class="card text-center">
+              <p class="text-3xl font-semibold text-slate-900 dark:text-white">{stat.value}</p>
               <p class="text-sm text-slate-500">{stat.label}</p>
             </div>
           ))}
@@ -146,45 +146,32 @@ const year = new Date().getFullYear();
       </div>
     </section>
 
-    <section class="section-shell" aria-labelledby="cta-band">
-      <div class="gradient-band" id="cta-band">
-        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
-          <div>
-            <p class="text-sm uppercase tracking-[0.35em]">Need a trusted partner?</p>
-            <h2 class="text-3xl font-semibold mt-3 text-white max-w-2xl">Let’s turn your “what if we automated this?” into production code.</h2>
-          </div>
-          <a class="btn-primary bg-white text-slate-900" href="#register" data-event="cta_click" data-location="cta-band">Book a working session</a>
+    <section class="section-shell" id="register">
+      <div class="flex flex-col gap-4">
+        <p class="text-sm uppercase tracking-[0.4em] text-slate-500">Start</p>
+        <h2 class="text-3xl sm:text-4xl font-semibold">Ready when you are.</h2>
+        <p class="max-w-2xl">Share a few details about what you’re building. I’ll get back to you within one business day with next steps, or I’ll recommend a better fit if I’m not the right partner.</p>
+        <div class="flex flex-wrap gap-3">
+          <button class="btn-primary" type="button" data-open-form>Open project form</button>
+          <a class="btn-ghost" href="mailto:info@appligent.ai">Email info@appligent.ai</a>
         </div>
       </div>
-    </section>
-
-    <section id="register" class="section-shell" aria-labelledby="lead-form">
-      <div class="grid gap-8 lg:grid-cols-2">
-        <div>
-          <p class="text-sm uppercase tracking-[0.35em] text-slate-500">Register</p>
-          <h2 id="lead-form" class="text-3xl sm:text-4xl font-semibold mt-4">Tell me what you’re building</h2>
-          <p class="mt-4 text-slate-600">Email required, everything else optional. I’ll respond within one working day with next steps or clarifying questions.</p>
-          <ul class="mt-6 space-y-3 text-slate-600">
-            <li>• Emails routed securely, nothing shared with third parties.</li>
-            <li>• Consent checkbox required to send.</li>
-            <li>• GDPR-compliant privacy notice in footer.</li>
-          </ul>
-        </div>
+      <div class="hidden-form mt-6" data-lead-form>
         <div class="card">
           <form id="leadCapture" class="space-y-4" aria-live="polite">
-            <label class="block text-sm font-medium text-slate-700">Email *</label>
-            <input type="email" name="email" required class="w-full rounded-xl border border-[var(--clr-border)] px-4 py-3" placeholder="you@company.ch" />
-            <label class="block text-sm font-medium text-slate-700">Company</label>
-            <input type="text" name="company" class="w-full rounded-xl border border-[var(--clr-border)] px-4 py-3" placeholder="Acme AG" />
-            <label class="block text-sm font-medium text-slate-700">Name</label>
-            <input type="text" name="name" class="w-full rounded-xl border border-[var(--clr-border)] px-4 py-3" placeholder="Vlad" />
-            <label class="block text-sm font-medium text-slate-700">Location</label>
-            <input type="text" name="location" class="w-full rounded-xl border border-[var(--clr-border)] px-4 py-3" placeholder="Zurich" />
-            <label class="block text-sm font-medium text-slate-700">What do you need?</label>
-            <textarea name="notes" rows="4" class="w-full rounded-xl border border-[var(--clr-border)] px-4 py-3" placeholder="AI assistant for support ops, mobile companion app, etc."></textarea>
+            <label class="block text-sm font-medium">Email *</label>
+            <input type="email" name="email" required class="w-full rounded-xl border border-[var(--border)] px-4 py-3 bg-transparent" placeholder="you@company.ch" />
+            <label class="block text-sm font-medium">Company</label>
+            <input type="text" name="company" class="w-full rounded-xl border border-[var(--border)] px-4 py-3 bg-transparent" placeholder="Acme AG" />
+            <label class="block text-sm font-medium">Name</label>
+            <input type="text" name="name" class="w-full rounded-xl border border-[var(--border)] px-4 py-3 bg-transparent" placeholder="Your name" />
+            <label class="block text-sm font-medium">Location</label>
+            <input type="text" name="location" class="w-full rounded-xl border border-[var(--border)] px-4 py-3 bg-transparent" placeholder="Zurich" />
+            <label class="block text-sm font-medium">What do you need?</label>
+            <textarea name="notes" rows="4" class="w-full rounded-xl border border-[var(--border)] px-4 py-3 bg-transparent" placeholder="AI assistant for support ops, native companion app, etc."></textarea>
             <label class="flex gap-3 text-sm text-slate-600">
               <input type="checkbox" name="consent" required />
-              I agree to be contacted about Appligent AI services & privacy terms.
+              I agree to the privacy & communication terms.
             </label>
             <button class="btn-primary w-full" type="submit">Submit</button>
             <p id="formMessage" class="text-sm text-slate-500"></p>
@@ -194,11 +181,11 @@ const year = new Date().getFullYear();
     </section>
   </main>
 
-  <footer class="px-4 py-10 bg-white border-t border-[var(--clr-border)] text-sm text-slate-500">
+  <footer class="px-4 py-10 bg-transparent text-sm text-slate-500">
     <div class="mx-auto max-w-6xl flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
       <p>© {year} Appligent AI · Zurich, Switzerland</p>
       <div class="flex gap-4">
-        <a href="mailto:vlad@appligent.ai">vlad@appligent.ai</a>
+        <a href="mailto:info@appligent.ai">info@appligent.ai</a>
         <a href="#">Privacy</a>
         <a href="#">Impressum</a>
       </div>
@@ -206,25 +193,44 @@ const year = new Date().getFullYear();
   </footer>
 
   <script is:inline>
-    const form = document.getElementById('leadCapture');
-    const message = document.getElementById('formMessage');
-    if (form) {
-      form.addEventListener('submit', (event) => {
-        event.preventDefault();
-        const consent = form.querySelector('input[name="consent"]').checked;
-        if (!consent) {
-          message.textContent = 'Consent required to submit.';
-          message.className = 'text-sm text-red-600';
-          return;
-        }
-        message.textContent = 'Thanks! I’ll reply within one business day.';
-        message.className = 'text-sm text-green-600';
-        form.reset();
-        form.querySelector('button').disabled = true;
-        setTimeout(() => {
-          form.querySelector('button').disabled = false;
-        }, 2000);
+    const html = document.documentElement;
+    const stored = localStorage.getItem('appligent-theme');
+    const initial = stored || 'system';
+    html.dataset.theme = initial;
+    document.querySelectorAll('[data-theme-value]').forEach((btn) => {
+      btn.setAttribute('aria-pressed', btn.dataset.themeValue === initial ? 'true' : 'false');
+      btn.addEventListener('click', () => {
+        const theme = btn.dataset.themeValue;
+        html.dataset.theme = theme;
+        localStorage.setItem('appligent-theme', theme);
+        document.querySelectorAll('[data-theme-value]').forEach((other) => other.setAttribute('aria-pressed', other === btn ? 'true' : 'false'));
       });
-    }
+    });
+
+    const openFormBtn = document.querySelector('[data-open-form]');
+    const formWrapper = document.querySelector('[data-lead-form]');
+    const form = document.getElementById('leadCapture');
+    const formMessage = document.getElementById('formMessage');
+    openFormBtn?.addEventListener('click', () => {
+      const open = formWrapper?.dataset.open === 'true';
+      formWrapper?.setAttribute('data-open', String(!open));
+      if (!open) {
+        formWrapper?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+
+    form?.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const consent = form.querySelector('input[name="consent"]').checked;
+      if (!consent) {
+        formMessage.textContent = 'Consent required to submit.';
+        formMessage.className = 'text-sm text-red-500';
+        return;
+      }
+      formMessage.textContent = 'Thanks! I’ll reply within one business day.';
+      formMessage.className = 'text-sm text-green-500';
+      form.reset();
+      setTimeout(() => (formMessage.textContent = ''), 3000);
+    });
   </script>
 </Layout>

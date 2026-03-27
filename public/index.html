@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Appligent AI — AI Automation & Mobile Development for Swiss SMEs</title>
+<meta name="description" content="Zurich-based AI consultancy helping Swiss SMEs automate workflows, build mobile apps, and unlock the power of artificial intelligence.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --primary: #00BFA6;
+  --primary-dark: #00a08c;
+  --highlight: #FF8A00;
+  --text: #1a1a2e;
+  --text-light: #4a4a6a;
+  --surface: #F5F5F7;
+  --white: #FFFFFF;
+  --font-headline: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+  --max-w: 1140px;
+  --radius: 12px;
+  --shadow: 0 2px 20px rgba(26,26,46,0.06);
+  --shadow-hover: 0 8px 32px rgba(26,26,46,0.12);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ── Utility ── */
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+.section { padding: 100px 0; }
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+.section-title {
+  font-family: var(--font-headline);
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: var(--text);
+}
+.section-subtitle {
+  font-size: 17px;
+  color: var(--text-light);
+  max-width: 560px;
+  line-height: 1.7;
+}
+
+/* ── Animations ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+.animate { opacity: 0; }
+.animate.visible { animation: fadeUp 0.7s ease forwards; }
+.animate.visible:nth-child(2) { animation-delay: 0.1s; }
+.animate.visible:nth-child(3) { animation-delay: 0.2s; }
+.animate.visible:nth-child(4) { animation-delay: 0.3s; }
+
+/* ── Navigation ── */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(26,26,46,0.06);
+  transition: box-shadow 0.3s;
+}
+.nav.scrolled { box-shadow: 0 2px 24px rgba(26,26,46,0.08); }
+.nav-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo {
+  font-family: var(--font-headline);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.nav-logo .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary);
+  display: inline-block;
+}
+.nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+.nav-links a {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-light);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--primary); }
+.lang-toggle {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  background: var(--surface);
+  border: 1px solid rgba(26,26,46,0.08);
+  border-radius: 6px;
+  padding: 5px 2px;
+  display: flex;
+  gap: 0;
+  cursor: pointer;
+}
+.lang-toggle button {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  border: none;
+  background: transparent;
+  padding: 3px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--text-light);
+  transition: all 0.2s;
+}
+.lang-toggle button.active {
+  background: var(--white);
+  color: var(--text);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.nav-hamburger span {
+  width: 22px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+/* ── Hero ── */
+.hero {
+  padding: 160px 0 120px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(0,191,166,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255,138,0,0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-content { position: relative; z-index: 1; max-width: 700px; }
+.hero-label {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--primary);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  animation: slideRight 0.6s ease forwards;
+}
+.hero-title {
+  font-family: var(--font-headline);
+  font-size: clamp(36px, 5.5vw, 56px);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  animation: fadeUp 0.7s ease 0.1s forwards;
+  opacity: 0;
+}
+.hero-title .accent { color: var(--primary); }
+.hero-sub {
+  font-size: 18px;
+  color: var(--text-light);
+  line-height: 1.7;
+  max-width: 520px;
+  margin-bottom: 40px;
+  animation: fadeUp 0.7s ease 0.2s forwards;
+  opacity: 0;
+}
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--primary);
+  color: var(--white);
+  font-family: var(--font-headline);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 14px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s;
+  animation: fadeUp 0.7s ease 0.35s forwards;
+  opacity: 0;
+}
+.hero-cta:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(0,191,166,0.25);
+}
+.hero-cta svg { transition: transform 0.2s; }
+.hero-cta:hover svg { transform: translateX(3px); }
+
+/* ── Services ── */
+.services { background: var(--surface); }
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 48px;
+}
+.service-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 36px 32px;
+  box-shadow: var(--shadow);
+  transition: all 0.35s;
+  border: 1px solid rgba(26,26,46,0.04);
+  position: relative;
+  overflow: hidden;
+}
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+.service-card:hover::before { transform: scaleX(1); }
+.service-card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-4px);
+}
+.service-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: rgba(0,191,166,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: var(--primary);
+}
+.service-card h3 {
+  font-family: var(--font-headline);
+  font-size: 19px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.service-card p {
+  font-size: 15px;
+  color: var(--text-light);
+  line-height: 1.65;
+  margin-bottom: 16px;
+}
+.service-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.service-tags span {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--primary-dark);
+  background: rgba(0,191,166,0.07);
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+/* ── Process ── */
+.process-track {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: 56px;
+  position: relative;
+}
+.process-track::before {
+  content: '';
+  position: absolute;
+  top: 28px;
+  left: 60px;
+  right: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--highlight));
+  opacity: 0.25;
+}
+.process-step { text-align: center; position: relative; }
+.step-number {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 2px solid var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--primary);
+  margin: 0 auto 20px;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s;
+}
+.process-step:hover .step-number {
+  background: var(--primary);
+  color: var(--white);
+  transform: scale(1.1);
+}
+.process-step h3 {
+  font-family: var(--font-headline);
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.process-step p {
+  font-size: 14px;
+  color: var(--text-light);
+  max-width: 200px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ── Results ── */
+.results { background: var(--surface); }
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 48px;
+}
+.result-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(26,26,46,0.04);
+  transition: all 0.35s;
+}
+.result-card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-3px);
+}
+.result-industry {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--highlight);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 16px;
+}
+.result-card h3 {
+  font-family: var(--font-headline);
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+.result-card p {
+  font-size: 14px;
+  color: var(--text-light);
+  line-height: 1.65;
+  margin-bottom: 20px;
+}
+.result-metric {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding-top: 16px;
+  border-top: 1px solid var(--surface);
+}
+.result-metric .number {
+  font-family: var(--font-headline);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--primary);
+}
+.result-metric .label {
+  font-size: 13px;
+  color: var(--text-light);
+}
+
+/* ── Why ── */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+.why-card {
+  padding: 32px 28px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(26,26,46,0.08);
+  transition: all 0.3s;
+}
+.why-card:hover {
+  border-color: var(--primary);
+  background: rgba(0,191,166,0.02);
+}
+.why-icon {
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+.why-card h3 {
+  font-family: var(--font-headline);
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.why-card p {
+  font-size: 14px;
+  color: var(--text-light);
+  line-height: 1.65;
+}
+
+/* ── CTA Band ── */
+.cta-band {
+  background: var(--text);
+  padding: 80px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-band::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -10%;
+  width: 50%;
+  height: 200%;
+  background: radial-gradient(ellipse, rgba(0,191,166,0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cta-band h2 {
+  font-family: var(--font-headline);
+  font-size: clamp(24px, 3.5vw, 36px);
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 16px;
+  position: relative;
+}
+.cta-band p {
+  font-size: 16px;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 32px;
+  position: relative;
+}
+.cta-band .hero-cta { position: relative; }
+
+/* ── Contact ── */
+.contact-inner {
+  max-width: 560px;
+  margin: 0 auto;
+  text-align: center;
+}
+.contact-form {
+  margin-top: 40px;
+  text-align: left;
+}
+.form-group { margin-bottom: 20px; }
+.form-group label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 6px;
+}
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 15px;
+  padding: 12px 16px;
+  border: 1px solid rgba(26,26,46,0.12);
+  border-radius: 8px;
+  background: var(--white);
+  color: var(--text);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(0,191,166,0.1);
+}
+.form-group textarea { resize: vertical; min-height: 120px; }
+.form-submit {
+  width: 100%;
+  background: var(--primary);
+  color: var(--white);
+  font-family: var(--font-headline);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 14px 32px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.form-submit:hover {
+  background: var(--primary-dark);
+  box-shadow: 0 4px 16px rgba(0,191,166,0.25);
+}
+.gdpr-note {
+  font-size: 12px;
+  color: var(--text-light);
+  margin-top: 16px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* ── Footer ── */
+.footer {
+  background: var(--text);
+  padding: 40px 0;
+}
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.footer-left {
+  font-family: var(--font-headline);
+  font-size: 14px;
+  color: rgba(255,255,255,0.5);
+}
+.footer-links { display: flex; gap: 24px; }
+.footer-links a {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--primary); }
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    padding: 24px;
+    gap: 20px;
+    border-bottom: 1px solid rgba(26,26,46,0.08);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  }
+  .nav-hamburger { display: flex; }
+  .section { padding: 72px 0; }
+  .hero { padding: 120px 0 80px; }
+  .services-grid { grid-template-columns: 1fr; }
+  .process-track {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .process-track::before { display: none; }
+  .process-step { text-align: left; display: flex; gap: 20px; align-items: flex-start; }
+  .step-number { margin: 0; flex-shrink: 0; }
+  .process-step p { margin: 0; max-width: none; }
+  .results-grid { grid-template-columns: 1fr; }
+  .why-grid { grid-template-columns: 1fr; }
+  .cta-band { padding: 60px 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ NAV ═══════════════ -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo"><span class="dot"></span> Appligent AI</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#services" data-en="Services" data-de="Leistungen">Services</a></li>
+      <li><a href="#process" data-en="Process" data-de="Prozess">Process</a></li>
+      <li><a href="#results" data-en="Results" data-de="Ergebnisse">Results</a></li>
+      <li><a href="#contact" data-en="Contact" data-de="Kontakt">Contact</a></li>
+      <li>
+        <div class="lang-toggle">
+          <button id="langEN" class="active" onclick="setLang('en')">EN</button>
+          <button id="langDE" onclick="setLang('de')">DE</button>
+        </div>
+      </li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section class="hero" id="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-label" data-en="AI Consultancy · Zurich" data-de="KI-Beratung · Zürich">AI Consultancy · Zurich</div>
+      <h1 class="hero-title">
+        <span data-en="AI that works " data-de="KI, die für ">AI that works </span><span class="accent" data-en="for your business." data-de="Ihr Unternehmen arbeitet.">for your business.</span>
+      </h1>
+      <p class="hero-sub" data-en="We help Swiss SMEs save time, reduce costs, and unlock new possibilities — with practical AI automation and mobile solutions built around how you actually work." data-de="Wir helfen Schweizer KMU, Zeit zu sparen, Kosten zu senken und neue Möglichkeiten zu entdecken — mit praxisnaher KI-Automatisierung und mobilen Lösungen, die zu Ihrem Arbeitsalltag passen.">We help Swiss SMEs save time, reduce costs, and unlock new possibilities — with practical AI automation and mobile solutions built around how you actually work.</p>
+      <a href="#contact" class="hero-cta">
+        <span data-en="Let's Talk" data-de="Gespräch vereinbaren">Let's Talk</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ SERVICES ═══════════════ -->
+<section class="services section" id="services">
+  <div class="container">
+    <div class="section-label" data-en="What We Do" data-de="Was wir tun">What We Do</div>
+    <h2 class="section-title" data-en="Solutions that make a real difference" data-de="Lösungen, die wirklich etwas bewirken">Solutions that make a real difference</h2>
+    <p class="section-subtitle" data-en="From idea to implementation — we build AI and mobile solutions tailored to your business, not off-the-shelf products." data-de="Von der Idee bis zur Umsetzung — wir entwickeln KI- und Mobile-Lösungen, die auf Ihr Unternehmen zugeschnitten sind.">From idea to implementation — we build AI and mobile solutions tailored to your business, not off-the-shelf products.</p>
+
+    <div class="services-grid">
+      <!-- Card 1 -->
+      <div class="service-card animate">
+        <div class="service-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3 data-en="AI Automation" data-de="KI-Automatisierung">AI Automation</h3>
+        <p data-en="Automate repetitive workflows, connect your tools, and let AI agents handle the tasks that slow your team down." data-de="Automatisieren Sie wiederkehrende Abläufe, verbinden Sie Ihre Tools und lassen Sie KI-Agenten die Aufgaben übernehmen, die Ihr Team bremsen.">Automate repetitive workflows, connect your tools, and let AI agents handle the tasks that slow your team down.</p>
+        <div class="service-tags">
+          <span data-en="Workflows" data-de="Workflows">Workflows</span>
+          <span data-en="AI Agents" data-de="KI-Agenten">AI Agents</span>
+          <span data-en="Chatbots" data-de="Chatbots">Chatbots</span>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="service-card animate">
+        <div class="service-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18.01"/></svg>
+        </div>
+        <h3 data-en="Mobile Development" data-de="Mobile Entwicklung">Mobile Development</h3>
+        <p data-en="Native iOS and Android apps designed to delight your users — from concept and prototyping to App Store launch." data-de="Native iOS- und Android-Apps, die Ihre Nutzer begeistern — vom Konzept über den Prototyp bis zum Launch im App Store.">Native iOS and Android apps designed to delight your users — from concept and prototyping to App Store launch.</p>
+        <div class="service-tags">
+          <span>iOS</span>
+          <span>Android</span>
+          <span data-en="Cross-platform" data-de="Plattformübergreifend">Cross-platform</span>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="service-card animate">
+        <div class="service-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <h3 data-en="AI Strategy Consulting" data-de="KI-Strategieberatung">AI Strategy Consulting</h3>
+        <p data-en="Not sure where to start with AI? We assess your operations, identify quick wins, and build a roadmap that fits your budget and goals." data-de="Unsicher, wo Sie mit KI anfangen sollen? Wir analysieren Ihre Abläufe, identifizieren schnelle Erfolge und erstellen eine Roadmap, die zu Ihrem Budget passt.">Not sure where to start with AI? We assess your operations, identify quick wins, and build a roadmap that fits your budget and goals.</p>
+        <div class="service-tags">
+          <span data-en="Assessment" data-de="Analyse">Assessment</span>
+          <span data-en="Roadmap" data-de="Fahrplan">Roadmap</span>
+          <span data-en="Quick Wins" data-de="Schnelle Erfolge">Quick Wins</span>
+        </div>
+      </div>
+      <!-- Card 4 -->
+      <div class="service-card animate">
+        <div class="service-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <h3 data-en="Custom AI Solutions" data-de="Massgeschneiderte KI-Lösungen">Custom AI Solutions</h3>
+        <p data-en="Integrate AI into your existing systems — CRM, ERP, internal tools. We build the bridges between your tech stack and the latest AI models." data-de="Integrieren Sie KI in Ihre bestehenden Systeme — CRM, ERP, interne Tools. Wir bauen die Brücken zwischen Ihrem Tech-Stack und den neuesten KI-Modellen.">Integrate AI into your existing systems — CRM, ERP, internal tools. We build the bridges between your tech stack and the latest AI models.</p>
+        <div class="service-tags">
+          <span data-en="API Integration" data-de="API-Integration">API Integration</span>
+          <span data-en="LLM Pipelines" data-de="LLM-Pipelines">LLM Pipelines</span>
+          <span data-en="RAG" data-de="RAG">RAG</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ PROCESS ═══════════════ -->
+<section class="section" id="process">
+  <div class="container">
+    <div class="section-label" data-en="How We Work" data-de="Wie wir arbeiten">How We Work</div>
+    <h2 class="section-title" data-en="From first conversation to lasting impact" data-de="Vom ersten Gespräch zur nachhaltigen Wirkung">From first conversation to lasting impact</h2>
+    <p class="section-subtitle" data-en="A structured, transparent process — no surprises, just steady progress." data-de="Ein strukturierter, transparenter Prozess — keine Überraschungen, nur stetiger Fortschritt.">A structured, transparent process — no surprises, just steady progress.</p>
+
+    <div class="process-track">
+      <div class="process-step animate">
+        <div class="step-number">01</div>
+        <div>
+          <h3 data-en="Discover" data-de="Verstehen">Discover</h3>
+          <p data-en="We listen, ask the right questions, and understand your workflows and bottlenecks." data-de="Wir hören zu, stellen die richtigen Fragen und verstehen Ihre Abläufe und Engpässe.">We listen, ask the right questions, and understand your workflows and bottlenecks.</p>
+        </div>
+      </div>
+      <div class="process-step animate">
+        <div class="step-number">02</div>
+        <div>
+          <h3 data-en="Design" data-de="Konzipieren">Design</h3>
+          <p data-en="We map out a solution that balances impact, feasibility, and your budget." data-de="Wir entwerfen eine Lösung, die Wirkung, Machbarkeit und Ihr Budget in Einklang bringt.">We map out a solution that balances impact, feasibility, and your budget.</p>
+        </div>
+      </div>
+      <div class="process-step animate">
+        <div class="step-number">03</div>
+        <div>
+          <h3 data-en="Build" data-de="Umsetzen">Build</h3>
+          <p data-en="Iterative development with regular check-ins. You see progress weekly, not just at the end." data-de="Iterative Entwicklung mit regelmässigen Updates. Sie sehen Fortschritte wöchentlich, nicht erst am Ende.">Iterative development with regular check-ins. You see progress weekly, not just at the end.</p>
+        </div>
+      </div>
+      <div class="process-step animate">
+        <div class="step-number">04</div>
+        <div>
+          <h3 data-en="Support" data-de="Begleiten">Support</h3>
+          <p data-en="Launch is just the start. We provide training, monitoring, and ongoing improvements." data-de="Der Launch ist erst der Anfang. Wir bieten Schulung, Monitoring und kontinuierliche Verbesserung.">Launch is just the start. We provide training, monitoring, and ongoing improvements.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ RESULTS ═══════════════ -->
+<section class="results section" id="results">
+  <div class="container">
+    <div class="section-label" data-en="Results" data-de="Ergebnisse">Results</div>
+    <h2 class="section-title" data-en="What practical AI looks like" data-de="So sieht praxisnahe KI aus">What practical AI looks like</h2>
+    <p class="section-subtitle" data-en="Real-world outcomes for businesses like yours." data-de="Praxisnahe Ergebnisse für Unternehmen wie Ihres.">Real-world outcomes for businesses like yours.</p>
+
+    <div class="results-grid">
+      <div class="result-card animate">
+        <div class="result-industry" data-en="Financial Services" data-de="Finanzdienstleistungen">Financial Services</div>
+        <h3 data-en="Automated client onboarding" data-de="Automatisiertes Kunden-Onboarding">Automated client onboarding</h3>
+        <p data-en="Replaced a manual 3-day process with an AI-powered workflow that handles document checks, data entry, and compliance verification." data-de="Ein manueller 3-Tage-Prozess wurde durch einen KI-gestützten Workflow ersetzt — für Dokumentenprüfung, Dateneingabe und Compliance-Checks.">Replaced a manual 3-day process with an AI-powered workflow that handles document checks, data entry, and compliance verification.</p>
+        <div class="result-metric">
+          <span class="number">85%</span>
+          <span class="label" data-en="faster onboarding" data-de="schnelleres Onboarding">faster onboarding</span>
+        </div>
+      </div>
+
+      <div class="result-card animate">
+        <div class="result-industry" data-en="Retail & E-Commerce" data-de="Handel & E-Commerce">Retail & E-Commerce</div>
+        <h3 data-en="AI-powered product assistant" data-de="KI-gestützter Produktberater">AI-powered product assistant</h3>
+        <p data-en="Built a conversational assistant that helps customers find the right product — reducing support tickets and increasing conversion." data-de="Ein KI-Assistent, der Kunden bei der Produktauswahl hilft — weniger Support-Tickets, mehr Conversions.">Built a conversational assistant that helps customers find the right product — reducing support tickets and increasing conversion.</p>
+        <div class="result-metric">
+          <span class="number">40%</span>
+          <span class="label" data-en="fewer support tickets" data-de="weniger Support-Tickets">fewer support tickets</span>
+        </div>
+      </div>
+
+      <div class="result-card animate">
+        <div class="result-industry" data-en="Healthcare" data-de="Gesundheitswesen">Healthcare</div>
+        <h3 data-en="Mobile app for patient engagement" data-de="Mobile App für Patientenbindung">Mobile app for patient engagement</h3>
+        <p data-en="Designed and launched an iOS app that streamlines appointment scheduling, reminders, and secure communication with care teams." data-de="Konzeption und Launch einer iOS-App für Terminplanung, Erinnerungen und sichere Kommunikation mit dem Behandlungsteam.">Designed and launched an iOS app that streamlines appointment scheduling, reminders, and secure communication with care teams.</p>
+        <div class="result-metric">
+          <span class="number">3x</span>
+          <span class="label" data-en="patient engagement" data-de="Patienteninteraktion">patient engagement</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ WHY ═══════════════ -->
+<section class="section" id="why">
+  <div class="container">
+    <div class="section-label" data-en="Why Appligent AI" data-de="Warum Appligent AI">Why Appligent AI</div>
+    <h2 class="section-title" data-en="Built for Swiss SMEs" data-de="Gemacht für Schweizer KMU">Built for Swiss SMEs</h2>
+    <p class="section-subtitle" data-en="We're not a big consultancy with slide decks and buzzwords. We're a hands-on partner who builds alongside you." data-de="Wir sind keine grosse Beratung mit Powerpoints und Buzzwords. Wir sind ein Partner, der mit Ihnen gemeinsam aufbaut.">We're not a big consultancy with slide decks and buzzwords. We're a hands-on partner who builds alongside you.</p>
+
+    <div class="why-grid">
+      <div class="why-card animate">
+        <div class="why-icon">📍</div>
+        <h3 data-en="Zurich-based" data-de="Sitz in Zürich">Zurich-based</h3>
+        <p data-en="Local presence, face-to-face meetings, and a deep understanding of the Swiss business landscape." data-de="Lokale Präsenz, persönliche Treffen und ein tiefes Verständnis der Schweizer Geschäftslandschaft.">Local presence, face-to-face meetings, and a deep understanding of the Swiss business landscape.</p>
+      </div>
+      <div class="why-card animate">
+        <div class="why-icon">🤝</div>
+        <h3 data-en="SME-focused" data-de="KMU-fokussiert">SME-focused</h3>
+        <p data-en="Solutions sized for your team and budget — not enterprise bloatware. Every franc invested delivers measurable value." data-de="Lösungen für Ihr Team und Budget — kein Enterprise-Bloatware. Jeder investierte Franken bringt messbaren Mehrwert.">Solutions sized for your team and budget — not enterprise bloatware. Every franc invested delivers measurable value.</p>
+      </div>
+      <div class="why-card animate">
+        <div class="why-icon">⚡</div>
+        <h3 data-en="Hands-on delivery" data-de="Praxisnahe Umsetzung">Hands-on delivery</h3>
+        <p data-en="We don't just advise — we build, deploy, and support. You get working solutions, not strategy decks." data-de="Wir beraten nicht nur — wir entwickeln, deployen und betreuen. Sie bekommen funktionierende Lösungen, keine Strategiepapiere.">We don't just advise — we build, deploy, and support. You get working solutions, not strategy decks.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ CTA BAND ═══════════════ -->
+<section class="cta-band">
+  <div class="container">
+    <h2 data-en="Ready to see what AI can do for you?" data-de="Bereit zu sehen, was KI für Sie tun kann?">Ready to see what AI can do for you?</h2>
+    <p data-en="Let's start with a conversation — no commitment, no hard sell." data-de="Beginnen wir mit einem Gespräch — unverbindlich und ohne Druck.">Let's start with a conversation — no commitment, no hard sell.</p>
+    <a href="#contact" class="hero-cta">
+      <span data-en="Get in Touch" data-de="Kontakt aufnehmen">Get in Touch</span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ═══════════════ CONTACT ═══════════════ -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="section-label" data-en="Contact" data-de="Kontakt">Contact</div>
+      <h2 class="section-title" style="text-align:center;" data-en="Let's talk about your idea" data-de="Lassen Sie uns über Ihre Idee sprechen">Let's talk about your idea</h2>
+      <p class="section-subtitle" style="text-align:center; margin: 0 auto;" data-en="Tell us briefly what you're working on — we'll get back to you within one business day." data-de="Erzählen Sie uns kurz, woran Sie arbeiten — wir melden uns innerhalb eines Werktages.">Tell us briefly what you're working on — we'll get back to you within one business day.</p>
+
+      <form class="contact-form" id="contactForm">
+        <div class="form-group">
+          <label for="name" data-en="Name" data-de="Name">Name</label>
+          <input type="text" id="name" name="name" required placeholder="">
+        </div>
+        <div class="form-group">
+          <label for="email" data-en="Email" data-de="E-Mail">Email</label>
+          <input type="email" id="email" name="email" required placeholder="">
+        </div>
+        <div class="form-group">
+          <label for="message" data-en="Message" data-de="Nachricht">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit" class="form-submit" data-en="Send Message" data-de="Nachricht senden">Send Message</button>
+        <p class="gdpr-note" data-en="Your data is sent directly via email and is not stored on any server. We respect your privacy." data-de="Ihre Daten werden direkt per E-Mail gesendet und auf keinem Server gespeichert. Wir respektieren Ihre Privatsphäre.">Your data is sent directly via email and is not stored on any server. We respect your privacy.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-left">© 2026 Appligent AI · Zurich, Switzerland</div>
+      <div class="footer-links">
+        <a href="mailto:hello@appligent.ai" data-en="hello@appligent.ai" data-de="hello@appligent.ai">hello@appligent.ai</a>
+        <a href="https://linkedin.com/company/appligent-ai" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── Language Toggle ──
+let currentLang = 'en';
+
+function setLang(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  document.getElementById('langEN').classList.toggle('active', lang === 'en');
+  document.getElementById('langDE').classList.toggle('active', lang === 'de');
+
+  document.querySelectorAll('[data-en]').forEach(el => {
+    const text = el.getAttribute(`data-${lang}`);
+    if (text) {
+      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+        el.placeholder = text;
+      } else {
+        el.textContent = text;
+      }
+    }
+  });
+}
+
+// ── Nav scroll effect ──
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// ── Mobile menu ──
+function toggleMenu() {
+  document.getElementById('navLinks').classList.toggle('open');
+}
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => {
+    document.getElementById('navLinks').classList.remove('open');
+  });
+});
+
+// ── Scroll animations ──
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.animate').forEach(el => observer.observe(el));
+
+// ── Contact form → mailto ──
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const message = document.getElementById('message').value.trim();
+  const subject = encodeURIComponent(`Website Inquiry from ${name}`);
+  const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+  window.location.href = `mailto:hello@appligent.ai?subject=${subject}&body=${body}`;
+});
+</script>
+
+</body>
+</html>

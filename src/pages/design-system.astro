@@ -1,0 +1,610 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const colors = [
+  {
+    token: '--clr-bg',
+    hex: '#F4F5F7',
+    name: 'Background',
+    usage: 'Page & section backgrounds',
+    dark: false,
+  },
+  {
+    token: '--clr-surface',
+    hex: '#FFFFFF',
+    name: 'Surface',
+    usage: 'Cards, modals, overlays',
+    dark: false,
+    bordered: true,
+  },
+  {
+    token: '--clr-text',
+    hex: '#0B0D13',
+    name: 'Text',
+    usage: 'Primary headings & body copy',
+    dark: true,
+  },
+  {
+    token: '--clr-muted',
+    hex: '#4B4F5B',
+    name: 'Muted',
+    usage: 'Secondary text, captions, metadata',
+    dark: true,
+  },
+  {
+    token: '--clr-border',
+    hex: '#E0E3EA',
+    name: 'Border',
+    usage: 'Dividers, card outlines, inputs',
+    dark: false,
+  },
+  {
+    token: '--clr-accent',
+    hex: '#00BFA6',
+    name: 'Accent',
+    usage: 'Primary CTAs, links, active states',
+    dark: true,
+  },
+  {
+    token: '--clr-accent-dark',
+    hex: '#00907D',
+    name: 'Accent Dark',
+    usage: 'Hover & focus states for accent',
+    dark: true,
+  },
+  {
+    token: '--clr-highlight',
+    hex: '#FF8A00',
+    name: 'Highlight',
+    usage: 'Badges, callouts, emphasis',
+    dark: true,
+  },
+];
+
+const typeScale = [
+  { label: 'Display', size: '56px', weight: '600', font: 'Space Grotesk', lh: '1.1', sample: 'AI Automation & Mobile' },
+  { label: 'H1', size: '40px', weight: '600', font: 'Space Grotesk', lh: '1.2', sample: 'Without Enterprise Drag' },
+  { label: 'H2', size: '32px', weight: '500', font: 'Space Grotesk', lh: '1.25', sample: 'Our Expertise & Services' },
+  { label: 'H3', size: '24px', weight: '500', font: 'Space Grotesk', lh: '1.35', sample: 'AI Automation Workflows' },
+  { label: 'H4', size: '20px', weight: '500', font: 'Space Grotesk', lh: '1.4', sample: 'Data & AI Strategy' },
+  { label: 'Body LG', size: '18px', weight: '400', font: 'Inter', lh: '1.7', sample: 'Swiss-based studio delivering measurable AI outcomes.' },
+  { label: 'Body MD', size: '16px', weight: '400', font: 'Inter', lh: '1.7', sample: 'Deploy trustworthy automation across ops, finance, and CX workflows.' },
+  { label: 'Body SM', size: '14px', weight: '400', font: 'Inter', lh: '1.6', sample: 'Sprint-sized increments with continuous demos and telemetry baked in.' },
+  { label: 'Label / UI', size: '12px', weight: '600', font: 'Inter', lh: '1.5', sample: 'ZURICH · SME FOCUSED' },
+];
+
+const radii = [
+  { name: 'Pill', value: '999px', usage: 'Buttons, tags', class: 'rounded-full', px: 56 },
+  { name: 'XL', value: '1.5rem / 24px', usage: 'Hero visual, gradient band', px: 24 },
+  { name: 'LG', value: '1rem / 16px', usage: 'Cards', px: 16 },
+  { name: 'MD', value: '0.75rem / 12px', usage: 'Inputs, small cards', px: 12 },
+  { name: 'SM', value: '0.5rem / 8px', usage: 'Chips, badges', px: 8 },
+];
+
+const shadows = [
+  {
+    name: 'Card',
+    css: '0 30px 80px rgba(11, 13, 19, 0.05)',
+    usage: '.card component',
+  },
+  {
+    name: 'Button Hover',
+    css: '0 12px 30px rgba(0, 191, 166, 0.30)',
+    usage: '.btn-primary:hover',
+  },
+  {
+    name: 'Nav / Logo',
+    css: '0 4px 16px rgba(11, 13, 19, 0.08)',
+    usage: 'Logo mark in header',
+  },
+];
+
+const spacingTokens = [
+  { token: '4px', label: 'XS', usage: 'Icon gap, tight padding' },
+  { token: '8px', label: 'SM', usage: 'Chip padding, list gap' },
+  { token: '16px', label: 'MD', usage: 'Inline gaps, form fields' },
+  { token: '24px', label: 'LG', usage: 'Card internal spacing' },
+  { token: '32px', label: 'XL', usage: 'Component gap' },
+  { token: '48px', label: '2XL', usage: 'Section inner rhythm' },
+  { token: '80px', label: '3XL', usage: '.section-shell padding (mobile)' },
+  { token: '96px', label: '4XL', usage: '.section-shell padding (desktop)' },
+];
+---
+
+<Layout
+  title="Design System — Appligent AI"
+  description="Visual design system documentation for Appligent AI"
+>
+  <style>
+    /* ── Page shell ────────────────────────────────────────────── */
+    body { background: #f4f5f7; }
+
+    .ds-page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 2rem 6rem;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* ── Section titles ────────────────────────────────────────── */
+    .ds-section { margin-top: 4rem; }
+    .ds-section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #00bfa6;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #00bfa6;
+      display: inline-block;
+    }
+
+    /* ── Cover ─────────────────────────────────────────────────── */
+    .ds-cover {
+      background: linear-gradient(120deg, #00bfa6 0%, #00907d 100%);
+      border-radius: 1.5rem;
+      padding: 3rem 2.5rem 2.5rem;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+    .ds-cover-logo {
+      width: 52px; height: 52px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600; font-size: 18px;
+      margin-bottom: 1.5rem;
+      backdrop-filter: blur(6px);
+    }
+    .ds-cover h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 42px; font-weight: 600;
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+    }
+    .ds-cover p { color: rgba(255,255,255,0.78); font-size: 16px; line-height: 1.6; margin: 0; }
+    .ds-cover-meta {
+      margin-top: 2rem;
+      display: flex; gap: 2rem; flex-wrap: wrap;
+      font-size: 12px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.6);
+    }
+
+    /* ── Color palette ─────────────────────────────────────────── */
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+    .color-card {
+      border-radius: 1rem;
+      overflow: hidden;
+      border: 1px solid #e0e3ea;
+      background: #fff;
+    }
+    .color-swatch {
+      height: 90px;
+      position: relative;
+    }
+    .color-info {
+      padding: 0.875rem 1rem;
+    }
+    .color-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 14px; font-weight: 600;
+      color: #0b0d13; margin-bottom: 2px;
+    }
+    .color-hex {
+      font-size: 12px; font-weight: 500;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      color: #4b4f5b; margin-bottom: 4px;
+    }
+    .color-token {
+      font-size: 10px;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      color: #00bfa6; background: #e8faf8;
+      display: inline-block;
+      padding: 2px 6px; border-radius: 4px;
+      margin-bottom: 4px;
+    }
+    .color-usage {
+      font-size: 11px; color: #4b4f5b; margin: 0;
+      line-height: 1.4;
+    }
+
+    /* ── Contrast chips on swatches ─────────────────────────────── */
+    .swatch-chip {
+      position: absolute; bottom: 8px; right: 8px;
+      font-size: 10px; font-weight: 600;
+      padding: 2px 8px; border-radius: 999px;
+    }
+
+    /* ── Gradient samples ───────────────────────────────────────── */
+    .gradient-row { display: grid; gap: 1rem; grid-template-columns: 1fr 1fr; }
+    .grad-card {
+      border-radius: 1rem; padding: 1.5rem;
+      color: #fff;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    .grad-label { font-size: 11px; opacity: 0.7; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.4rem; }
+    .grad-value { font-size: 12px; font-family: 'SF Mono', 'Fira Code', monospace; opacity: 0.9; }
+
+    /* ── Typography table ───────────────────────────────────────── */
+    .type-table { width: 100%; border-collapse: collapse; }
+    .type-table th {
+      font-size: 11px; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.1em; color: #4b4f5b;
+      border-bottom: 1px solid #e0e3ea;
+      padding: 0.5rem 0.75rem; text-align: left;
+    }
+    .type-row td { padding: 1rem 0.75rem; border-bottom: 1px solid #f0f1f4; vertical-align: middle; }
+    .type-meta { font-size: 11px; color: #4b4f5b; font-family: 'SF Mono', 'Fira Code', monospace; }
+    .type-tag {
+      font-size: 10px; font-weight: 600;
+      background: #f4f5f7; color: #4b4f5b;
+      border: 1px solid #e0e3ea;
+      padding: 2px 8px; border-radius: 999px; display: inline-block;
+    }
+
+    /* ── Font weight specimens ───────────────────────────────────── */
+    .weight-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .weight-card {
+      background: #fff; border: 1px solid #e0e3ea;
+      border-radius: 1rem; padding: 1.5rem;
+    }
+    .weight-label { font-size: 11px; font-weight: 600; color: #4b4f5b; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem; }
+
+    /* ── Components ─────────────────────────────────────────────── */
+    .comp-row { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; margin-bottom: 2rem; }
+    .comp-card {
+      background: #fff; border: 1px solid #e0e3ea;
+      border-radius: 1rem; padding: 2rem;
+      flex: 1; min-width: 220px;
+    }
+    .comp-label {
+      font-size: 10px; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.15em; color: #4b4f5b; margin-bottom: 1.25rem;
+    }
+
+    /* ── Radius grid ─────────────────────────────────────────────── */
+    .radius-grid { display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: flex-end; }
+    .radius-item { text-align: center; }
+    .radius-box {
+      background: #fff;
+      border: 2px solid #00bfa6;
+      width: 72px; height: 72px;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 0.5rem;
+    }
+    .radius-name { font-size: 11px; font-weight: 600; color: #0b0d13; margin-bottom: 1px; }
+    .radius-value { font-size: 10px; color: #4b4f5b; font-family: 'SF Mono', 'Fira Code', monospace; }
+
+    /* ── Shadow cards ────────────────────────────────────────────── */
+    .shadow-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.5rem; }
+    .shadow-demo {
+      background: #fff; border-radius: 1rem;
+      padding: 1.5rem; border: 1px solid #f0f1f4;
+    }
+    .shadow-name { font-size: 13px; font-weight: 600; color: #0b0d13; margin-bottom: 4px; }
+    .shadow-usage { font-size: 11px; color: #00bfa6; margin-bottom: 8px; font-weight: 500; }
+    .shadow-css { font-size: 10px; font-family: 'SF Mono', 'Fira Code', monospace; color: #4b4f5b; word-break: break-all; }
+
+    /* ── Spacing rail ────────────────────────────────────────────── */
+    .spacing-list { display: flex; flex-direction: column; gap: 0.75rem; }
+    .spacing-row { display: flex; align-items: center; gap: 1rem; }
+    .spacing-bar { background: linear-gradient(90deg, #00bfa6, #00907d); border-radius: 4px; height: 20px; min-width: 4px; }
+    .spacing-info { display: flex; gap: 1.5rem; align-items: baseline; }
+    .spacing-token { font-family: 'SF Mono', 'Fira Code', monospace; font-size: 12px; font-weight: 600; color: #0b0d13; min-width: 44px; }
+    .spacing-label-tag { font-size: 10px; font-weight: 600; background: #e8faf8; color: #00907d; padding: 1px 7px; border-radius: 999px; }
+    .spacing-usage { font-size: 11px; color: #4b4f5b; }
+
+    /* ── Iconography / usage note ────────────────────────────────── */
+    .note-box {
+      background: #fff8f0; border-left: 3px solid #ff8a00;
+      border-radius: 0 0.75rem 0.75rem 0;
+      padding: 1rem 1.25rem;
+      font-size: 13px; color: #4b4f5b; line-height: 1.6;
+    }
+    .note-box strong { color: #ff8a00; }
+
+    /* ── Print overrides ─────────────────────────────────────────── */
+    @media print {
+      body { background: #fff !important; }
+      .ds-page { padding: 0 1.5rem 2rem; }
+      .ds-cover { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .color-swatch { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .grad-card { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .spacing-bar { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .ds-section { page-break-inside: avoid; }
+      .color-grid { page-break-inside: avoid; }
+      .print-break { page-break-before: always; }
+    }
+  </style>
+
+  <div class="ds-page">
+
+    <!-- ── COVER ──────────────────────────────────────────────── -->
+    <div class="ds-cover">
+      <div class="ds-cover-logo">AA</div>
+      <h1>Appligent AI<br/>Design System</h1>
+      <p>Visual language, component library, and usage guidelines for<br/>all Appligent AI digital touchpoints.</p>
+      <div class="ds-cover-meta">
+        <span>Version 1.0</span>
+        <span>Astro 6 · Tailwind CSS 4</span>
+        <span>Zurich, Switzerland</span>
+      </div>
+    </div>
+
+    <!-- ── TABLE OF CONTENTS ──────────────────────────────────── -->
+    <div class="ds-section">
+      <p class="ds-section-title">Contents</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.4rem 2rem;">
+        {['1 — Color Palette', '2 — Gradients', '3 — Typography Scale', '4 — Font Weights', '5 — Buttons', '6 — Cards', '7 — Sections & Bands', '8 — Border Radius', '9 — Shadows', '10 — Spacing'].map((item) => (
+          <div style="font-size:13px;color:#4b4f5b;padding:0.3rem 0;border-bottom:1px solid #f0f1f4;">{item}</div>
+        ))}
+      </div>
+    </div>
+
+    <!-- ── 1. COLOR PALETTE ───────────────────────────────────── -->
+    <div class="ds-section">
+      <p class="ds-section-title">1 — Color Palette</p>
+      <div class="color-grid">
+        {colors.map((c) => (
+          <div class="color-card" style={c.bordered ? 'box-shadow:0 0 0 1px #e0e3ea inset;' : ''}>
+            <div class="color-swatch" style={`background:${c.hex};`}>
+              <span
+                class="swatch-chip"
+                style={c.dark ? 'background:rgba(255,255,255,0.18);color:#fff;' : 'background:rgba(11,13,19,0.08);color:#4b4f5b;'}
+              >Aa</span>
+            </div>
+            <div class="color-info">
+              <div class="color-name">{c.name}</div>
+              <div class="color-hex">{c.hex}</div>
+              <div class="color-token">{c.token}</div>
+              <p class="color-usage">{c.usage}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- ── 2. GRADIENTS ───────────────────────────────────────── -->
+    <div class="ds-section">
+      <p class="ds-section-title">2 — Gradients</p>
+      <div class="gradient-row">
+        <div class="grad-card" style="background:linear-gradient(120deg,#00bfa6 0%,#00a38c 100%);">
+          <div class="grad-label">Gradient Band (CTA sections)</div>
+          <div class="grad-value">linear-gradient(120deg, #00BFA6 → #00A38C)</div>
+        </div>
+        <div class="grad-card" style="background:linear-gradient(135deg,#f4f5f7,#e2e6ee);color:#0b0d13;">
+          <div class="grad-label" style="opacity:0.5;">Hero Visual (decorative container)</div>
+          <div class="grad-value" style="opacity:0.7;">linear-gradient(135deg, #F4F5F7 → #E2E6EE)</div>
+        </div>
+        <div class="grad-card" style="background:linear-gradient(135deg,#00bfa6 0%,#ff8a00 100%);">
+          <div class="grad-label">Accent + Highlight Blend</div>
+          <div class="grad-value">Accent #00BFA6 → Highlight #FF8A00</div>
+        </div>
+        <div class="grad-card" style="background:linear-gradient(180deg,#ffffff 0%,#f4f5f7 100%);color:#4b4f5b;border:1px solid #e0e3ea;">
+          <div class="grad-label" style="opacity:0.6;">Surface Fade (card-to-bg)</div>
+          <div class="grad-value">Surface #FFFFFF → BG #F4F5F7</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 3. TYPOGRAPHY SCALE ─────────────────────────────────── -->
+    <div class="ds-section print-break">
+      <p class="ds-section-title">3 — Typography Scale</p>
+      <table class="type-table">
+        <thead>
+          <tr>
+            <th>Style</th>
+            <th>Sample</th>
+            <th>Size</th>
+            <th>Weight</th>
+            <th>Font</th>
+            <th>L-H</th>
+          </tr>
+        </thead>
+        <tbody>
+          {typeScale.map((t) => (
+            <tr class="type-row">
+              <td><span class="type-tag">{t.label}</span></td>
+              <td>
+                <span
+                  style={`font-family:'${t.font}',sans-serif;font-size:${parseInt(t.size) > 24 ? '20px' : t.size};font-weight:${t.weight};color:#0b0d13;line-height:${t.lh};`}
+                >{t.sample}</span>
+              </td>
+              <td class="type-meta">{t.size}</td>
+              <td class="type-meta">{t.weight}</td>
+              <td class="type-meta">{t.font}</td>
+              <td class="type-meta">{t.lh}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ── 4. FONT WEIGHTS ─────────────────────────────────────── -->
+    <div class="ds-section">
+      <p class="ds-section-title">4 — Font Weights</p>
+      <div class="weight-grid">
+        <div class="weight-card">
+          <div class="weight-label">Space Grotesk — Headings</div>
+          {[['400', 'Regular'], ['500', 'Medium'], ['600', 'SemiBold']].map(([w, name]) => (
+            <div style="margin-bottom:1.25rem;">
+              <div style="font-size:10px;color:#4b4f5b;margin-bottom:2px;font-family:'SF Mono','Fira Code',monospace;">{w} / {name}</div>
+              <div style={`font-family:'Space Grotesk',sans-serif;font-weight:${w};font-size:22px;color:#0b0d13;`}>
+                AI Automation Studio
+              </div>
+            </div>
+          ))}
+        </div>
+        <div class="weight-card">
+          <div class="weight-label">Inter — Body & UI</div>
+          {[['400', 'Regular'], ['500', 'Medium'], ['600', 'SemiBold']].map(([w, name]) => (
+            <div style="margin-bottom:1.25rem;">
+              <div style="font-size:10px;color:#4b4f5b;margin-bottom:2px;font-family:'SF Mono','Fira Code',monospace;">{w} / {name}</div>
+              <div style={`font-family:'Inter',sans-serif;font-weight:${w};font-size:16px;color:#0b0d13;line-height:1.6;`}>
+                Deploy trustworthy automation across ops, finance, and CX workflows.
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 5. BUTTONS ─────────────────────────────────────────── -->
+    <div class="ds-section">
+      <p class="ds-section-title">5 — Buttons</p>
+      <div class="comp-row">
+        <div class="comp-card">
+          <div class="comp-label">.btn-primary</div>
+          <button class="btn-primary" style="display:inline-block;">Get Started</button>
+          <div style="margin-top:1.25rem;font-size:11px;color:#4b4f5b;line-height:1.8;">
+            <div><span style="color:#0b0d13;font-weight:600;">Background:</span> var(--clr-accent) #00BFA6</div>
+            <div><span style="color:#0b0d13;font-weight:600;">Text:</span> #FFFFFF, weight 600</div>
+            <div><span style="color:#0b0d13;font-weight:600;">Radius:</span> 999px (pill)</div>
+            <div><span style="color:#0b0d13;font-weight:600;">Padding:</span> 0.9rem 1.75rem</div>
+            <div><span style="color:#0b0d13;font-weight:600;">Hover:</span> translateY(-1px) + teal shadow</div>
+          </div>
+        </div>
+        <div class="comp-card">
+          <div class="comp-label">.btn-secondary</div>
+          <button class="btn-secondary" style="display:inline-block;">See Our Work</button>
+          <div style="margin-top:1.25rem;font-size:11px;color:#4b4f5b;line-height:1.8;">
+            <div><span style="color:#0b0d13;font-weight:600;">Background:</span> transparent</div>
+            <div><span style="color:#0b0d13;font-weight:600;">Border:</span> 1px solid var(--clr-accent)</div>
+            <div><span style="color:#0b0d13;font-weight:600;">Text:</span> var(--clr-accent), weight 600</div>
+            <div><span style="color:#0b0d13;font-weight:600;">Radius:</span> 999px (pill)</div>
+            <div><span style="color:#0b0d13;font-weight:600;">Padding:</span> 0.9rem 1.75rem</div>
+          </div>
+        </div>
+        <div class="comp-card" style="background:#0b0d13;">
+          <div class="comp-label" style="color:#4b4f5b;">Buttons on Dark</div>
+          <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+            <button class="btn-primary">Primary</button>
+            <button class="btn-secondary" style="border-color:rgba(255,255,255,0.3);color:#fff;">Secondary</button>
+          </div>
+          <div style="margin-top:1.25rem;font-size:11px;color:#4b4f5b;line-height:1.8;">
+            Secondary on dark: override border and<br/>text color to white/translucent.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 6. CARDS ───────────────────────────────────────────── -->
+    <div class="ds-section">
+      <p class="ds-section-title">6 — Cards</p>
+      <div class="comp-row">
+        <div class="card" style="flex:1;min-width:220px;">
+          <div style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.15em;color:#4b4f5b;margin-bottom:0.75rem;">.card — Default</div>
+          <h3 style="font-size:18px;margin-bottom:0.5rem;">AI Automation</h3>
+          <p style="font-size:14px;margin:0;">Deploy trustworthy automation across ops, finance, and CX workflows with guardrails.</p>
+        </div>
+        <div class="card" style="flex:1;min-width:220px;border-color:#00bfa6;border-width:2px;">
+          <div style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.15em;color:#00bfa6;margin-bottom:0.75rem;">.card — Accent Border</div>
+          <h3 style="font-size:18px;margin-bottom:0.5rem;">Mobile Development</h3>
+          <p style="font-size:14px;margin:0;">Native iOS, Android, and web apps that extend your AI stack into the field.</p>
+        </div>
+        <div class="card" style="flex:1;min-width:220px;background:#0b0d13;border-color:#1e2130;">
+          <div style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.15em;color:#4b4f5b;margin-bottom:0.75rem;">.card — Dark Variant</div>
+          <h3 style="font-size:18px;margin-bottom:0.5rem;color:#fff;">Data Strategy</h3>
+          <p style="font-size:14px;margin:0;color:#4b4f5b;">Translate business goals into measurable AI roadmaps and KPIs.</p>
+        </div>
+      </div>
+      <div style="font-size:11px;color:#4b4f5b;margin-top:-0.5rem;line-height:1.8;">
+        <span style="color:#0b0d13;font-weight:600;">Border:</span> 1px solid var(--clr-border) &nbsp;·&nbsp;
+        <span style="color:#0b0d13;font-weight:600;">Radius:</span> 1rem &nbsp;·&nbsp;
+        <span style="color:#0b0d13;font-weight:600;">Padding:</span> 2rem &nbsp;·&nbsp;
+        <span style="color:#0b0d13;font-weight:600;">Shadow:</span> 0 30px 80px rgba(11,13,19,0.05)
+      </div>
+    </div>
+
+    <!-- ── 7. SECTIONS & BANDS ─────────────────────────────────── -->
+    <div class="ds-section print-break">
+      <p class="ds-section-title">7 — Sections & Bands</p>
+      <div style="display:flex;flex-direction:column;gap:1rem;">
+        <!-- Section shell preview -->
+        <div style="background:#f4f5f7;border:1px dashed #c8ccd6;border-radius:1rem;padding:2rem;text-align:center;">
+          <span style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.15em;color:#4b4f5b;">.section-shell</span>
+          <p style="font-size:12px;color:#4b4f5b;margin:0.5rem 0 0;">padding: 5rem 1.25rem (mobile) · 6rem 2rem (≥768px)</p>
+        </div>
+        <!-- Gradient band -->
+        <div class="gradient-band">
+          <div style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.15em;opacity:0.7;margin-bottom:0.75rem;">.gradient-band</div>
+          <h2 style="font-size:28px;font-weight:600;margin-bottom:0.5rem;">Ready to automate?</h2>
+          <p style="opacity:0.85;font-size:15px;margin:0 0 1.25rem;">Let's scope your first sprint. No commitment, no enterprise drag.</p>
+          <button class="btn-primary" style="background:#fff;color:#00bfa6;display:inline-block;">Book a Free Call</button>
+        </div>
+        <!-- Hero visual -->
+        <div class="hero-visual" style="min-height:120px;display:flex;align-items:center;justify-content:center;">
+          <span style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.15em;color:#4b4f5b;">.hero-visual — decorative container with border glow ring</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 8. BORDER RADIUS ───────────────────────────────────── -->
+    <div class="ds-section">
+      <p class="ds-section-title">8 — Border Radius</p>
+      <div class="radius-grid">
+        {radii.map((r) => (
+          <div class="radius-item">
+            <div class="radius-box" style={`border-radius:${r.px === 56 ? '999px' : r.px + 'px'};`}></div>
+            <div class="radius-name">{r.name}</div>
+            <div class="radius-value">{r.value}</div>
+            <div style="font-size:10px;color:#4b4f5b;margin-top:2px;">{r.usage}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- ── 9. SHADOWS ─────────────────────────────────────────── -->
+    <div class="ds-section">
+      <p class="ds-section-title">9 — Shadows</p>
+      <div class="shadow-grid">
+        {shadows.map((s) => (
+          <div class="shadow-demo" style={`box-shadow:${s.css};`}>
+            <div class="shadow-name">{s.name}</div>
+            <div class="shadow-usage">{s.usage}</div>
+            <div class="shadow-css">{s.css}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- ── 10. SPACING ────────────────────────────────────────── -->
+    <div class="ds-section">
+      <p class="ds-section-title">10 — Spacing</p>
+      <div class="spacing-list">
+        {spacingTokens.map((s) => (
+          <div class="spacing-row">
+            <div
+              class="spacing-bar"
+              style={`width:${parseInt(s.token) * 1.5}px;`}
+            ></div>
+            <div class="spacing-info">
+              <span class="spacing-token">{s.token}</span>
+              <span class="spacing-label-tag">{s.label}</span>
+              <span class="spacing-usage">{s.usage}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- ── NOTE ───────────────────────────────────────────────── -->
+    <div class="ds-section">
+      <div class="note-box">
+        <strong>Print to PDF:</strong> Open this page in a browser, go to
+        <strong>File → Print</strong>, set destination to <em>"Save as PDF"</em>,
+        choose A4 paper, enable <em>"Background graphics"</em> so color swatches
+        and gradients render correctly, then save.
+      </div>
+    </div>
+
+  </div>
+</Layout>

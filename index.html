@@ -19,6 +19,14 @@
   --text-light: #4a4a6a;
   --surface: #F5F5F7;
   --white: #FFFFFF;
+  --page-bg: #FFFFFF;
+  --card-border: rgba(26,26,46,0.04);
+  --nav-bg: rgba(255,255,255,0.92);
+  --nav-border: rgba(26,26,46,0.06);
+  --language-border: rgba(26,26,46,0.08);
+  --toggle-bg: rgba(26,26,46,0.04);
+  --cta-band-bg: #1a1a2e;
+  --footer-bg: #1a1a2e;
   --font-headline: 'Space Grotesk', sans-serif;
   --font-body: 'Inter', sans-serif;
   --font-mono: 'IBM Plex Mono', monospace;
@@ -28,12 +36,29 @@
   --shadow-hover: 0 8px 32px rgba(26,26,46,0.12);
 }
 
+[data-theme='dark'] {
+  --text: #F5F7F8;
+  --text-light: #92A7B1;
+  --surface: #131E22;
+  --white: #1A262C;
+  --page-bg: #0B1A1F;
+  --card-border: rgba(255,255,255,0.08);
+  --nav-bg: rgba(11,26,31,0.9);
+  --nav-border: rgba(255,255,255,0.08);
+  --language-border: rgba(255,255,255,0.12);
+  --toggle-bg: rgba(255,255,255,0.05);
+  --cta-band-bg: #050b12;
+  --footer-bg: #04080e;
+  --shadow: 0 2px 18px rgba(2,6,23,0.65);
+  --shadow-hover: 0 8px 28px rgba(2,6,23,0.55);
+}
+
 html { scroll-behavior: smooth; }
 
 body {
   font-family: var(--font-body);
   color: var(--text);
-  background: var(--white);
+  background: var(--page-bg);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
@@ -92,13 +117,13 @@ body {
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(255,255,255,0.92);
+  background: var(--nav-bg);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(26,26,46,0.06);
+  border-bottom: 1px solid var(--nav-border);
   transition: box-shadow 0.3s;
 }
-.nav.scrolled { box-shadow: 0 2px 24px rgba(26,26,46,0.08); }
+.nav.scrolled { box-shadow: var(--shadow); }
 .nav-inner {
   max-width: var(--max-w);
   margin: 0 auto;
@@ -139,8 +164,8 @@ body {
   font-family: var(--font-mono);
   font-size: 12px;
   font-weight: 500;
-  background: var(--surface);
-  border: 1px solid rgba(26,26,46,0.08);
+  background: var(--toggle-bg);
+  border: 1px solid var(--language-border);
   border-radius: 6px;
   padding: 5px 2px;
   display: flex;
@@ -160,6 +185,36 @@ body {
   transition: all 0.2s;
 }
 .lang-toggle button.active {
+  background: var(--white);
+  color: var(--text);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.utility-toggles {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.appearance-toggle {
+  display: inline-flex;
+  background: var(--toggle-bg, rgba(255,255,255,0.9));
+  border: 1px solid var(--language-border, rgba(26,26,46,0.08));
+  border-radius: 6px;
+  padding: 5px 2px;
+  gap: 0;
+}
+.appearance-toggle button {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  border: none;
+  background: transparent;
+  padding: 3px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--text-light);
+  transition: all 0.2s;
+}
+.appearance-toggle button.active {
   background: var(--white);
   color: var(--text);
   box-shadow: 0 1px 4px rgba(0,0,0,0.08);
@@ -275,7 +330,7 @@ body {
   padding: 36px 32px;
   box-shadow: var(--shadow);
   transition: all 0.35s;
-  border: 1px solid rgba(26,26,46,0.04);
+  border: 1px solid var(--card-border);
   position: relative;
   overflow: hidden;
 }
@@ -403,7 +458,7 @@ body {
   border-radius: var(--radius);
   padding: 32px 28px;
   box-shadow: var(--shadow);
-  border: 1px solid rgba(26,26,46,0.04);
+  border: 1px solid var(--card-border);
   transition: all 0.35s;
 }
 .result-card:hover {
@@ -460,12 +515,13 @@ body {
 .why-card {
   padding: 32px 28px;
   border-radius: var(--radius);
-  border: 1px solid rgba(26,26,46,0.08);
+  border: 1px solid var(--card-border);
+  background: var(--white);
   transition: all 0.3s;
 }
 .why-card:hover {
   border-color: var(--primary);
-  background: rgba(0,191,166,0.02);
+  background: rgba(0,191,166,0.06);
 }
 .why-icon {
   font-size: 28px;
@@ -485,7 +541,7 @@ body {
 
 /* ── CTA Band ── */
 .cta-band {
-  background: var(--text);
+  background: var(--cta-band-bg);
   padding: 80px 0;
   text-align: center;
   position: relative;
@@ -544,7 +600,7 @@ body {
   font-family: var(--font-body);
   font-size: 15px;
   padding: 12px 16px;
-  border: 1px solid rgba(26,26,46,0.12);
+  border: 1px solid var(--card-border);
   border-radius: 8px;
   background: var(--white);
   color: var(--text);
@@ -584,7 +640,7 @@ body {
 
 /* ── Footer ── */
 .footer {
-  background: var(--text);
+  background: var(--footer-bg);
   padding: 40px 0;
 }
 .footer-inner {
@@ -621,8 +677,8 @@ body {
     background: var(--white);
     padding: 24px;
     gap: 20px;
-    border-bottom: 1px solid rgba(26,26,46,0.08);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    border-bottom: 1px solid var(--card-border);
+    box-shadow: var(--shadow);
   }
   .nav-hamburger { display: flex; }
   .section { padding: 72px 0; }
@@ -633,6 +689,11 @@ body {
     gap: 32px;
   }
   .process-track::before { display: none; }
+  .utility-toggles {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
   .process-step { text-align: left; display: flex; gap: 20px; align-items: flex-start; }
   .step-number { margin: 0; flex-shrink: 0; }
   .process-step p { margin: 0; max-width: none; }
@@ -653,10 +714,15 @@ body {
       <li><a href="#process" data-en="Process" data-de="Prozess">Process</a></li>
       <li><a href="#results" data-en="Results" data-de="Ergebnisse">Results</a></li>
       <li><a href="#contact" data-en="Contact" data-de="Kontakt">Contact</a></li>
-      <li>
+      <li class="utility-toggles">
         <div class="lang-toggle">
           <button id="langEN" class="active" onclick="setLang('en')">EN</button>
           <button id="langDE" onclick="setLang('de')">DE</button>
+        </div>
+        <div class="appearance-toggle" role="group" aria-label="Appearance">
+          <button type="button" data-mode="light">Light</button>
+          <button type="button" data-mode="dark">Dark</button>
+          <button type="button" data-mode="system">Auto</button>
         </div>
       </li>
     </ul>
@@ -909,6 +975,50 @@ body {
 </footer>
 
 <script>
+// ── Appearance Toggle ──
+const themeStorageKey = 'appligent-theme';
+const themeButtons = document.querySelectorAll('.appearance-toggle button');
+const themeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+let currentTheme = localStorage.getItem(themeStorageKey) ?? 'system';
+
+function setThemeButtons() {
+  themeButtons.forEach((btn) => {
+    const isActive = btn.dataset.mode === currentTheme;
+    btn.classList.toggle('active', isActive);
+    btn.setAttribute('aria-pressed', String(isActive));
+  });
+}
+
+function applyTheme(mode, persist = true) {
+  currentTheme = mode;
+  if (persist) {
+    localStorage.setItem(themeStorageKey, mode);
+  }
+
+  let resolved = mode;
+  if (mode === 'system') {
+    resolved = themeMediaQuery.matches ? 'dark' : 'light';
+  }
+
+  if (resolved === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  } else {
+    document.documentElement.removeAttribute('data-theme');
+  }
+
+  setThemeButtons();
+}
+
+themeButtons.forEach((btn) => {
+  btn.addEventListener('click', () => applyTheme(btn.dataset.mode ?? 'system'));
+});
+
+themeMediaQuery.addEventListener('change', () => {
+  if (currentTheme === 'system') applyTheme('system', false);
+});
+
+applyTheme(currentTheme, false);
+
 // ── Language Toggle ──
 let currentLang = 'en';
 

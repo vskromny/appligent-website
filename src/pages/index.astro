@@ -1,11 +1,748 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const hero = {
+	eyebrow: 'Zurich-based AI studio',
+	headline: 'Swiss automation, precisely delivered.',
+	subheadline:
+		'AI-powered business operations for regulated teams—trusted by enterprise, verifiable by audit.',
+	primaryCta: { label: 'Book a Strategy Call', href: '#register' },
+	secondaryCta: { label: 'See How Automation Works', href: '#expertise' },
+	kpis: [
+		{ label: 'Process acceleration', value: '4.2× faster' },
+		{ label: 'Data residency', value: '100% Swiss' },
+		{ label: 'Compliance', value: 'GDPR & FINMA ready' }
+	]
+};
+
+const services = [
+	{
+		title: 'AI Roadmapping',
+		description: 'Map opportunities tailored to compliance, ops debt, and budget realities.',
+		stat: '74% less manual work'
+	},
+	{
+		title: 'Process Modeling',
+		description: 'Design custom GPT workflows with documentation engineers trust.',
+		stat: '12-week rollout'
+	},
+	{
+		title: 'Automation Engineering',
+		description: 'Integrations and orchestration with full audit trails and monitoring.',
+		stat: '99.98% uptime'
+	},
+	{
+		title: 'No-Code Enablement',
+		description: 'Secure low-code kits so business teams can iterate without bottlenecks.',
+		stat: '48h onboarding'
+	},
+	{
+		title: 'Compliance Automation',
+		description: 'GDPR, Swiss FADP, and FINMA controls baked into every workflow.',
+		stat: '0 compliance incidents'
+	},
+	{
+		title: 'Ops Integration',
+		description: 'CRM, ERP, BI handoffs with zero duplication and clear ownership.',
+		stat: '8 systems unified'
+	},
+	{
+		title: 'Performance Analytics',
+		description: 'Live ROI dashboards, anomaly alerts, and executive-ready reporting.',
+		stat: 'Real-time telemetry'
+	}
+];
+
+const processSteps = [
+	{
+		title: 'Prototype in days',
+		detail: 'Stakeholder interviews, data inventory, and compliance alignment.',
+		owner: 'Vlad + client ops lead'
+	},
+	{
+		title: 'Automation in weeks',
+		detail: 'Build & validate resilient workflows backed by automated tests.',
+		owner: 'Appligent build pod'
+	},
+	{
+		title: 'Compliance from day one',
+		detail: 'Documentation, access control, and observability before go-live.',
+		owner: 'Compliance partner'
+	},
+	{
+		title: 'Support on your terms',
+		detail: 'Response in ≤24h, proactive tuning, and shared dashboards.',
+		owner: 'Appligent support'
+	},
+	{
+		title: 'Optimize & evolve',
+		detail: 'Continuous insights to expand reach without adding headcount.',
+		owner: 'Joint growth squad'
+	}
+];
+
+const proofStats = [
+	{ label: 'Automations run', value: '8,000+' },
+	{ label: 'Client satisfaction', value: '98.7%' },
+	{ label: 'Uptime (24 mo)', value: '99.98%' }
+];
+
+const testimonial = {
+	quote:
+		'“Appligent shipped FINMA-compliant automation and documentation in one sprint—we trust them with every audit.”',
+	person: 'Sabine Keller, COO',
+	linkLabel: 'View LinkedIn profile',
+	link: 'https://www.linkedin.com/'
+};
+
+const cta = {
+	headline: 'Ready to automate? Let’s map your use case.',
+	primary: { label: 'Book a Strategy Call', href: '#register' },
+	secondary: { label: 'See Case Studies', href: '#proof' }
+};
+
+const formFields = [
+	{ label: 'Name', id: 'name', type: 'text', required: true },
+	{ label: 'Work Email', id: 'email', type: 'email', required: true },
+	{ label: 'Company', id: 'company', type: 'text', required: false },
+	{ label: 'Project Scope', id: 'scope', type: 'text', required: false },
+	{ label: 'What do you need?', id: 'message', type: 'textarea', required: false }
+];
+
+const navLinks = [
+	{ label: 'Expertise', href: '#expertise' },
+	{ label: 'Process', href: '#process' },
+	{ label: 'Proof', href: '#proof' },
+	{ label: 'Contact', href: '#register' }
+];
 ---
 
 <Layout>
-	<Welcome />
+	<div class="page-shell">
+		<header class="site-header">
+			<a class="brand" href="#hero" aria-label="Appligent AI home">Appligent AI</a>
+			<nav>
+				{navLinks.map((link) => (
+					<a href={link.href}>{link.label}</a>
+				))}
+			</nav>
+			<div class="appearance-toggle" role="group" aria-label="Appearance">
+				<button type="button" data-mode="light" aria-pressed="false">Light</button>
+				<button type="button" data-mode="dark" aria-pressed="false">Dark</button>
+				<button type="button" data-mode="system" aria-pressed="false">System</button>
+			</div>
+		</header>
+
+		<main>
+			<section id="hero" class="hero">
+				<div class="hero-copy">
+					<p class="eyebrow">{hero.eyebrow}</p>
+					<h1>{hero.headline}</h1>
+					<p class="subhead">{hero.subheadline}</p>
+					<div class="cta-row">
+						<a class="primary" href={hero.primaryCta.href}>{hero.primaryCta.label}</a>
+						<a class="secondary" href={hero.secondaryCta.href}>{hero.secondaryCta.label}</a>
+					</div>
+					<ul class="kpi-row">
+						{hero.kpis.map((kpi) => (
+							<li>
+								<strong>{kpi.value}</strong>
+								<span>{kpi.label}</span>
+							</li>
+						))}
+					</ul>
+				</div>
+				<div class="hero-visual">
+					<div class="orb"></div>
+					<div class="metric-card">
+						<p>12,000+ hours saved for Swiss SMEs</p>
+					</div>
+				</div>
+			</section>
+
+			<section id="expertise" class="panel">
+				<div class="section-heading">
+					<p class="eyebrow">Expertise</p>
+					<h2>Precision-built service stack</h2>
+					<p>Seven pillars to take you from idea to audited automation without adding headcount.</p>
+				</div>
+				<div class="expertise-grid">
+					{services.map((service) => (
+						<div class="card">
+							<div class="icon-dot" aria-hidden="true"></div>
+							<h3>{service.title}</h3>
+							<p>{service.description}</p>
+							<span class="stat">{service.stat}</span>
+						</div>
+					))}
+				</div>
+			</section>
+
+			<section id="process" class="panel process">
+				<div class="section-heading">
+					<p class="eyebrow">How we help</p>
+					<h2>Outcome-based timeline</h2>
+					<p>Every engagement stays measurable—prototype, scale, and govern with zero ambiguity.</p>
+				</div>
+				<ol class="process-list">
+					{processSteps.map((step, index) => (
+						<li>
+							<div class="step-number">{String(index + 1).padStart(2, '0')}</div>
+							<div>
+								<h3>{step.title}</h3>
+								<p>{step.detail}</p>
+								<span>{step.owner}</span>
+							</div>
+						</li>
+					))}
+				</ol>
+			</section>
+
+			<section id="proof" class="panel proof">
+				<div class="metrics">
+					<p class="eyebrow">Proof</p>
+					<h2>Trust earned in production</h2>
+					<ul>
+						{proofStats.map((stat) => (
+							<li>
+								<strong>{stat.value}</strong>
+								<span>{stat.label}</span>
+							</li>
+						))}
+					</ul>
+				</div>
+				<article class="testimonial">
+					<p>{testimonial.quote}</p>
+					<div class="person">
+						<strong>{testimonial.person}</strong>
+						<a href={testimonial.link} target="_blank" rel="noreferrer">{testimonial.linkLabel}</a>
+					</div>
+				</article>
+			</section>
+
+			<section class="cta-band" id="cta">
+				<div>
+					<p class="eyebrow">Next step</p>
+					<h2>{cta.headline}</h2>
+				</div>
+				<div class="cta-row">
+					<a class="primary" href={cta.primary.href}>{cta.primary.label}</a>
+					<a class="secondary" href={cta.secondary.href}>{cta.secondary.label}</a>
+				</div>
+			</section>
+
+			<section id="register" class="panel register">
+				<div class="section-heading">
+					<p class="eyebrow">Register</p>
+					<h2>Tell us what you need</h2>
+					<p>Swiss-led, automation-first delivery. We respond within 24 hours.</p>
+				</div>
+				<form class="lead-form">
+					{formFields.map((field) => (
+						<label for={field.id}>
+							<span>{field.label}{field.required && <sup>*</sup>}</span>
+							{field.type === 'textarea' ? (
+								<textarea id={field.id} name={field.id} rows={4} required={field.required}></textarea>
+							) : (
+								<input id={field.id} name={field.id} type={field.type} required={field.required} />
+							)}
+						</label>
+					))}
+					<label class="consent">
+						<input type="checkbox" required />
+						<span>
+							I agree to Appligent AI storing my data in Switzerland and receiving follow-up emails. We operate
+							under GDPR & Swiss FADP.
+							<a href="/privacy" target="_blank">Privacy policy</a>
+						</span>
+					</label>
+					<button type="submit">Submit request</button>
+				</form>
+			</section>
+		</main>
+
+		<footer class="site-footer">
+			<p>© {new Date().getFullYear()} Appligent AI. info@appligent.ai · Built in Zürich.</p>
+			<div class="legal-links">
+				<a href="/privacy">Privacy</a>
+				<a href="/impressum">Impressum</a>
+			</div>
+		</footer>
+	</div>
+
+	<script type="module">
+		const storageKey = 'appligent-theme';
+		const root = document.documentElement;
+		const buttons = document.querySelectorAll('.appearance-toggle button');
+		const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+		let currentMode = localStorage.getItem(storageKey) ?? 'system';
+
+		const setButtonState = () => {
+			buttons.forEach((button) => {
+				const isActive = button.dataset.mode === currentMode;
+				button.classList.toggle('active', isActive);
+				button.setAttribute('aria-pressed', String(isActive));
+			});
+		};
+
+		const applyTheme = (mode, persist = true) => {
+			currentMode = mode;
+			if (persist) {
+				localStorage.setItem(storageKey, mode);
+			}
+
+			let effectiveMode = mode;
+			if (mode === 'system') {
+				effectiveMode = mediaQuery.matches ? 'dark' : 'light';
+			}
+
+			if (effectiveMode === 'dark') {
+				root.setAttribute('data-theme', 'dark');
+			} else {
+				root.removeAttribute('data-theme');
+			}
+
+			root.setAttribute('data-theme-mode', mode);
+			setButtonState();
+		};
+
+		buttons.forEach((button) => {
+			button.addEventListener('click', () => {
+				applyTheme(button.dataset.mode ?? 'system');
+			});
+		});
+
+		mediaQuery.addEventListener('change', () => {
+			if (currentMode === 'system') {
+				applyTheme('system', false);
+			}
+		});
+
+		applyTheme(currentMode, false);
+	</script>
 </Layout>
+
+<style>
+	:root {
+		--bg-body: #f5f7f8;
+		--bg-surface: #ffffff;
+		--bg-card: #ffffff;
+		--bg-input: #ffffff;
+		--divider: #e0e3ea;
+		--text-primary: #0b1a1f;
+		--text-muted: #4b5563;
+		--success: #10b981;
+		--warning: #ff8a00;
+		--error: #ef4444;
+		--primary: #00bfa6;
+		--highlight: #ff8a00;
+		--cta-gradient: linear-gradient(83.21deg, #3245ff 0%, #bc52ee 100%);
+		--code-gradient: linear-gradient(90deg, #fb37ff 0%, #ffb200 100%);
+		--glass: rgba(255, 255, 255, 0.8);
+		--shadow-sm: 0 10px 30px rgb(15 23 42 / 0.08);
+		--shadow-lg: 0 30px 60px rgb(15 23 42 / 0.18);
+	}
+
+	[data-theme='dark'] {
+		--bg-body: #0b1a1f;
+		--bg-surface: #162329;
+		--bg-card: #1a262c;
+		--bg-input: #131e22;
+		--divider: #21323c;
+		--text-primary: #f5f7f8;
+		--text-muted: #92a7b1;
+		--success: #26d99a;
+		--warning: #ffd370;
+		--error: #ff5a60;
+		--primary: #00bfa6;
+		--highlight: #ff8a00;
+		--cta-gradient: linear-gradient(90deg, #3245ff 0%, #bc52ee 100%);
+		--code-gradient: linear-gradient(90deg, #fb37ff 0%, #ffb200 100%);
+		--glass: rgba(22, 35, 41, 0.7);
+		--shadow-sm: 0 8px 20px rgb(0 0 0 / 0.45);
+		--shadow-lg: 0 30px 60px rgb(0 0 0 / 0.35);
+	}
+
+	:global(body) {
+		margin: 0;
+		font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+		background: var(--bg-body);
+		color: var(--text-primary);
+	}
+
+	.page-shell {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 32px clamp(16px, 4vw, 48px);
+	}
+
+	.site-header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 16px;
+		position: sticky;
+		top: 0;
+		z-index: 5;
+		padding: 12px 0;
+		background: linear-gradient(90deg, rgba(245, 247, 248, 0.9), rgba(245, 247, 248, 0.6));
+		backdrop-filter: blur(20px);
+	}
+
+	[data-theme='dark'] .site-header {
+		background: linear-gradient(90deg, rgba(11, 26, 31, 0.85), rgba(11, 26, 31, 0.7));
+	}
+
+	.brand {
+		font-weight: 600;
+		text-decoration: none;
+		color: var(--text-primary);
+		letter-spacing: 0.04em;
+	}
+
+	nav {
+		display: flex;
+		gap: 16px;
+		flex-wrap: wrap;
+	}
+
+	nav a {
+		text-decoration: none;
+		color: var(--text-muted);
+		font-size: 14px;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+	}
+
+	nav a:hover {
+		color: var(--text-primary);
+	}
+
+	.appearance-toggle {
+		display: inline-flex;
+		gap: 4px;
+		padding: 4px;
+		border-radius: 999px;
+		background: var(--glass);
+		border: 1px solid var(--divider);
+	}
+
+	.appearance-toggle button {
+		font: inherit;
+		font-size: 13px;
+		padding: 6px 10px;
+		border: none;
+		border-radius: 999px;
+		background: transparent;
+		color: var(--text-muted);
+		cursor: pointer;
+	}
+
+	.appearance-toggle button.active {
+		background: var(--bg-card);
+		color: var(--text-primary);
+		box-shadow: var(--shadow-sm);
+	}
+
+	.hero {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 32px;
+		padding: 96px 0 48px;
+	}
+
+	.eyebrow {
+		letter-spacing: 0.2em;
+		text-transform: uppercase;
+		font-size: 12px;
+		color: var(--text-muted);
+		margin: 0 0 12px;
+	}
+
+	h1 {
+		font-family: 'Space Grotesk', 'Inter', sans-serif;
+		font-size: clamp(2.5rem, 4vw, 3.75rem);
+		margin: 0 0 16px;
+	}
+
+	.subhead {
+		max-width: 520px;
+		margin-bottom: 24px;
+	}
+
+	.cta-row {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 12px;
+		align-items: center;
+	}
+
+	.cta-row a,
+	.cta-band .cta-row a,
+	.register button {
+		text-decoration: none;
+		font-weight: 500;
+		border-radius: 999px;
+		padding: 12px 24px;
+	}
+
+	.cta-row .primary,
+	.cta-band .primary,
+	.register button {
+		background: var(--primary);
+		color: #0b1a1f;
+		border: none;
+	}
+
+	.cta-row .secondary,
+	.cta-band .secondary {
+		border: 1px solid var(--primary);
+		color: var(--primary);
+		background: transparent;
+	}
+
+	.kpi-row {
+		list-style: none;
+		padding: 0;
+		margin: 32px 0 0;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 24px;
+	}
+
+	.kpi-row li {
+		min-width: 160px;
+	}
+
+	.kpi-row strong {
+		display: block;
+		font-size: 20px;
+	}
+
+	.hero-visual {
+		position: relative;
+		min-height: 360px;
+		border-radius: 24px;
+		background: radial-gradient(circle at top, rgba(0, 191, 166, 0.35), transparent 65%),
+			var(--bg-card);
+		border: 1px solid var(--divider);
+		padding: 32px;
+		overflow: hidden;
+	}
+
+	.hero-visual .orb {
+		position: absolute;
+		right: -40px;
+		top: -60px;
+		width: 240px;
+		height: 240px;
+		border-radius: 50%;
+		background: var(--cta-gradient);
+		filter: blur(10px);
+		opacity: 0.8;
+	}
+
+	.metric-card {
+		position: absolute;
+		bottom: 32px;
+		left: 32px;
+		padding: 16px 20px;
+		border-radius: 16px;
+		background: var(--glass);
+		backdrop-filter: blur(12px);
+		max-width: 220px;
+	}
+
+	.panel {
+		padding: 64px 0;
+	}
+
+	.section-heading {
+		max-width: 640px;
+	}
+
+	.expertise-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+		gap: 20px;
+		margin-top: 32px;
+	}
+
+	.card {
+		padding: 24px;
+		border-radius: 20px;
+		border: 1px solid var(--divider);
+		background: var(--bg-card);
+		box-shadow: var(--shadow-sm);
+		min-height: 220px;
+	}
+
+	.icon-dot {
+		width: 36px;
+		height: 36px;
+		border-radius: 50%;
+		background: rgba(0, 191, 166, 0.15);
+		margin-bottom: 12px;
+	}
+
+	.card h3 {
+		margin: 0 0 8px;
+	}
+
+	.card .stat {
+		display: inline-flex;
+		margin-top: 16px;
+		font-size: 14px;
+		color: var(--primary);
+	}
+
+	.process-list {
+		margin: 32px 0 0;
+		padding: 0;
+		list-style: none;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+		gap: 20px;
+	}
+
+	.process-list li {
+		border: 1px solid var(--divider);
+		border-radius: 20px;
+		padding: 24px;
+		background: var(--bg-card);
+	}
+
+	.step-number {
+		font-size: 12px;
+		letter-spacing: 0.2em;
+		text-transform: uppercase;
+		color: var(--text-muted);
+		margin-bottom: 8px;
+	}
+
+	.proof {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 24px;
+	}
+
+	.metrics ul {
+		list-style: none;
+		padding: 0;
+		margin: 24px 0 0;
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+	}
+
+	.metrics li {
+		padding: 16px 0;
+		border-bottom: 1px solid var(--divider);
+	}
+
+	.metrics strong {
+		font-size: 24px;
+	}
+
+	.testimonial {
+		padding: 32px;
+		border-radius: 24px;
+		border: 1px solid var(--divider);
+		background: var(--bg-card);
+		box-shadow: var(--shadow-lg);
+	}
+
+	.testimonial .person {
+		margin-top: 16px;
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+	}
+
+	.cta-band {
+		margin: 48px 0;
+		padding: 40px;
+		border-radius: 32px;
+		background: var(--cta-gradient);
+		color: #fff;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 24px;
+	}
+
+	.register {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 32px;
+	}
+
+	.lead-form {
+		display: grid;
+		gap: 16px;
+	}
+
+	.lead-form label {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+		font-size: 14px;
+	}
+
+	.lead-form input,
+	.lead-form textarea {
+		border-radius: 12px;
+		border: 1px solid var(--divider);
+		background: var(--bg-input);
+		color: var(--text-primary);
+		padding: 12px;
+		font: inherit;
+	}
+
+	.consent {
+		flex-direction: row;
+		align-items: flex-start;
+		gap: 12px;
+	}
+
+	.consent input {
+		width: 20px;
+		margin-top: 4px;
+	}
+
+	.site-footer {
+		padding: 48px 0;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		gap: 16px;
+		font-size: 14px;
+		border-top: 1px solid var(--divider);
+	}
+
+	.legal-links {
+		display: flex;
+		gap: 16px;
+	}
+
+	.legal-links a {
+		color: var(--text-muted);
+		text-decoration: none;
+	}
+
+	@media (max-width: 768px) {
+		.site-header {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		nav {
+			width: 100%;
+			justify-content: space-between;
+		}
+
+		.cta-band {
+			flex-direction: column;
+		}
+	}
+</style>

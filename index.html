@@ -630,6 +630,19 @@ body {
   background: var(--primary-dark);
   box-shadow: 0 4px 16px rgba(0,191,166,0.25);
 }
+.form-submit[disabled] {
+  opacity: 0.65;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.contact-status {
+  margin-top: 12px;
+  font-size: 0.92rem;
+  min-height: 1.5rem;
+  text-align: center;
+}
+.contact-status.success { color: var(--primary); }
+.contact-status.error { color: #F87171; }
 .gdpr-note {
   font-size: 12px;
   color: var(--text-light);
@@ -955,6 +968,7 @@ body {
           <textarea id="message" name="message" required></textarea>
         </div>
         <button type="submit" class="form-submit" data-en="Send Message" data-de="Nachricht senden">Send Message</button>
+        <p class="contact-status" id="contactStatus" data-success-en="Thanks, your message is on its way." data-success-de="Danke, Ihre Nachricht ist unterwegs." data-error-en="Something went wrong. Please email hello@appligent.ai." data-error-de="Etwas ist schiefgelaufen. Bitte schreiben Sie an hello@appligent.ai."></p>
         <p class="gdpr-note" data-en="Your data is sent directly via email and is not stored on any server. We respect your privacy." data-de="Ihre Daten werden direkt per E-Mail gesendet und auf keinem Server gespeichert. Wir respektieren Ihre Privatsphäre.">Your data is sent directly via email and is not stored on any server. We respect your privacy.</p>
       </form>
     </div>
@@ -1066,15 +1080,51 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.animate').forEach(el => observer.observe(el));
 
-// ── Contact form → mailto ──
-document.getElementById('contactForm').addEventListener('submit', function(e) {
+// ── Contact form → direct submit ──
+const CONTACT_ENDPOINT = 'https://formsubmit.co/ajax/hello@appligent.ai';
+const statusMessages = {
+  success: { en: 'Thanks, your message is on its way.', de: 'Danke, Ihre Nachricht ist unterwegs.' },
+  error: { en: 'Something went wrong. Please email hello@appligent.ai.', de: 'Etwas ist schiefgelaufen. Bitte schreiben Sie an hello@appligent.ai.' }
+};
+const contactForm = document.getElementById('contactForm');
+const contactStatus = document.getElementById('contactStatus');
+const submitButton = contactForm.querySelector('.form-submit');
+
+contactForm.addEventListener('submit', async (e) => {
   e.preventDefault();
-  const name = document.getElementById('name').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const message = document.getElementById('message').value.trim();
-  const subject = encodeURIComponent(`Website Inquiry from ${name}`);
-  const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
-  window.location.href = `mailto:hello@appligent.ai?subject=${subject}&body=${body}`;
+  const formData = new FormData(contactForm);
+  const payload = {
+    name: (formData.get('name') ?? '').trim(),
+    email: (formData.get('email') ?? '').trim(),
+    message: (formData.get('message') ?? '').trim(),
+    _subject: `Website inquiry from ${(formData.get('name') ?? 'Appligent website').trim()}`,
+    _captcha: 'false'
+  };
+
+  contactStatus.textContent = '';
+  contactStatus.classList.remove('success', 'error');
+  const originalLabel = submitButton.textContent;
+  submitButton.disabled = true;
+  submitButton.textContent = currentLang === 'de' ? 'Senden…' : 'Sending…';
+
+  try {
+    const response = await fetch(CONTACT_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+
+    if (!response.ok) throw new Error('Network error');
+    contactForm.reset();
+    contactStatus.textContent = statusMessages.success[currentLang] ?? statusMessages.success.en;
+    contactStatus.classList.add('success');
+  } catch (error) {
+    contactStatus.textContent = statusMessages.error[currentLang] ?? statusMessages.error.en;
+    contactStatus.classList.add('error');
+  } finally {
+    submitButton.disabled = false;
+    submitButton.textContent = originalLabel;
+  }
 });
 </script>
 

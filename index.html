@@ -238,40 +238,41 @@ body {
 
 /* ── Hero ── */
 .hero {
-  padding: 160px 0 120px;
+  min-height: 100vh;
   position: relative;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  background: #0B1A1F;
 }
-.hero::before {
-  content: '';
+#hero-canvas {
   position: absolute;
-  top: -200px;
-  right: -200px;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(0,191,166,0.08) 0%, transparent 70%);
+  inset: 0;
+  z-index: 0;
+}
+.hero-vignette {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(11,26,31,0.7) 100%);
   pointer-events: none;
 }
-.hero::after {
-  content: '';
-  position: absolute;
-  bottom: -100px;
-  left: -100px;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(255,138,0,0.05) 0%, transparent 70%);
-  pointer-events: none;
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  padding: 120px 0 80px;
 }
-.hero-content { position: relative; z-index: 1; max-width: 700px; }
 .hero-label {
   font-family: var(--font-mono);
   font-size: 13px;
   font-weight: 500;
-  color: var(--primary);
-  letter-spacing: 1.5px;
+  color: #08DFC2;
+  letter-spacing: 2px;
   text-transform: uppercase;
   margin-bottom: 20px;
-  animation: slideRight 0.6s ease forwards;
+  opacity: 0;
+  animation: slideRight 0.6s ease 0.3s forwards;
 }
 .hero-title {
   font-family: var(--font-headline);
@@ -279,25 +280,26 @@ body {
   font-weight: 700;
   line-height: 1.1;
   margin-bottom: 24px;
-  animation: fadeUp 0.7s ease 0.1s forwards;
+  color: #E8F4F2;
+  animation: fadeUp 0.9s ease 0.55s forwards;
   opacity: 0;
 }
-.hero-title .accent { color: var(--primary); }
+.hero-title .accent { color: #08DFC2; }
 .hero-sub {
   font-size: 18px;
-  color: var(--text-light);
+  color: rgba(232, 244, 242, 0.6);
   line-height: 1.7;
   max-width: 520px;
   margin-bottom: 40px;
-  animation: fadeUp 0.7s ease 0.2s forwards;
+  animation: fadeUp 0.9s ease 0.8s forwards;
   opacity: 0;
 }
 .hero-cta {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: var(--primary);
-  color: var(--white);
+  background: #08DFC2;
+  color: #0B1A1F;
   font-family: var(--font-headline);
   font-size: 15px;
   font-weight: 600;
@@ -305,13 +307,13 @@ body {
   border-radius: 8px;
   text-decoration: none;
   transition: all 0.3s;
-  animation: fadeUp 0.7s ease 0.35s forwards;
+  animation: fadeUp 0.9s ease 1.05s forwards;
   opacity: 0;
 }
 .hero-cta:hover {
-  background: var(--primary-dark);
+  background: #06c4ab;
   transform: translateY(-2px);
-  box-shadow: 0 6px 24px rgba(0,191,166,0.25);
+  box-shadow: 0 6px 24px rgba(8,223,194,0.3);
 }
 .hero-cta svg { transition: transform 0.2s; }
 .hero-cta:hover svg { transform: translateX(3px); }
@@ -695,7 +697,7 @@ body {
   }
   .nav-hamburger { display: flex; }
   .section { padding: 72px 0; }
-  .hero { padding: 120px 0 80px; }
+  .hero-content { padding: 100px 0 60px; }
   .services-grid { grid-template-columns: 1fr; }
   .process-track {
     grid-template-columns: 1fr;
@@ -747,6 +749,8 @@ body {
 
 <!-- ═══════════════ HERO ═══════════════ -->
 <section class="hero" id="hero">
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-vignette"></div>
   <div class="container">
     <div class="hero-content">
       <div class="hero-label" data-en="AI Consultancy · Zurich" data-de="KI-Beratung · Zürich">AI Consultancy · Zurich</div>
@@ -1079,6 +1083,136 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.15 });
 
 document.querySelectorAll('.animate').forEach(el => observer.observe(el));
+
+// ── Hero canvas particle network ──
+(function () {
+  const canvas = document.getElementById('hero-canvas');
+  const ctx = canvas.getContext('2d');
+  const TEAL = { r: 8, g: 223, b: 194 };
+  const BG = '#0B1A1F';
+  const NODE_COUNT = 90;
+  const MAX_DIST = 160;
+  const MOUSE_REPEL = 120;
+  const HUBS = 6;
+  let W, H, nodes = [];
+  let mouse = { x: -9999, y: -9999 };
+
+  function rand(min, max) { return Math.random() * (max - min) + min; }
+
+  function resize() {
+    const hero = document.getElementById('hero');
+    W = canvas.width = hero.offsetWidth;
+    H = canvas.height = hero.offsetHeight;
+  }
+
+  class Node {
+    constructor(initial) {
+      this.x = rand(0, W);
+      this.y = initial ? rand(0, H) : rand(-20, H + 20);
+      this.vx = rand(-0.28, 0.28);
+      this.vy = rand(-0.18, 0.18);
+      this.r = rand(1.8, 3.8);
+      this.base_alpha = rand(0.45, 0.9);
+      this.alpha = this.base_alpha;
+      this.pulse_offset = rand(0, Math.PI * 2);
+    }
+
+    update(t) {
+      const dx = this.x - mouse.x;
+      const dy = this.y - mouse.y;
+      const d = Math.sqrt(dx * dx + dy * dy);
+      if (d < MOUSE_REPEL && d > 0) {
+        const force = (MOUSE_REPEL - d) / MOUSE_REPEL * 0.6;
+        this.vx += (dx / d) * force;
+        this.vy += (dy / d) * force;
+      }
+      this.vx *= 0.98;
+      this.vy *= 0.98;
+      const speed = Math.sqrt(this.vx * this.vx + this.vy * this.vy);
+      if (speed > 1.2) { this.vx *= 1.2 / speed; this.vy *= 1.2 / speed; }
+      this.x += this.vx;
+      this.y += this.vy;
+      this.alpha = this.base_alpha * (0.7 + 0.3 * Math.sin(t * 0.0012 + this.pulse_offset));
+      if (this.x < -20) this.x = W + 20;
+      if (this.x > W + 20) this.x = -20;
+      if (this.y < -20) this.y = H + 20;
+      if (this.y > H + 20) this.y = -20;
+    }
+
+    draw() {
+      const grd = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.r * 5);
+      grd.addColorStop(0, `rgba(${TEAL.r},${TEAL.g},${TEAL.b},${this.alpha * 0.6})`);
+      grd.addColorStop(1, `rgba(${TEAL.r},${TEAL.g},${TEAL.b},0)`);
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.r * 5, 0, Math.PI * 2);
+      ctx.fillStyle = grd;
+      ctx.fill();
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${TEAL.r},${TEAL.g},${TEAL.b},${this.alpha})`;
+      ctx.fill();
+    }
+  }
+
+  function drawEdges() {
+    for (let i = 0; i < nodes.length; i++) {
+      for (let j = i + 1; j < nodes.length; j++) {
+        const a = nodes[i], b = nodes[j];
+        const dx = a.x - b.x, dy = a.y - b.y;
+        const d = Math.sqrt(dx * dx + dy * dy);
+        if (d < MAX_DIST) {
+          const opacity = (1 - d / MAX_DIST) * 0.35;
+          ctx.beginPath();
+          ctx.moveTo(a.x, a.y);
+          ctx.lineTo(b.x, b.y);
+          ctx.strokeStyle = `rgba(${TEAL.r},${TEAL.g},${TEAL.b},${opacity})`;
+          ctx.lineWidth = 0.8;
+          ctx.stroke();
+        }
+      }
+    }
+  }
+
+  function init() {
+    resize();
+    nodes = [];
+    for (let i = 0; i < NODE_COUNT; i++) {
+      const n = new Node(true);
+      if (i < HUBS) { n.r = rand(4, 6.5); n.base_alpha = 0.95; }
+      nodes.push(n);
+    }
+  }
+
+  let raf;
+  function loop(t) {
+    ctx.fillStyle = BG;
+    ctx.fillRect(0, 0, W, H);
+    ctx.strokeStyle = 'rgba(8,223,194,0.025)';
+    ctx.lineWidth = 0.5;
+    const gridSize = 80;
+    for (let x = 0; x < W; x += gridSize) {
+      ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke();
+    }
+    for (let y = 0; y < H; y += gridSize) {
+      ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke();
+    }
+    drawEdges();
+    nodes.forEach(n => { n.update(t); n.draw(); });
+    raf = requestAnimationFrame(loop);
+  }
+
+  const heroSection = document.getElementById('hero');
+  heroSection.addEventListener('mousemove', e => {
+    const rect = canvas.getBoundingClientRect();
+    mouse.x = e.clientX - rect.left;
+    mouse.y = e.clientY - rect.top;
+  });
+  heroSection.addEventListener('mouseleave', () => { mouse.x = -9999; mouse.y = -9999; });
+  window.addEventListener('resize', init);
+
+  init();
+  loop(0);
+})();
 
 // ── Contact form → direct submit ──
 const CONTACT_ENDPOINT = 'https://formsubmit.co/ajax/hello@appligent.ai';

@@ -12,9 +12,34 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="theme-color" content="#FAFAF7" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0D1311" media="(prefers-color-scheme: dark)">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,400..700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Selbst gehostete Schriften — keine Verbindung zu Drittanbietern.
+   Self-hosted fonts — no third-party connection. */
+@font-face{font-family:'Archivo';font-style:normal;font-weight:400 750;font-stretch:100%;font-display:swap;
+  src:url('/assets/fonts/archivo-latin-ext.woff2') format('woff2');
+  unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Archivo';font-style:normal;font-weight:400 750;font-stretch:100%;font-display:swap;
+  src:url('/assets/fonts/archivo-latin.woff2') format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:400 700;font-stretch:100%;font-display:swap;
+  src:url('/assets/fonts/bricolage-latin-ext.woff2') format('woff2');
+  unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:400 700;font-stretch:100%;font-display:swap;
+  src:url('/assets/fonts/bricolage-latin.woff2') format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;
+  src:url('/assets/fonts/plexmono-400-latin-ext.woff2') format('woff2');
+  unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;
+  src:url('/assets/fonts/plexmono-400-latin.woff2') format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:500;font-display:swap;
+  src:url('/assets/fonts/plexmono-500-latin-ext.woff2') format('woff2');
+  unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:500;font-display:swap;
+  src:url('/assets/fonts/plexmono-500-latin.woff2') format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+</style>
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 :root {
@@ -109,8 +134,8 @@ th { color: var(--ink); font-weight: 650; font-size: 13px; text-transform: upper
     <p>
       <strong>Appligent AI</strong><br>
       <span data-de="Inhaber: Vladimir Skromny (Einzelunternehmen)" data-en="Owner: Vladimir Skromny (sole proprietorship)">Inhaber: Vladimir Skromny (Einzelunternehmen)</span><br>
-      [STRASSE UND HAUSNUMMER]<br>
-      [PLZ] Zürich, <span data-de="Schweiz" data-en="Switzerland">Schweiz</span><br>
+      Im Gässli 19<br>
+      8162 Steinmaur, <span data-de="Kanton Zürich, Schweiz" data-en="Canton of Zurich, Switzerland">Kanton Zürich, Schweiz</span><br>
       <a href="mailto:hello@appligent.ai">hello@appligent.ai</a>
     </p>
   </div>
@@ -155,15 +180,15 @@ th { color: var(--ink); font-weight: 650; font-size: 13px; text-transform: upper
   </div>
   <p class="muted" data-de="Sie können diese Werte jederzeit über die Einstellungen Ihres Browsers löschen. Die Website funktioniert danach unverändert, lediglich Ihre Einstellungen sind zurückgesetzt." data-en="You can delete these values at any time via your browser settings. The website will continue to work unchanged; only your preferences will be reset.">Sie können diese Werte jederzeit über die Einstellungen Ihres Browsers löschen. Die Website funktioniert danach unverändert, lediglich Ihre Einstellungen sind zurückgesetzt.</p>
 
-  <h3 data-de="3.4 Schriftarten von Google Fonts" data-en="3.4 Google Fonts">3.4 Schriftarten von Google Fonts</h3>
-  <p data-de="Diese Website bindet Schriftarten über den Dienst Google Fonts ein (Google Ireland Limited bzw. Google LLC, USA). Dabei stellt Ihr Browser eine Verbindung zu Servern von Google her, wobei Ihre IP-Adresse und technische Angaben zu Browser und Betriebssystem an Google übermittelt werden. Dies geschieht bereits beim Aufruf der Seite und ist für die einheitliche Darstellung der Schriften erforderlich." data-en="This website loads fonts via the Google Fonts service (Google Ireland Limited or Google LLC, USA). In doing so, your browser establishes a connection to Google servers, transmitting your IP address and technical details about your browser and operating system to Google. This occurs when the page is loaded and is necessary for the consistent display of the fonts.">Diese Website bindet Schriftarten über den Dienst Google Fonts ein (Google Ireland Limited bzw. Google LLC, USA). Dabei stellt Ihr Browser eine Verbindung zu Servern von Google her, wobei Ihre IP-Adresse und technische Angaben zu Browser und Betriebssystem an Google übermittelt werden. Dies geschieht bereits beim Aufruf der Seite und ist für die einheitliche Darstellung der Schriften erforderlich.</p>
-  <p data-de="Nach Angaben von Google werden die Schriftanfragen getrennt von anderen Google-Diensten geführt und nicht zur Profilbildung verwendet. Weitere Informationen finden Sie in der Datenschutzerklärung von Google." data-en="According to Google, font requests are kept separate from other Google services and are not used for profiling. Further information is available in Google's privacy policy.">Nach Angaben von Google werden die Schriftanfragen getrennt von anderen Google-Diensten geführt und nicht zur Profilbildung verwendet. Weitere Informationen finden Sie in der Datenschutzerklärung von Google.</p>
+  <h3 data-de="3.4 Schriftarten" data-en="3.4 Fonts">3.4 Schriftarten</h3>
+  <p data-de="Die auf dieser Website verwendeten Schriftarten werden von unserem eigenen Server ausgeliefert. Es besteht keine Verbindung zu Google Fonts oder zu einem anderen externen Schriften-Dienst, und es werden dabei keine Daten an Dritte übermittelt." data-en="The fonts used on this website are served from our own server. There is no connection to Google Fonts or any other external font service, and no data is transmitted to third parties in this process.">Die auf dieser Website verwendeten Schriftarten werden von unserem eigenen Server ausgeliefert. Es besteht keine Verbindung zu Google Fonts oder zu einem anderen externen Schriften-Dienst, und es werden dabei keine Daten an Dritte übermittelt.</p>
 
   <h2 data-de="4. Was wir nicht tun" data-en="4. What we do not do">4. Was wir nicht tun</h2>
   <div class="card">
     <ul>
       <li data-de="Keine Analyse- oder Statistikdienste (kein Google Analytics, Matomo, Plausible o. Ä.)" data-en="No analytics or statistics services (no Google Analytics, Matomo, Plausible or similar)">Keine Analyse- oder Statistikdienste (kein Google Analytics, Matomo, Plausible o. Ä.)</li>
       <li data-de="Keine Tracking-, Werbe- oder Social-Media-Pixel" data-en="No tracking, advertising or social media pixels">Keine Tracking-, Werbe- oder Social-Media-Pixel</li>
+      <li data-de="Keine externen Schriftarten, Karten oder eingebetteten Videos (Schriften werden selbst gehostet)" data-en="No external fonts, maps or embedded videos (fonts are self-hosted)">Keine externen Schriftarten, Karten oder eingebetteten Videos (Schriften werden selbst gehostet)</li>
       <li data-de="Keine Erstellung von Nutzerprofilen und kein Profiling" data-en="No creation of user profiles and no profiling">Keine Erstellung von Nutzerprofilen und kein Profiling</li>
       <li data-de="Keine automatisierte Entscheidungsfindung im Einzelfall" data-en="No automated individual decision-making">Keine automatisierte Entscheidungsfindung im Einzelfall</li>
       <li data-de="Kein Verkauf und keine Vermietung von Personendaten an Dritte" data-en="No sale or rental of personal data to third parties">Kein Verkauf und keine Vermietung von Personendaten an Dritte</li>
@@ -175,7 +200,7 @@ th { color: var(--ink); font-weight: 650; font-size: 13px; text-transform: upper
   <p data-de="Wir bearbeiten Personendaten zur Bereitstellung und Sicherheit der Website sowie zur Beantwortung von Anfragen. Nach Schweizer Recht stützt sich die Bearbeitung auf ein überwiegendes berechtigtes Interesse am sicheren Betrieb der Website sowie auf die Anbahnung und Erfüllung vorvertraglicher Beziehungen. Soweit die DSGVO anwendbar ist, sind die Rechtsgrundlagen Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einem sicheren und funktionsfähigen Webauftritt) sowie Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Massnahmen auf Ihre Anfrage hin)." data-en="We process personal data to provide and secure the website and to respond to enquiries. Under Swiss law, processing is based on an overriding legitimate interest in the secure operation of the website and on the initiation and performance of pre-contractual relations. Where the GDPR applies, the legal bases are Art. 6(1)(f) GDPR (legitimate interest in a secure and functional web presence) and Art. 6(1)(b) GDPR (pre-contractual measures at your request).">Wir bearbeiten Personendaten zur Bereitstellung und Sicherheit der Website sowie zur Beantwortung von Anfragen. Nach Schweizer Recht stützt sich die Bearbeitung auf ein überwiegendes berechtigtes Interesse am sicheren Betrieb der Website sowie auf die Anbahnung und Erfüllung vorvertraglicher Beziehungen. Soweit die DSGVO anwendbar ist, sind die Rechtsgrundlagen Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einem sicheren und funktionsfähigen Webauftritt) sowie Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Massnahmen auf Ihre Anfrage hin).</p>
 
   <h2 data-de="6. Bekanntgabe an Dritte und Auslandbekanntgabe" data-en="6. Disclosure to third parties and transfers abroad">6. Bekanntgabe an Dritte und Auslandbekanntgabe</h2>
-  <p data-de="Wir geben Personendaten nur an die nachfolgend genannten Dienstleister weiter, die für den Betrieb der Website erforderlich sind. Beide Anbieter haben ihren Sitz bzw. Serverstandorte unter anderem in den Vereinigten Staaten, weshalb es zu einer Bekanntgabe ins Ausland kommen kann." data-en="We disclose personal data only to the service providers listed below, which are necessary for the operation of the website. Both providers are based or operate servers, among other locations, in the United States, which may result in a transfer abroad.">Wir geben Personendaten nur an die nachfolgend genannten Dienstleister weiter, die für den Betrieb der Website erforderlich sind. Beide Anbieter haben ihren Sitz bzw. Serverstandorte unter anderem in den Vereinigten Staaten, weshalb es zu einer Bekanntgabe ins Ausland kommen kann.</p>
+  <p data-de="Wir setzen bewusst nur einen einzigen externen Dienstleister ein: den Hosting-Anbieter. Weitere Inhalte Dritter — etwa Schriftarten, Karten, Videos oder Analysewerkzeuge — bindet diese Website nicht ein. Der Anbieter hat seinen Sitz bzw. Serverstandorte unter anderem in den Vereinigten Staaten, weshalb es zu einer Bekanntgabe ins Ausland kommen kann." data-en="We deliberately use only a single external service provider: the hosting provider. This website embeds no other third-party content — no fonts, maps, videos or analytics tools. The provider is based or operates servers, among other locations, in the United States, which may result in a transfer abroad.">Wir setzen bewusst nur einen einzigen externen Dienstleister ein: den Hosting-Anbieter. Weitere Inhalte Dritter — etwa Schriftarten, Karten, Videos oder Analysewerkzeuge — bindet diese Website nicht ein. Der Anbieter hat seinen Sitz bzw. Serverstandorte unter anderem in den Vereinigten Staaten, weshalb es zu einer Bekanntgabe ins Ausland kommen kann.</p>
   <div class="table-wrap">
     <table>
       <thead>
@@ -190,11 +215,6 @@ th { color: var(--ink); font-weight: 650; font-size: 13px; text-transform: upper
           <td>GitHub, Inc. (Microsoft)</td>
           <td data-de="Hosting der Website" data-en="Website hosting">Hosting der Website</td>
           <td data-de="IP-Adresse, Zugriffsdaten" data-en="IP address, access data">IP-Adresse, Zugriffsdaten</td>
-        </tr>
-        <tr>
-          <td>Google Ireland Ltd. / Google LLC</td>
-          <td data-de="Bereitstellung der Schriftarten" data-en="Provision of fonts">Bereitstellung der Schriftarten</td>
-          <td data-de="IP-Adresse, Browserdaten" data-en="IP address, browser data">IP-Adresse, Browserdaten</td>
         </tr>
       </tbody>
     </table>

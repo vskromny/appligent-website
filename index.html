@@ -691,7 +691,7 @@ html.js .reveal.is-in { opacity: 1; transform: none; }
         <input name="email" type="email" required placeholder="Email" aria-label="Email" data-en="Email" data-de="E-Mail" autocomplete="email">
         <textarea name="message" required rows="5" placeholder="Which task should stop being manual?" aria-label="Message" data-en="Which task should stop being manual?" data-de="Welche Aufgabe soll nicht mehr manuell sein?"></textarea>
         <button type="submit" data-en="Send message" data-de="Nachricht senden">Send message</button>
-        <p class="form-note" data-en="Opens your email app — sent directly to us, nothing is stored on a server." data-de="Öffnet Ihre E-Mail-App — direkt an uns gesendet, nichts wird auf einem Server gespeichert.">Opens your email app — sent directly to us, nothing is stored on a server.</p>
+        <p class="form-note" data-en="Opens your email app — the form itself sends nothing to our servers. See our privacy policy for details." data-de="Öffnet Ihre E-Mail-App — das Formular selbst sendet nichts an unsere Server. Details in der Datenschutzerklärung.">Opens your email app — the form itself sends nothing to our servers. See our privacy policy for details.</p>
       </form>
     </div>
   </section>
@@ -703,6 +703,8 @@ html.js .reveal.is-in { opacity: 1; transform: none; }
   <div class="bar">
     <span>© 2026 Appligent AI · Zürich, Switzerland</span>
     <div class="links">
+      <a href="/impressum.html" data-en="Legal Notice" data-de="Impressum">Legal Notice</a>
+      <a href="/datenschutz.html" data-en="Privacy" data-de="Datenschutz">Privacy</a>
       <a href="mailto:hello@appligent.ai">hello@appligent.ai</a>
       <a href="https://linkedin.com/company/appligent-ai" target="_blank" rel="noopener">LinkedIn</a>
     </div>
@@ -712,7 +714,10 @@ html.js .reveal.is-in { opacity: 1; transform: none; }
 <!-- ═══════════════ PRIVACY BANNER ═══════════════ -->
 <div class="cookie" id="cookieBanner" hidden>
   <div class="inner">
-    <p data-en="We don't use tracking or advertising cookies. Your language and theme preferences are stored locally on your device — nothing else." data-de="Wir verwenden keine Tracking- oder Werbe-Cookies. Ihre Sprach- und Design-Einstellungen werden nur lokal auf Ihrem Gerät gespeichert — sonst nichts.">We don't use tracking or advertising cookies. Your language and theme preferences are stored locally on your device — nothing else.</p>
+    <p>
+      <span data-en="We don't use tracking or advertising cookies. Your language and theme preferences are stored locally on your device." data-de="Wir verwenden keine Tracking- oder Werbe-Cookies. Ihre Sprach- und Design-Einstellungen werden nur lokal auf Ihrem Gerät gespeichert.">We don't use tracking or advertising cookies. Your language and theme preferences are stored locally on your device.</span>
+      <a href="/datenschutz.html" data-en="Privacy policy" data-de="Datenschutzerklärung">Privacy policy</a>
+    </p>
     <button type="button" id="cookieOk" data-en="Got it" data-de="Verstanden">Got it</button>
   </div>
 </div>

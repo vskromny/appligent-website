@@ -1,0 +1,8 @@
+# Agent-produced reports and screenshots (never shipped)
+agents-artifacts/
+
+# Local Claude Code worktrees
+.claude/worktrees/
+
+# OS noise
+.DS_Store

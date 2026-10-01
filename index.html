@@ -3,10 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Appligent AI — AI Automation & Mobile Apps for Swiss SMEs</title>
-<meta name="description" content="Appligent AI builds practical AI automation and mobile apps for Swiss SMEs — working systems measured in hours saved per week. Based in the Zurich area, no lock-in.">
-<meta name="robots" content="index, follow">
+<title>Appligent AI — iOS Apps & AI Automation from Zurich</title>
+<meta name="description" content="Appligent AI is a Zurich-area app studio. We ship our own iOS apps — ReciPics, Mealog, CalmClick, SubOrbs — and build practical AI automation and mobile apps for Swiss SMEs. No lock-in.">
+<meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://appligent.ai/">
+<link rel="preload" href="/assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
 
 <!-- Favicons -->
 <link rel="icon" href="/favicon.ico" sizes="any">
@@ -18,41 +19,113 @@
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Appligent AI">
 <meta property="og:url" content="https://appligent.ai/">
-<meta property="og:title" content="Appligent AI — AI Automation & Mobile Apps for Swiss SMEs">
-<meta property="og:description" content="Practical AI automation and mobile apps for Swiss SMEs — working systems measured in hours saved per week. Based in the Zurich area, no lock-in.">
-<meta property="og:image" content="https://appligent.ai/assets/img/hero-team.jpg">
+<meta property="og:title" content="Appligent AI — iOS Apps & AI Automation from Zurich">
+<meta property="og:description" content="A Zurich-area app studio. We ship our own iOS apps — ReciPics, Mealog, CalmClick, SubOrbs — and build practical AI automation for Swiss SMEs.">
+<meta property="og:image" content="https://appligent.ai/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Appligent AI — iOS apps and AI automation, Zurich">
 <meta property="og:locale" content="en_CH">
+<meta property="og:locale:alternate" content="de_CH">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Appligent AI — AI Automation & Mobile Apps for Swiss SMEs">
-<meta name="twitter:description" content="Practical AI automation and mobile apps for Swiss SMEs — working systems measured in hours saved per week. Based in the Zurich area.">
-<meta name="twitter:image" content="https://appligent.ai/assets/img/hero-team.jpg">
+<meta name="twitter:title" content="Appligent AI — iOS Apps & AI Automation from Zurich">
+<meta name="twitter:description" content="A Zurich-area app studio. We ship our own iOS apps — ReciPics, Mealog, CalmClick, SubOrbs — and build practical AI automation for Swiss SMEs.">
+<meta name="twitter:image" content="https://appligent.ai/assets/img/og.png">
+<meta name="twitter:image:alt" content="Appligent AI — iOS apps and AI automation, Zurich">
 
-<!-- Structured data -->
+<!-- Structured data: Organization + WebSite + one SoftwareApplication per shipped app.
+     Facts only — app ids/names verified against the App Store on 2026-10-01. No ratings/awards (none exist). -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Appligent AI",
-  "url": "https://appligent.ai",
-  "email": "hello@appligent.ai",
-  "description": "Appligent AI builds practical AI automation and mobile apps for Swiss SMEs — working systems measured in hours saved per week.",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Im Gässli 19",
-    "postalCode": "8162",
-    "addressLocality": "Steinmaur",
-    "addressRegion": "ZH",
-    "addressCountry": "CH"
-  },
-  "areaServed": {
-    "@type": "Country",
-    "name": "Switzerland"
-  },
-  "serviceType": ["AI Automation", "Mobile App Development", "AI Strategy Consulting", "Custom AI Integration"],
-  "knowsLanguage": ["en", "de"]
+  "@graph": [
+    {
+      "@type": ["Organization", "ProfessionalService"],
+      "@id": "https://appligent.ai/#org",
+      "name": "Appligent AI",
+      "url": "https://appligent.ai/",
+      "logo": "https://appligent.ai/assets/img/logo.svg",
+      "image": "https://appligent.ai/assets/img/og.png",
+      "email": "hello@appligent.ai",
+      "description": "Zurich-area app studio shipping its own iOS apps (ReciPics, Mealog, CalmClick, SubOrbs) and building practical AI automation and mobile apps for Swiss SMEs.",
+      "sameAs": ["https://linkedin.com/company/appligent-ai"],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Im Gässli 19",
+        "postalCode": "8162",
+        "addressLocality": "Steinmaur",
+        "addressRegion": "ZH",
+        "addressCountry": "CH"
+      },
+      "areaServed": [{ "@type": "Country", "name": "Switzerland" }, { "@type": "Country", "name": "Germany" }, { "@type": "Country", "name": "Austria" }],
+      "serviceType": ["iOS App Development", "AI Automation", "AI Strategy Consulting", "Custom AI Integration"],
+      "knowsLanguage": ["en", "de"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://appligent.ai/#website",
+      "url": "https://appligent.ai/",
+      "name": "Appligent AI",
+      "publisher": { "@id": "https://appligent.ai/#org" },
+      "inLanguage": ["en", "de"]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://appligent.ai/#recipics",
+      "name": "ReciPics",
+      "alternateName": "Recipe Keeper - ReciPics",
+      "url": "https://recipics.app/",
+      "installUrl": "https://apps.apple.com/app/id6740248018",
+      "applicationCategory": "LifestyleApplication",
+      "operatingSystem": "iOS",
+      "description": "Smart recipe keeper: scan ingredients, photograph a dish or ask by voice — ReciPics turns it into a structured recipe in your own cookbook.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@id": "https://appligent.ai/#org" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://appligent.ai/#mealog",
+      "name": "Mealog",
+      "alternateName": "Mealog: AI Food Diary",
+      "url": "https://apps.apple.com/app/id6800812845",
+      "installUrl": "https://apps.apple.com/app/id6800812845",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "iOS",
+      "description": "AI food diary: a photo, a voice note or one line of text becomes calories, protein, carbs and fat — logged in seconds, every estimate editable.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@id": "https://appligent.ai/#org" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://appligent.ai/#calmclick",
+      "name": "CalmClick",
+      "alternateName": "CalmClick: Is This Real?",
+      "url": "https://apps.apple.com/app/id6783985536",
+      "installUrl": "https://apps.apple.com/app/id6783985536",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "iOS",
+      "description": "Photograph a confusing message, letter or pop-up and get a calm, plain-language verdict — Safe, Be careful or Warning — with exact next steps.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@id": "https://appligent.ai/#org" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://appligent.ai/#suborbs",
+      "name": "SubOrbs",
+      "alternateName": "SubOrbs: Subscription Tracker",
+      "url": "https://apps.apple.com/app/id6790872622",
+      "installUrl": "https://apps.apple.com/app/id6790872622",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "iOS",
+      "description": "Subscription tracker: every subscription orbits your total spend, sized by cost and placed by renewal date, with reminders before payments land.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@id": "https://appligent.ai/#org" }
+    }
+  ]
 }
 </script>
 
@@ -105,8 +178,36 @@
   --disp-track: -0.03em;
   --disp-weight: 640;
   --maxw: 1240px;
+
+  /* Background: a calm gradient mesh (two accent tints + one cool neutral) over the base colour,
+     with a faint grain so large flat areas don't band. CSS only — no image downloads. */
+  --mesh-a: rgba(109, 74, 255, 0.14);
+  --mesh-b: rgba(47, 176, 255, 0.12);
+  --mesh-c: rgba(20, 140, 110, 0.07);
+  --grain-opacity: 0.035;
+  --glass: rgba(255, 255, 255, 0.55);
+  --shadow: 0 24px 60px -24px rgba(22, 24, 22, 0.25);
 }
 
+/* Dark tokens, applied twice: (1) OS preference when JS hasn't resolved a theme (no-JS fallback),
+   (2) the explicit toggle. Keep both blocks identical. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0D1311;
+    --bg2: #131B18;
+    --ink: #F2F5F2;
+    --ink2: #B2BDB5;
+    --line: #243029;
+    --accent-ink: #9C8BFF;
+    --accent-on-ink: #6D4AFF;
+    --mesh-a: rgba(109, 74, 255, 0.22);
+    --mesh-b: rgba(47, 176, 255, 0.12);
+    --mesh-c: rgba(20, 140, 110, 0.10);
+    --grain-opacity: 0.06;
+    --glass: rgba(19, 27, 24, 0.55);
+    --shadow: 0 24px 60px -24px rgba(0, 0, 0, 0.6);
+  }
+}
 :root[data-theme="dark"] {
   --bg: #0D1311;
   --bg2: #131B18;
@@ -115,9 +216,15 @@
   --line: #243029;
   --accent-ink: #9C8BFF;
   --accent-on-ink: #6D4AFF;
+  --mesh-a: rgba(109, 74, 255, 0.22);
+  --mesh-b: rgba(47, 176, 255, 0.12);
+  --mesh-c: rgba(20, 140, 110, 0.10);
+  --grain-opacity: 0.06;
+  --glass: rgba(19, 27, 24, 0.55);
+  --shadow: 0 24px 60px -24px rgba(0, 0, 0, 0.6);
 }
 
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; background: var(--bg); }
 
 body {
   margin: 0;
@@ -129,7 +236,31 @@ body {
   -webkit-font-smoothing: antialiased;
   transition: background .3s, color .3s;
   overflow-x: hidden;
+  position: relative;
+  isolation: isolate;
 }
+/* Mesh layer: fixed so it reads as a calm backdrop rather than scrolling stripes. */
+body::before {
+  content: "";
+  position: fixed; inset: 0; z-index: -2; pointer-events: none;
+  background:
+    radial-gradient(900px 620px at 8% -8%,  var(--mesh-a), transparent 65%),
+    radial-gradient(760px 560px at 96% 12%, var(--mesh-b), transparent 62%),
+    radial-gradient(700px 520px at 50% 110%, var(--mesh-c), transparent 60%),
+    var(--bg);
+  transition: background .3s;
+}
+/* Grain layer: tiny inline SVG turbulence tile, ~3–6 % opacity. */
+body::after {
+  content: "";
+  position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  opacity: var(--grain-opacity);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  background-size: 160px 160px;
+  mix-blend-mode: multiply;
+}
+:root[data-theme="dark"] body::after { mix-blend-mode: screen; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) body::after { mix-blend-mode: screen; } }
 
 a { color: var(--accent-ink); text-decoration: none; }
 a:hover { color: var(--ink); }
@@ -227,21 +358,22 @@ html.js .reveal.is-in { opacity: 1; transform: none; }
 .btn-ghost { border: 1px solid var(--line); color: var(--ink); background: transparent; }
 .btn-ghost:hover { border-color: var(--accent-ink); color: var(--accent-ink); }
 
-.hero-figure {
-  margin-top: 72px; position: relative; border-radius: 6px; overflow: hidden;
-  aspect-ratio: 21 / 8; background: var(--bg2);
+/* Hero app strip — the four shipped apps as quiet proof, linking into the showcase. */
+.hero-apps {
+  margin-top: 64px; display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center;
+  font-size: 13px; color: var(--ink2);
 }
-.hero-figure img {
-  position: absolute; inset: 0; width: 100%; height: 100%;
-  object-fit: cover; filter: saturate(0.75) contrast(1.05);
+.hero-apps .lbl { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; margin-right: 6px; }
+.hero-apps a {
+  display: inline-flex; align-items: center; gap: 8px; padding: 7px 12px 7px 8px; border-radius: 99px;
+  border: 1px solid var(--line); background: var(--glass); color: var(--ink); font-weight: 600; font-size: 13px;
+  transition: border-color .15s, transform .15s;
 }
-.hero-figure .grad-overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(20deg, color-mix(in srgb, var(--accent) 32%, transparent), color-mix(in srgb, var(--accent2) 10%, transparent) 55%, transparent 75%);
-}
+.hero-apps a:hover { border-color: var(--accent-ink); transform: translateY(-1px); }
+.hero-apps .dot { width: 18px; height: 18px; border-radius: 6px; display: inline-block; }
 .stats {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px;
-  border-top: 1px solid var(--line); margin-top: 56px; padding: 28px 0 0;
+  border-top: 1px solid var(--line); margin-top: 40px; padding: 28px 0 0;
 }
 .stat { display: flex; align-items: baseline; gap: 12px; }
 .stat .num { font-family: var(--font-display); font-weight: var(--disp-weight); font-size: 34px; letter-spacing: -0.02em; }
@@ -260,17 +392,110 @@ html.js .reveal.is-in { opacity: 1; transform: none; }
   gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 48px;
 }
 .cell {
-  background: var(--bg); padding: 32px 28px; display: flex; flex-direction: column; gap: 14px;
+  background: color-mix(in srgb, var(--bg) 72%, transparent); padding: 32px 28px; display: flex; flex-direction: column; gap: 14px;
   min-height: 200px; transition: background .2s;
 }
-.cell:hover { background: var(--bg2); }
+.cell:hover { background: var(--glass); }
 .cell .idx { font-family: var(--font-mono); font-size: 11px; color: var(--ink2); }
 .cell h3 { margin: 0; font-size: 19px; font-weight: 650; letter-spacing: -0.015em; }
 .cell p { margin: 0; color: var(--ink2); font-size: 14.5px; line-height: 1.6; flex: 1; text-wrap: pretty; }
 .cell .metric { font-family: var(--font-mono); font-size: 12px; color: var(--accent-ink); }
 
-/* ── Services ── */
-.svc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-top: 48px; }
+/* ── What we do: app showcase ──
+   Markup is a tablist + 4 panels. Without JS every panel is visible (stacked) and the tabs are
+   plain in-page anchors; with JS (html.js) one panel shows at a time. */
+.showcase { margin-top: 48px; display: grid; grid-template-columns: minmax(220px, 300px) 1fr; gap: 32px; align-items: start; }
+.app-tabs { display: flex; flex-direction: column; gap: 6px; position: sticky; top: 84px; }
+.app-tab {
+  display: grid; grid-template-columns: 40px 1fr auto; align-items: center; gap: 14px;
+  padding: 12px 14px; border-radius: 14px; border: 1px solid transparent;
+  background: transparent; color: var(--ink); text-align: left; cursor: pointer;
+  font-family: var(--font-body); font-size: 15px; font-weight: 600; letter-spacing: -0.01em;
+  transition: background .15s, border-color .15s, transform .15s;
+}
+.app-tab small { display: block; font-weight: 400; font-size: 12.5px; color: var(--ink2); margin-top: 1px; }
+.app-tab .arrow { font-family: var(--font-mono); color: var(--ink2); opacity: 0; transition: opacity .15s, transform .15s; }
+.app-tab:hover { background: var(--glass); border-color: var(--line); }
+.app-tab[aria-selected="true"] { background: var(--glass); border-color: var(--line); box-shadow: var(--shadow); }
+.app-tab[aria-selected="true"] .arrow, .app-tab:hover .arrow { opacity: 1; transform: translateX(2px); }
+.app-tab:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 2px; }
+.app-glyph {
+  width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center;
+  color: #fff; font-family: var(--font-display); font-weight: 700; font-size: 17px; letter-spacing: -0.02em;
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,0.15), 0 4px 12px -6px rgba(0,0,0,0.4);
+}
+/* Per-app accent pairs (brand-neutral placeholders; swap for real app-icon colours any time). */
+.app-recipics  { --app-a: #FF7A3D; --app-b: #FFB03D; }
+.app-mealog    { --app-a: #2EB872; --app-b: #7FE0A6; }
+.app-calmclick { --app-a: #2F8BFF; --app-b: #7CC4FF; }
+.app-suborbs   { --app-a: #6D4AFF; --app-b: #C56BFF; }
+.app-glyph, .hero-apps .dot { background: linear-gradient(135deg, var(--app-a), var(--app-b)); }
+
+.app-panels { min-height: 560px; }
+.app-panel {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(240px, 300px); gap: 40px; align-items: center;
+  padding: 36px; border-radius: 24px; border: 1px solid var(--line); background: var(--glass);
+  -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); box-shadow: var(--shadow);
+}
+html.js .app-panel[hidden] { display: none; }
+html:not(.js) .app-panel + .app-panel { margin-top: 24px; }
+html:not(.js) .app-tabs { position: static; }
+.app-panel .kicker { display: flex; align-items: center; gap: 10px; }
+.app-panel h3 { margin: 14px 0 0; font-size: clamp(26px, 2.8vw, 36px); line-height: 1.08; letter-spacing: -0.025em; font-family: var(--font-display); font-weight: var(--disp-weight); text-wrap: balance; }
+.app-panel .value { margin: 16px 0 0; font-size: 16.5px; line-height: 1.6; color: var(--ink2); max-width: 520px; text-wrap: pretty; }
+.app-panel .chips { margin-top: 20px; }
+.app-panel .store-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; align-items: center; }
+.store-badge {
+  display: inline-flex; align-items: center; gap: 9px; padding: 9px 16px 9px 12px; border-radius: 10px;
+  background: var(--ink); color: var(--bg); font-size: 13.5px; font-weight: 600; line-height: 1.1;
+  transition: transform .15s, opacity .15s;
+}
+.store-badge:hover { transform: translateY(-2px); color: var(--bg); opacity: 0.92; }
+.store-badge small { display: block; font-weight: 400; font-size: 10px; opacity: 0.7; letter-spacing: 0.02em; margin-bottom: 2px; }
+.store-badge svg { width: 18px; height: 18px; flex-shrink: 0; }
+.link-ghost { display: inline-flex; align-items: center; gap: 6px; padding: 9px 14px; border-radius: 10px; border: 1px solid var(--line); color: var(--ink); font-size: 13.5px; font-weight: 600; }
+.link-ghost:hover { border-color: var(--accent-ink); color: var(--accent-ink); }
+
+/* CSS phone frame with a stylised, abstract screen per app (not a real screenshot). */
+.device { justify-self: center; width: 100%; max-width: 260px; aspect-ratio: 9 / 19; position: relative; }
+.device .shell {
+  position: absolute; inset: 0; border-radius: 40px; padding: 10px;
+  background: linear-gradient(160deg, #2A2E2C, #0F1211); box-shadow: 0 30px 60px -28px rgba(0,0,0,0.6), inset 0 0 0 1px rgba(255,255,255,0.08);
+}
+.device .screen {
+  position: relative; width: 100%; height: 100%; border-radius: 31px; overflow: hidden;
+  background: linear-gradient(170deg, color-mix(in srgb, var(--app-a) 18%, var(--bg2)), var(--bg2) 60%);
+  display: flex; flex-direction: column; gap: 12px; padding: 44px 16px 20px; color: var(--ink);
+}
+.device .island { position: absolute; top: 12px; left: 50%; transform: translateX(-50%); width: 84px; height: 24px; border-radius: 99px; background: #0F1211; }
+.scr-title { font-family: var(--font-display); font-weight: 700; font-size: 15px; letter-spacing: -0.02em; }
+.scr-card { border-radius: 14px; background: color-mix(in srgb, var(--bg) 78%, transparent); border: 1px solid var(--line); padding: 12px; display: flex; flex-direction: column; gap: 8px; }
+.scr-line { height: 8px; border-radius: 99px; background: color-mix(in srgb, var(--ink2) 28%, transparent); }
+.scr-line.w60 { width: 60%; } .scr-line.w40 { width: 40%; } .scr-line.w80 { width: 80%; }
+.scr-pill { align-self: flex-start; font-family: var(--font-mono); font-size: 10px; padding: 3px 8px; border-radius: 99px; color: #fff; background: linear-gradient(135deg, var(--app-a), var(--app-b)); }
+.scr-viewfinder { aspect-ratio: 4 / 3; border-radius: 14px; position: relative; background: linear-gradient(135deg, color-mix(in srgb, var(--app-a) 45%, var(--bg2)), color-mix(in srgb, var(--app-b) 35%, var(--bg2))); }
+.scr-viewfinder::before { content: ""; position: absolute; inset: 14px; border: 2px solid rgba(255,255,255,0.75); border-radius: 10px; mask: linear-gradient(#000 0 0) top/100% 22px no-repeat, linear-gradient(#000 0 0) bottom/100% 22px no-repeat, linear-gradient(#000 0 0) left/22px 100% no-repeat, linear-gradient(#000 0 0) right/22px 100% no-repeat; -webkit-mask: linear-gradient(#000 0 0) top/100% 22px no-repeat, linear-gradient(#000 0 0) bottom/100% 22px no-repeat, linear-gradient(#000 0 0) left/22px 100% no-repeat, linear-gradient(#000 0 0) right/22px 100% no-repeat; }
+.scr-ring { width: 108px; height: 108px; border-radius: 50%; margin: 6px auto; display: grid; place-items: center; background: conic-gradient(var(--app-a) 0 62%, color-mix(in srgb, var(--ink2) 22%, transparent) 62% 100%); }
+.scr-ring span { width: 82px; height: 82px; border-radius: 50%; background: var(--bg2); display: grid; place-items: center; font-family: var(--font-display); font-weight: 700; font-size: 15px; letter-spacing: -0.02em; }
+.scr-macros { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.scr-macros div { border-radius: 10px; padding: 8px 6px; text-align: center; font-family: var(--font-mono); font-size: 10px; color: var(--ink2); background: color-mix(in srgb, var(--bg) 78%, transparent); border: 1px solid var(--line); }
+.scr-macros b { display: block; font-family: var(--font-display); font-size: 14px; color: var(--ink); }
+.scr-verdict { border-radius: 14px; padding: 14px; color: #fff; background: linear-gradient(135deg, var(--app-a), var(--app-b)); display: flex; flex-direction: column; gap: 6px; }
+.scr-verdict b { font-family: var(--font-display); font-size: 18px; letter-spacing: -0.02em; }
+.scr-verdict span { font-size: 11px; opacity: 0.9; line-height: 1.4; }
+.scr-orbit { position: relative; aspect-ratio: 1; margin: 4px 10px; }
+.scr-orbit .o { position: absolute; border-radius: 50%; border: 1px dashed color-mix(in srgb, var(--ink2) 40%, transparent); }
+.scr-orbit .o1 { inset: 0; } .scr-orbit .o2 { inset: 18%; } .scr-orbit .o3 { inset: 36%; }
+.scr-orbit .c { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 46px; height: 46px; border-radius: 50%; background: linear-gradient(135deg, var(--app-a), var(--app-b)); color: #fff; display: grid; place-items: center; font-family: var(--font-mono); font-size: 10px; }
+.scr-orbit .p { position: absolute; border-radius: 50%; background: var(--app-b); box-shadow: 0 0 0 3px color-mix(in srgb, var(--bg2) 80%, transparent); }
+.scr-orbit .p1 { width: 16px; height: 16px; left: 8%;  top: 30%; }
+.scr-orbit .p2 { width: 11px; height: 11px; right: 14%; top: 16%; background: var(--app-a); }
+.scr-orbit .p3 { width: 20px; height: 20px; right: 10%; bottom: 20%; }
+.scr-orbit .p4 { width: 9px;  height: 9px;  left: 34%; bottom: 8%; background: var(--app-a); }
+
+/* Services (compact row under the showcase) */
+.svc-head { margin-top: 72px; }
+.svc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-top: 32px; }
 .svc { border-top: 2px solid var(--ink); padding-top: 20px; display: flex; flex-direction: column; gap: 12px; }
 .svc h3 { margin: 0; font-size: 18px; font-weight: 650; letter-spacing: -0.015em; }
 .svc p { margin: 0; color: var(--ink2); font-size: 14.5px; line-height: 1.6; flex: 1; text-wrap: pretty; }
@@ -285,7 +510,7 @@ html.js .reveal.is-in { opacity: 1; transform: none; }
   display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 48px;
 }
-.step { background: var(--bg); padding: 32px 28px 40px; display: flex; flex-direction: column; gap: 16px; }
+.step { background: color-mix(in srgb, var(--bg) 72%, transparent); padding: 32px 28px 40px; display: flex; flex-direction: column; gap: 16px; }
 .step .num { font-family: var(--font-display); font-weight: var(--disp-weight); font-size: 52px; letter-spacing: -0.03em; color: var(--accent-ink); line-height: 1; }
 .step h3 { margin: 0; font-size: 18px; font-weight: 650; }
 .step p { margin: 0; color: var(--ink2); font-size: 14.5px; line-height: 1.6; text-wrap: pretty; }
@@ -310,16 +535,20 @@ html.js .reveal.is-in { opacity: 1; transform: none; }
 }
 
 /* ── Why / Zurich ── */
-.why-figure {
-  position: relative; border-radius: 6px; overflow: hidden;
-  aspect-ratio: 21 / 7; background: var(--bg2); margin-bottom: 48px;
+.why-band {
+  position: relative; border-radius: 24px; overflow: hidden; margin-bottom: 48px;
+  padding: clamp(40px, 6vw, 72px) clamp(28px, 4vw, 56px);
+  border: 1px solid var(--line); background: var(--glass);
+  -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
 }
-.why-figure img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(0.7) contrast(1.05); }
-.why-figure .shade { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(10,12,10,0.55), transparent 60%); }
-.why-figure .cap {
-  position: absolute; left: 28px; bottom: 22px; color: #fff;
+.why-band::before {
+  content: ""; position: absolute; inset: -40% -10% auto auto; width: 60%; aspect-ratio: 1; border-radius: 50%;
+  background: radial-gradient(closest-side, var(--mesh-a), transparent); pointer-events: none;
+}
+.why-band .cap {
+  position: relative; margin: 14px 0 0;
   font-family: var(--font-display); font-weight: var(--disp-weight); letter-spacing: var(--disp-track);
-  font-size: clamp(22px, 2.6vw, 34px); max-width: 640px; text-wrap: balance;
+  font-size: clamp(26px, 3.2vw, 44px); line-height: 1.06; max-width: 720px; text-wrap: balance;
 }
 .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; border-top: 1px solid var(--line); padding-top: 48px; }
 .why-item { display: flex; flex-direction: column; gap: 10px; }
@@ -400,17 +629,32 @@ html.js .reveal.is-in { opacity: 1; transform: none; }
 }
 
 /* ── Responsive ── */
+@media (max-width: 960px) {
+  .showcase { grid-template-columns: 1fr; gap: 20px; }
+  .app-tabs {
+    position: static; flex-direction: row; gap: 8px; overflow-x: auto; padding: 2px 2px 8px;
+    scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch; scrollbar-width: none;
+  }
+  .app-tabs::-webkit-scrollbar { display: none; }
+  .app-tab { flex: 0 0 auto; grid-template-columns: 32px 1fr; padding: 10px 14px 10px 10px; scroll-snap-align: start; border-color: var(--line); }
+  .app-tab .arrow, .app-tab small { display: none; }
+  .app-glyph { width: 32px; height: 32px; border-radius: 10px; font-size: 14px; }
+  .app-panel { grid-template-columns: 1fr; gap: 28px; padding: 24px; }
+  .device { grid-row: 1; max-width: 190px; }
+  .app-panels { min-height: 0; }
+}
 @media (max-width: 860px) {
   .faq-wrap { grid-template-columns: 1fr; gap: 24px; }
 }
 @media (max-width: 720px) {
   .nav-center { display: none; }
-  .wrap, .section, .site-header .bar, .site-footer .bar, .contact-sec { padding-left: 20px; padding-right: 20px; }
+  .wrap, .section, .site-header .bar, .site-footer .bar, .contact-sec { padding-left: 16px; padding-right: 16px; }
   .section { padding-top: 88px; }
   .hero { padding-top: 72px; }
-  .hero-figure { aspect-ratio: 4 / 3; }
-  .why-figure { aspect-ratio: 3 / 2; }
   .hero-row { gap: 28px; }
+  .app-panel { padding: 20px 16px; border-radius: 18px; }
+  .why-band { border-radius: 18px; }
+  .hero-apps .lbl { flex-basis: 100%; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -468,10 +712,13 @@ html.js .reveal.is-in { opacity: 1; transform: none; }
         <a href="#examples" class="btn btn-ghost" data-en="See concrete examples" data-de="Konkrete Beispiele ansehen">See concrete examples</a>
       </div>
     </div>
-    <figure class="hero-figure reveal">
-      <img src="assets/img/hero-team.jpg" alt="A team working together on laptops" width="1500" height="1000" loading="eager">
-      <div class="grad-overlay"></div>
-    </figure>
+    <div class="hero-apps reveal" aria-label="Apps we ship">
+      <span class="lbl" data-en="Our apps on the App Store" data-de="Unsere Apps im App Store">Our apps on the App Store</span>
+      <a href="#app-recipics" class="app-recipics"><span class="dot" aria-hidden="true"></span>ReciPics</a>
+      <a href="#app-mealog" class="app-mealog"><span class="dot" aria-hidden="true"></span>Mealog</a>
+      <a href="#app-calmclick" class="app-calmclick"><span class="dot" aria-hidden="true"></span>CalmClick</a>
+      <a href="#app-suborbs" class="app-suborbs"><span class="dot" aria-hidden="true"></span>SubOrbs</a>
+    </div>
     <div class="stats reveal">
       <div class="stat"><span class="num">1</span><span class="lbl" data-en="business day to a first response" data-de="Arbeitstag bis zur ersten Antwort">business day to a first response</span></div>
       <div class="stat"><span class="num">2–6</span><span class="lbl" data-en="weeks for a typical first project" data-de="Wochen für ein typisches erstes Projekt">weeks for a typical first project</span></div>
@@ -530,9 +777,164 @@ html.js .reveal.is-in { opacity: 1; transform: none; }
 
   <!-- ═══════════════ SERVICES ═══════════════ -->
   <section class="section" id="services">
-    <div class="reveal">
-      <div class="kicker" data-en="What we do" data-de="Was wir tun">What we do</div>
-      <h2 class="h-display sec-title" data-en="Four ways we can help" data-de="Vier Wege, wie wir helfen">Four ways we can help</h2>
+    <div class="sec-head-row reveal" id="apps">
+      <div>
+        <div class="kicker" data-en="What we do" data-de="Was wir tun">What we do</div>
+        <h2 class="h-display sec-title" data-en="We ship our own iOS apps — and build the same for you." data-de="Wir veröffentlichen eigene iOS-Apps — und bauen dasselbe für Sie.">We ship our own iOS apps — and build the same for you.</h2>
+      </div>
+      <p class="sec-sub" data-en="Four apps live on the App Store, designed, built and supported in-house. Pick one to see what it does." data-de="Vier Apps live im App Store — intern konzipiert, gebaut und betreut. Wählen Sie eine aus.">Four apps live on the App Store, designed, built and supported in-house. Pick one to see what it does.</p>
+    </div>
+
+    <!-- App showcase. Progressive enhancement: without JS all four panels render stacked and the
+         tabs are in-page anchors; with JS the tabs switch panels (role=tablist, arrow keys). -->
+    <div class="showcase reveal">
+      <div class="app-tabs" role="tablist" aria-label="Our apps" aria-orientation="vertical">
+        <a class="app-tab app-recipics" role="tab" id="tab-recipics" href="#app-recipics" aria-controls="app-recipics" aria-selected="true">
+          <span class="app-glyph" aria-hidden="true">R</span>
+          <span>ReciPics<small data-en="Recipe keeper with AI camera" data-de="Rezeptbuch mit KI-Kamera">Recipe keeper with AI camera</small></span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="app-tab app-mealog" role="tab" id="tab-mealog" href="#app-mealog" aria-controls="app-mealog" aria-selected="false" tabindex="-1">
+          <span class="app-glyph" aria-hidden="true">M</span>
+          <span>Mealog<small data-en="AI food diary" data-de="KI-Ernährungstagebuch">AI food diary</small></span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="app-tab app-calmclick" role="tab" id="tab-calmclick" href="#app-calmclick" aria-controls="app-calmclick" aria-selected="false" tabindex="-1">
+          <span class="app-glyph" aria-hidden="true">C</span>
+          <span>CalmClick<small data-en="Is this message real?" data-de="Ist diese Nachricht echt?">Is this message real?</small></span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="app-tab app-suborbs" role="tab" id="tab-suborbs" href="#app-suborbs" aria-controls="app-suborbs" aria-selected="false" tabindex="-1">
+          <span class="app-glyph" aria-hidden="true">S</span>
+          <span>SubOrbs<small data-en="Subscription tracker" data-de="Abo-Tracker">Subscription tracker</small></span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <div class="app-panels">
+        <!-- ReciPics -->
+        <article class="app-panel app-recipics" id="app-recipics" role="tabpanel" aria-labelledby="tab-recipics">
+          <div>
+            <div class="kicker"><span data-en="iOS · Food &amp; Drink" data-de="iOS · Essen &amp; Trinken">iOS · Food &amp; Drink</span></div>
+            <h3 data-en="Point your camera at ingredients. Get a recipe." data-de="Kamera auf die Zutaten richten. Rezept erhalten.">Point your camera at ingredients. Get a recipe.</h3>
+            <p class="value" data-en="ReciPics scans what you have, recognises a finished dish from a photo or takes a voice request — and turns it into a structured recipe in your own cookbook." data-de="ReciPics scannt, was Sie haben, erkennt ein fertiges Gericht auf dem Foto oder nimmt eine Sprachanfrage — und macht daraus ein strukturiertes Rezept in Ihrem Kochbuch.">ReciPics scans what you have, recognises a finished dish from a photo or takes a voice request — and turns it into a structured recipe in your own cookbook.</p>
+            <div class="chips">
+              <span data-en="AI camera" data-de="KI-Kamera">AI camera</span>
+              <span data-en="Voice input" data-de="Spracheingabe">Voice input</span>
+              <span data-en="Recipe book" data-de="Rezeptbuch">Recipe book</span>
+              <span>EN · DE</span>
+            </div>
+            <div class="store-row">
+              <a class="store-badge" href="https://apps.apple.com/app/id6740248018" target="_blank" rel="noopener" aria-label="ReciPics on the App Store">
+                <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+                <span><small data-en="Download on the" data-de="Laden im">Download on the</small>App Store</span>
+              </a>
+              <a class="link-ghost" href="https://recipics.app" target="_blank" rel="noopener">recipics.app ↗</a>
+            </div>
+          </div>
+          <div class="device" aria-hidden="true">
+            <div class="shell"><div class="screen">
+              <div class="island"></div>
+              <div class="scr-title">ReciPics</div>
+              <div class="scr-viewfinder"></div>
+              <div class="scr-card"><span class="scr-pill">Recipe found</span><div class="scr-line w80"></div><div class="scr-line w60"></div><div class="scr-line w40"></div></div>
+            </div></div>
+          </div>
+        </article>
+
+        <!-- Mealog -->
+        <article class="app-panel app-mealog" id="app-mealog" role="tabpanel" aria-labelledby="tab-mealog" hidden>
+          <div>
+            <div class="kicker"><span data-en="iOS · Health &amp; Fitness" data-de="iOS · Gesundheit &amp; Fitness">iOS · Health &amp; Fitness</span></div>
+            <h3 data-en="Log a meal by photo, voice or one line of text." data-de="Mahlzeit per Foto, Sprache oder einer Textzeile loggen.">Log a meal by photo, voice or one line of text.</h3>
+            <p class="value" data-en="Mealog estimates calories, protein, carbs and fat in seconds — no database searching, no weighing. Every estimate shows its reasoning and can be corrected." data-de="Mealog schätzt Kalorien, Protein, Kohlenhydrate und Fett in Sekunden — ohne Datenbanksuche, ohne Waage. Jede Schätzung zeigt ihre Begründung und lässt sich korrigieren.">Mealog estimates calories, protein, carbs and fat in seconds — no database searching, no weighing. Every estimate shows its reasoning and can be corrected.</p>
+            <div class="chips">
+              <span data-en="Photo · voice · text" data-de="Foto · Sprache · Text">Photo · voice · text</span>
+              <span data-en="Editable estimates" data-de="Korrigierbare Schätzungen">Editable estimates</span>
+              <span data-en="Chronological log" data-de="Chronologisches Log">Chronological log</span>
+              <span>EN · DE</span>
+            </div>
+            <div class="store-row">
+              <a class="store-badge" href="https://apps.apple.com/app/id6800812845" target="_blank" rel="noopener" aria-label="Mealog on the App Store">
+                <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+                <span><small data-en="Download on the" data-de="Laden im">Download on the</small>App Store</span>
+              </a>
+            </div>
+          </div>
+          <div class="device" aria-hidden="true">
+            <div class="shell"><div class="screen">
+              <div class="island"></div>
+              <div class="scr-title">Mealog</div>
+              <div class="scr-ring"><span>kcal</span></div>
+              <div class="scr-macros"><div><b>P</b>protein</div><div><b>C</b>carbs</div><div><b>F</b>fat</div></div>
+              <div class="scr-card"><div class="scr-line w60"></div><div class="scr-line w40"></div></div>
+            </div></div>
+          </div>
+        </article>
+
+        <!-- CalmClick -->
+        <article class="app-panel app-calmclick" id="app-calmclick" role="tabpanel" aria-labelledby="tab-calmclick" hidden>
+          <div>
+            <div class="kicker"><span data-en="iOS · Utilities" data-de="iOS · Dienstprogramme">iOS · Utilities</span></div>
+            <h3 data-en="A strange text, an odd bill, a scary pop-up — is it real?" data-de="Seltsame SMS, komische Rechnung, Schock-Pop-up — ist das echt?">A strange text, an odd bill, a scary pop-up — is it real?</h3>
+            <p class="value" data-en="Photograph it or upload a screenshot. In about ten seconds CalmClick explains what it is in plain words and gives a clear verdict — Safe, Be careful or Warning — with exact next steps." data-de="Fotografieren oder Screenshot hochladen. In rund zehn Sekunden erklärt CalmClick in einfachen Worten, was das ist, und gibt ein klares Urteil — Sicher, Vorsicht oder Warnung — mit konkreten nächsten Schritten.">Photograph it or upload a screenshot. In about ten seconds CalmClick explains what it is in plain words and gives a clear verdict — Safe, Be careful or Warning — with exact next steps.</p>
+            <div class="chips">
+              <span data-en="Plain language" data-de="Einfache Sprache">Plain language</span>
+              <span data-en="Honest about uncertainty" data-de="Ehrlich bei Unsicherheit">Honest about uncertainty</span>
+              <span data-en="Follow-up questions" data-de="Rückfragen">Follow-up questions</span>
+            </div>
+            <div class="store-row">
+              <a class="store-badge" href="https://apps.apple.com/app/id6783985536" target="_blank" rel="noopener" aria-label="CalmClick on the App Store">
+                <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+                <span><small data-en="Download on the" data-de="Laden im">Download on the</small>App Store</span>
+              </a>
+            </div>
+          </div>
+          <div class="device" aria-hidden="true">
+            <div class="shell"><div class="screen">
+              <div class="island"></div>
+              <div class="scr-title">CalmClick</div>
+              <div class="scr-card"><div class="scr-line w80"></div><div class="scr-line w60"></div><div class="scr-line w80"></div></div>
+              <div class="scr-verdict"><b>Be careful</b><span>This looks like a phishing message. Don't tap the link.</span></div>
+              <div class="scr-card"><div class="scr-line w40"></div></div>
+            </div></div>
+          </div>
+        </article>
+
+        <!-- SubOrbs -->
+        <article class="app-panel app-suborbs" id="app-suborbs" role="tabpanel" aria-labelledby="tab-suborbs" hidden>
+          <div>
+            <div class="kicker"><span data-en="iOS · Finance" data-de="iOS · Finanzen">iOS · Finance</span></div>
+            <h3 data-en="Every subscription in one calm orbit." data-de="Jedes Abo in einer ruhigen Umlaufbahn.">Every subscription in one calm orbit.</h3>
+            <p class="value" data-en="Your total spend sits at the centre; each subscription orbits it, sized by cost and placed by renewal date. Reminders land before a payment or a cancellation window does." data-de="Ihre Gesamtausgaben stehen im Zentrum; jedes Abo kreist darum — nach Kosten skaliert, nach Verlängerungsdatum platziert. Erinnerungen kommen, bevor eine Zahlung oder eine Kündigungsfrist fällig wird.">Your total spend sits at the centre; each subscription orbits it, sized by cost and placed by renewal date. Reminders land before a payment or a cancellation window does.</p>
+            <div class="chips">
+              <span data-en="Orbit view" data-de="Orbit-Ansicht">Orbit view</span>
+              <span data-en="Renewal reminders" data-de="Verlängerungs-Erinnerungen">Renewal reminders</span>
+              <span data-en="Snap &amp; Read bills" data-de="Rechnungen scannen">Snap &amp; Read bills</span>
+              <span>EN · DE</span>
+            </div>
+            <div class="store-row">
+              <a class="store-badge" href="https://apps.apple.com/app/id6790872622" target="_blank" rel="noopener" aria-label="SubOrbs on the App Store">
+                <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+                <span><small data-en="Download on the" data-de="Laden im">Download on the</small>App Store</span>
+              </a>
+            </div>
+          </div>
+          <div class="device" aria-hidden="true">
+            <div class="shell"><div class="screen">
+              <div class="island"></div>
+              <div class="scr-title">SubOrbs</div>
+              <div class="scr-orbit"><div class="o o1"></div><div class="o o2"></div><div class="o o3"></div><div class="c">month</div><div class="p p1"></div><div class="p p2"></div><div class="p p3"></div><div class="p p4"></div></div>
+              <div class="scr-card"><div class="scr-line w60"></div><div class="scr-line w40"></div></div>
+            </div></div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="svc-head reveal">
+      <div class="kicker" data-en="For your business" data-de="Für Ihr Unternehmen">For your business</div>
+      <h2 class="h-display sec-title" style="font-size:clamp(26px,3vw,38px)" data-en="The same craft, four ways" data-de="Dasselbe Handwerk, auf vier Arten">The same craft, four ways</h2>
     </div>
     <div class="svc-grid">
       <div class="svc reveal">
@@ -644,11 +1046,10 @@ html.js .reveal.is-in { opacity: 1; transform: none; }
 
   <!-- ═══════════════ WHY / ZURICH ═══════════════ -->
   <section class="section">
-    <figure class="why-figure reveal">
-      <img src="assets/img/zurich.jpg" alt="Zurich old town along the Limmat river" loading="lazy" width="1500" height="1080">
-      <div class="shade"></div>
-      <figcaption class="cap" data-en="Built in the Zurich area, for Swiss SMEs." data-de="Im Raum Zürich gebaut, für Schweizer KMU.">Built in the Zurich area, for Swiss SMEs.</figcaption>
-    </figure>
+    <div class="why-band reveal">
+      <div class="kicker line" data-en="Why Appligent" data-de="Warum Appligent">Why Appligent</div>
+      <p class="cap" data-en="Built in the Zurich area. Shipped to the App Store. Supported after launch." data-de="Im Raum Zürich gebaut. Im App Store veröffentlicht. Nach dem Launch betreut.">Built in the Zurich area. Shipped to the App Store. Supported after launch.</p>
+    </div>
     <div class="why-grid">
       <div class="why-item reveal">
         <h3><span class="tag">A</span><span data-en="In the Zurich area" data-de="Im Raum Zürich">In the Zurich area</span></h3>
@@ -802,6 +1203,48 @@ html.js .reveal.is-in { opacity: 1; transform: none; }
   });
   applyLang(lang, false);
 
+  /* ── App showcase tabs (progressive enhancement over anchor links) ── */
+  var tabs = Array.prototype.slice.call(document.querySelectorAll(".app-tab[role=tab]"));
+  var panels = Array.prototype.slice.call(document.querySelectorAll(".app-panel[role=tabpanel]"));
+  function selectApp(id, focus) {
+    var found = false;
+    tabs.forEach(function (t) {
+      var on = t.getAttribute("aria-controls") === id;
+      t.setAttribute("aria-selected", String(on));
+      t.setAttribute("tabindex", on ? "0" : "-1");
+      if (on && focus) t.focus();
+      if (on) found = true;
+    });
+    if (!found) return false;
+    panels.forEach(function (p) { p.hidden = p.id !== id; });
+    return true;
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener("click", function (e) {
+      e.preventDefault();
+      selectApp(t.getAttribute("aria-controls"), false);
+      if (history.replaceState) history.replaceState(null, "", "#" + t.getAttribute("aria-controls"));
+    });
+    t.addEventListener("keydown", function (e) {
+      var next = e.key === "ArrowDown" || e.key === "ArrowRight" ? i + 1 : e.key === "ArrowUp" || e.key === "ArrowLeft" ? i - 1 : e.key === "Home" ? 0 : e.key === "End" ? tabs.length - 1 : -1;
+      if (next < 0) return;
+      e.preventDefault();
+      next = (next + tabs.length) % tabs.length;
+      selectApp(tabs[next].getAttribute("aria-controls"), true);
+    });
+  });
+  /* Hero chips and any other #app-… link switch the tab, then scroll to the section */
+  document.querySelectorAll('a[href^="#app-"]:not([role=tab])').forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      if (selectApp(a.getAttribute("href").slice(1), false)) {
+        e.preventDefault();
+        document.getElementById("apps").scrollIntoView({ behavior: "smooth", block: "start" });
+        if (history.replaceState) history.replaceState(null, "", a.getAttribute("href"));
+      }
+    });
+  });
+  if (location.hash && /^#app-/.test(location.hash)) selectApp(location.hash.slice(1), false);
+
   /* ── Reveal on scroll ── */
   var reveals = document.querySelectorAll(".reveal");
   if ("IntersectionObserver" in window) {
@@ -842,6 +1285,22 @@ html.js .reveal.is-in { opacity: 1; transform: none; }
   });
 })();
 </script>
+
+<!-- ═══════════════ ANALYTICS (placeholder — inert until a token is supplied) ═══════════════
+     Primary: Cloudflare Web Analytics. Cookieless, no fingerprinting, no personal data stored,
+     so no consent banner is needed. TODO (owner): create the site at
+     dash.cloudflare.com → Web Analytics → "Add a site" → appligent.ai, copy the token, replace
+     CF_BEACON_TOKEN below and remove the comment markers around the <script>. Add the same
+     snippet to impressum.html and datenschutz.html, AND update datenschutz.html §1/§4/§6 (draft
+     wording is prepared as an HTML comment there) in the same commit.
+
+     Alternative (also cookieless, EU-hosted, open source): GoatCounter —
+       <script data-goatcounter="https://appligent.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+     (requires a free account at goatcounter.com; "appligent" is a suggested subdomain, not reserved).
+
+     Deliberately NOT used: Google Analytics 4 — would require a consent banner and a full
+     Datenschutz rewrite, and sends data to Google. -->
+<!-- <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "CF_BEACON_TOKEN"}'></script> -->
 
 </body>
 </html>

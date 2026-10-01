@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Appligent AI — iOS Apps & AI Automation from Zurich</title>
-<meta name="description" content="Appligent AI is a Zurich-area app studio. We ship our own iOS apps — ReciPics, Mealog, CalmClick, SubOrbs — and build practical AI automation and mobile apps for Swiss SMEs. No lock-in.">
+<title>Appligent AI — Process Automation for Swiss SMEs, Zurich</title>
+<meta name="description" content="Appligent AI automates back-office processes for Swiss SMEs: Belege and invoice intake, QR-Rechnung and supplier payments, Mahnwesen, MWST preparation, quote follow-ups. Works with bexio, Abacus, Banana, Outlook and Gmail. Zurich area, no lock-in.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://appligent.ai/">
 <link rel="preload" href="/assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -21,38 +21,43 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Appligent AI">
 <meta property="og:url" content="https://appligent.ai/">
-<meta property="og:title" content="Appligent AI — iOS Apps & AI Automation from Zurich">
-<meta property="og:description" content="A Zurich-area app studio. We ship our own iOS apps — ReciPics, Mealog, CalmClick, SubOrbs — and build practical AI automation for Swiss SMEs.">
+<meta property="og:title" content="Appligent AI — Process Automation for Swiss SMEs, Zurich">
+<meta property="og:description" content="We automate the back office of Swiss SMEs — Belege, QR-Rechnung and supplier payments, Mahnwesen, MWST prep, quote follow-ups — with the tools you already use. Zurich area, no lock-in.">
 <meta property="og:image" content="https://appligent.ai/assets/img/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Appligent AI — iOS apps and AI automation, Zurich">
+<meta property="og:image:alt" content="Appligent AI — process automation for Swiss SMEs, Zurich">
 <meta property="og:locale" content="en_CH">
 <meta property="og:locale:alternate" content="de_CH">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Appligent AI — iOS Apps & AI Automation from Zurich">
-<meta name="twitter:description" content="A Zurich-area app studio. We ship our own iOS apps — ReciPics, Mealog, CalmClick, SubOrbs — and build practical AI automation for Swiss SMEs.">
+<meta name="twitter:title" content="Appligent AI — Process Automation for Swiss SMEs, Zurich">
+<meta name="twitter:description" content="We automate the back office of Swiss SMEs — Belege, QR-Rechnung and supplier payments, Mahnwesen, MWST prep, quote follow-ups — with the tools you already use. Zurich area, no lock-in.">
 <meta name="twitter:image" content="https://appligent.ai/assets/img/og.png">
-<meta name="twitter:image:alt" content="Appligent AI — iOS apps and AI automation, Zurich">
+<meta name="twitter:image:alt" content="Appligent AI — process automation for Swiss SMEs, Zurich">
 
-<!-- Structured data: Organization + WebSite + one SoftwareApplication per shipped app.
-     Facts only — app ids/names verified against the App Store on 2026-10-01. No ratings/awards (none exist). -->
+<!-- Structured data: Organization + WebSite + one Service per automation case.
+     Facts only — no ratings, awards or client counts (none exist). -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": ["Organization", "ProfessionalService"],
+      "@type": [
+        "Organization",
+        "ProfessionalService"
+      ],
       "@id": "https://appligent.ai/#org",
       "name": "Appligent AI",
       "url": "https://appligent.ai/",
       "logo": "https://appligent.ai/assets/img/logo.svg",
       "image": "https://appligent.ai/assets/img/og.png",
       "email": "hello@appligent.ai",
-      "description": "Zurich-area app studio shipping its own iOS apps (ReciPics, Mealog, CalmClick, SubOrbs) and building practical AI automation and mobile apps for Swiss SMEs.",
-      "sameAs": ["https://linkedin.com/company/appligent-ai"],
+      "description": "Zurich-area company automating back-office processes for Swiss SMEs: receipt and invoice intake, QR-Rechnung and supplier payments, Mahnwesen, MWST preparation and quote follow-ups, integrated with the tools the business already uses.",
+      "sameAs": [
+        "https://linkedin.com/company/appligent-ai"
+      ],
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Im Gässli 19",
@@ -61,69 +66,138 @@
         "addressRegion": "ZH",
         "addressCountry": "CH"
       },
-      "areaServed": [{ "@type": "Country", "name": "Switzerland" }, { "@type": "Country", "name": "Germany" }, { "@type": "Country", "name": "Austria" }],
-      "serviceType": ["iOS App Development", "AI Automation", "AI Strategy Consulting", "Custom AI Integration"],
-      "knowsLanguage": ["en", "de"]
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "Switzerland"
+        },
+        {
+          "@type": "Country",
+          "name": "Germany"
+        },
+        {
+          "@type": "Country",
+          "name": "Austria"
+        }
+      ],
+      "serviceType": [
+        "Business Process Automation",
+        "AI Automation",
+        "Custom Software Integration",
+        "AI Strategy Consulting"
+      ],
+      "knowsLanguage": [
+        "en",
+        "de"
+      ]
     },
     {
       "@type": "WebSite",
       "@id": "https://appligent.ai/#website",
       "url": "https://appligent.ai/",
       "name": "Appligent AI",
-      "publisher": { "@id": "https://appligent.ai/#org" },
-      "inLanguage": ["en", "de"]
+      "publisher": {
+        "@id": "https://appligent.ai/#org"
+      },
+      "inLanguage": [
+        "en",
+        "de"
+      ]
     },
     {
-      "@type": "SoftwareApplication",
-      "@id": "https://appligent.ai/#recipics",
-      "name": "ReciPics",
-      "alternateName": "Recipe Keeper - ReciPics",
-      "url": "https://recipics.app/",
-      "installUrl": "https://apps.apple.com/app/id6740248018",
-      "applicationCategory": "LifestyleApplication",
-      "operatingSystem": "iOS",
-      "description": "Smart recipe keeper: scan ingredients, photograph a dish or ask by voice — ReciPics turns it into a structured recipe in your own cookbook.",
-      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-      "author": { "@id": "https://appligent.ai/#org" }
+      "@type": "Service",
+      "@id": "https://appligent.ai/#case-belege",
+      "name": "Receipt and invoice intake automation",
+      "serviceType": "Business Process Automation",
+      "description": "Collection of Belege from email, photo and cloud folders, data extraction, booking into bexio, Abacus or Banana with the original attached, and a tracked queue for problem items.",
+      "provider": {
+        "@id": "https://appligent.ai/#org"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Switzerland"
+      },
+      "url": "https://appligent.ai/#case-belege",
+      "availableLanguage": [
+        "de",
+        "en"
+      ]
     },
     {
-      "@type": "SoftwareApplication",
-      "@id": "https://appligent.ai/#mealog",
-      "name": "Mealog",
-      "alternateName": "Mealog: AI Food Diary",
-      "url": "https://apps.apple.com/app/id6800812845",
-      "installUrl": "https://apps.apple.com/app/id6800812845",
-      "applicationCategory": "HealthApplication",
-      "operatingSystem": "iOS",
-      "description": "AI food diary: a photo, a voice note or one line of text becomes calories, protein, carbs and fat — logged in seconds, every estimate editable.",
-      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-      "author": { "@id": "https://appligent.ai/#org" }
+      "@type": "Service",
+      "@id": "https://appligent.ai/#case-zahlungen",
+      "name": "Supplier invoice and payment run automation",
+      "serviceType": "Business Process Automation",
+      "description": "Capture of QR-Rechnung, PDF and eBill supplier invoices, matching to orders, one-tap approval of exceptions, pain.001 payment files for e-banking and automatic payment notices.",
+      "provider": {
+        "@id": "https://appligent.ai/#org"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Switzerland"
+      },
+      "url": "https://appligent.ai/#case-zahlungen",
+      "availableLanguage": [
+        "de",
+        "en"
+      ]
     },
     {
-      "@type": "SoftwareApplication",
-      "@id": "https://appligent.ai/#calmclick",
-      "name": "CalmClick",
-      "alternateName": "CalmClick: Is This Real?",
-      "url": "https://apps.apple.com/app/id6783985536",
-      "installUrl": "https://apps.apple.com/app/id6783985536",
-      "applicationCategory": "UtilitiesApplication",
-      "operatingSystem": "iOS",
-      "description": "Photograph a confusing message, letter or pop-up and get a calm, plain-language verdict — Safe, Be careful or Warning — with exact next steps.",
-      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-      "author": { "@id": "https://appligent.ai/#org" }
+      "@type": "Service",
+      "@id": "https://appligent.ai/#case-mahnwesen",
+      "name": "Mahnwesen (dunning) automation",
+      "serviceType": "Business Process Automation",
+      "description": "Daily matching of open invoices against camt.054 bank payments, a configurable reminder and Mahnung ladder with QR-Rechnung and TWINT link, automatic closing on payment and a Betreibung-ready file for the rest.",
+      "provider": {
+        "@id": "https://appligent.ai/#org"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Switzerland"
+      },
+      "url": "https://appligent.ai/#case-mahnwesen",
+      "availableLanguage": [
+        "de",
+        "en"
+      ]
     },
     {
-      "@type": "SoftwareApplication",
-      "@id": "https://appligent.ai/#suborbs",
-      "name": "SubOrbs",
-      "alternateName": "SubOrbs: Subscription Tracker",
-      "url": "https://apps.apple.com/app/id6790872622",
-      "installUrl": "https://apps.apple.com/app/id6790872622",
-      "applicationCategory": "FinanceApplication",
-      "operatingSystem": "iOS",
-      "description": "Subscription tracker: every subscription orbits your total spend, sized by cost and placed by renewal date, with reminders before payments land.",
-      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-      "author": { "@id": "https://appligent.ai/#org" }
+      "@type": "Service",
+      "@id": "https://appligent.ai/#case-mwst",
+      "name": "MWST (VAT) return preparation automation",
+      "serviceType": "Business Process Automation",
+      "description": "Continuous MWST-code checks on booked Belege, a reconciled quarterly draft of the return for review by the owner or Treuhänder, filing via the ESTV ePortal and scheduled payment.",
+      "provider": {
+        "@id": "https://appligent.ai/#org"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Switzerland"
+      },
+      "url": "https://appligent.ai/#case-mwst",
+      "availableLanguage": [
+        "de",
+        "en"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://appligent.ai/#case-offerten",
+      "name": "Quote follow-up and appointment reminder automation",
+      "serviceType": "Business Process Automation",
+      "description": "Tracking of sent quotes and booked appointments, drafted follow-ups for approval, SMS and email reminders with rescheduling, and reply handling into order, invoice or pipeline list.",
+      "provider": {
+        "@id": "https://appligent.ai/#org"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Switzerland"
+      },
+      "url": "https://appligent.ai/#case-offerten",
+      "availableLanguage": [
+        "de",
+        "en"
+      ]
     }
   ]
 }
@@ -358,19 +432,6 @@ html.js .reveal.is-in { opacity: 1; transform: none; }
 .btn-ghost { border: 1px solid var(--line); color: var(--ink); background: transparent; }
 .btn-ghost:hover { border-color: var(--accent-ink); color: var(--accent-ink); }
 
-/* Hero app strip — the four shipped apps as quiet proof, linking into the showcase. */
-.hero-apps {
-  margin-top: 64px; display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center;
-  font-size: 13px; color: var(--ink2);
-}
-.hero-apps .lbl { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; margin-right: 6px; }
-.hero-apps a {
-  display: inline-flex; align-items: center; gap: 8px; padding: 7px 12px 7px 8px; border-radius: 99px;
-  border: 1px solid var(--line); background: var(--glass); color: var(--ink); font-weight: 600; font-size: 13px;
-  transition: border-color .15s, transform .15s;
-}
-.hero-apps a:hover { border-color: var(--accent-ink); transform: translateY(-1px); }
-.hero-apps .dot { width: 18px; height: 18px; border-radius: 6px; display: inline-block; }
 .stats {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px;
   border-top: 1px solid var(--line); margin-top: 40px; padding: 28px 0 0;
@@ -386,115 +447,122 @@ html.js .reveal.is-in { opacity: 1; transform: none; }
 .sec-title { font-size: clamp(30px, 3.6vw, 46px); margin: 16px 0 0; max-width: 640px; }
 .sec-sub { margin: 0; color: var(--ink2); font-size: 15.5px; max-width: 360px; line-height: 1.55; }
 
-/* ── Examples (grid of cells) ── */
-.grid-cells {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 48px;
-}
-.cell {
-  background: color-mix(in srgb, var(--bg) 72%, transparent); padding: 32px 28px; display: flex; flex-direction: column; gap: 14px;
-  min-height: 200px; transition: background .2s;
-}
-.cell:hover { background: var(--glass); }
-.cell .idx { font-family: var(--font-mono); font-size: 11px; color: var(--ink2); }
-.cell h3 { margin: 0; font-size: 19px; font-weight: 650; letter-spacing: -0.015em; }
-.cell p { margin: 0; color: var(--ink2); font-size: 14.5px; line-height: 1.6; flex: 1; text-wrap: pretty; }
-.cell .metric { font-family: var(--font-mono); font-size: 12px; color: var(--accent-ink); }
-
-/* ── What we do: app showcase ──
-   Markup is a tablist + 4 panels. Without JS every panel is visible (stacked) and the tabs are
-   plain in-page anchors; with JS (html.js) one panel shows at a time. */
-.showcase { margin-top: 48px; display: grid; grid-template-columns: minmax(220px, 300px) 1fr; gap: 32px; align-items: start; }
-.app-tabs { display: flex; flex-direction: column; gap: 6px; position: sticky; top: 84px; }
-.app-tab {
-  display: grid; grid-template-columns: 40px 1fr auto; align-items: center; gap: 14px;
+/* ── Cases: tabbed automation flows ──
+   Markup is a tablist + one panel per case. Without JS every panel renders stacked and the tabs are
+   plain in-page anchors; with JS (html.js) one panel shows at a time. Each panel holds a 3-step
+   "flow" that animates on hover / focus / tab selection (and loops gently on touch devices). */
+.fc-wrap { margin-top: 48px; display: grid; grid-template-columns: minmax(220px, 300px) 1fr; gap: 32px; align-items: start; }
+.fc-tabs { display: flex; flex-direction: column; gap: 6px; position: sticky; top: 84px; }
+.fc-tab {
+  display: grid; grid-template-columns: 36px 1fr auto; align-items: center; gap: 14px;
   padding: 12px 14px; border-radius: 14px; border: 1px solid transparent;
   background: transparent; color: var(--ink); text-align: left; cursor: pointer;
   font-family: var(--font-body); font-size: 15px; font-weight: 600; letter-spacing: -0.01em;
   transition: background .15s, border-color .15s, transform .15s;
 }
-.app-tab small { display: block; font-weight: 400; font-size: 12.5px; color: var(--ink2); margin-top: 1px; }
-.app-tab .arrow { font-family: var(--font-mono); color: var(--ink2); opacity: 0; transition: opacity .15s, transform .15s; }
-.app-tab:hover { background: var(--glass); border-color: var(--line); }
-.app-tab[aria-selected="true"] { background: var(--glass); border-color: var(--line); box-shadow: var(--shadow); }
-.app-tab[aria-selected="true"] .arrow, .app-tab:hover .arrow { opacity: 1; transform: translateX(2px); }
-.app-tab:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 2px; }
-.app-glyph {
-  width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center;
-  color: #fff; font-family: var(--font-display); font-weight: 700; font-size: 17px; letter-spacing: -0.02em;
-  box-shadow: inset 0 -1px 0 rgba(0,0,0,0.15), 0 4px 12px -6px rgba(0,0,0,0.4);
+.fc-tab small { display: block; font-weight: 400; font-size: 12.5px; color: var(--ink2); margin-top: 1px; }
+.fc-tab .arrow { font-family: var(--font-mono); color: var(--ink2); opacity: 0; transition: opacity .15s, transform .15s; }
+.fc-tab:hover { background: var(--glass); border-color: var(--line); }
+.fc-tab[aria-selected="true"] { background: var(--glass); border-color: var(--line); box-shadow: var(--shadow); }
+.fc-tab[aria-selected="true"] .arrow, .fc-tab:hover .arrow { opacity: 1; transform: translateX(2px); }
+.fc-tab:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 2px; }
+.fc-num {
+  width: 36px; height: 36px; border-radius: 11px; display: grid; place-items: center;
+  font-family: var(--font-mono); font-size: 12px; color: var(--accent-ink);
+  border: 1px solid var(--line); background: color-mix(in srgb, var(--bg2) 70%, transparent);
 }
-/* Per-app accent pairs (brand-neutral placeholders; swap for real app-icon colours any time). */
-.app-recipics  { --app-a: #FF7A3D; --app-b: #FFB03D; }
-.app-mealog    { --app-a: #2EB872; --app-b: #7FE0A6; }
-.app-calmclick { --app-a: #2F8BFF; --app-b: #7CC4FF; }
-.app-suborbs   { --app-a: #6D4AFF; --app-b: #C56BFF; }
-.app-glyph, .hero-apps .dot { background: linear-gradient(135deg, var(--app-a), var(--app-b)); }
+.fc-tab[aria-selected="true"] .fc-num { background: var(--grad); color: var(--on-accent); border-color: transparent; }
 
-.app-panels { min-height: 560px; }
-.app-panel {
-  display: grid; grid-template-columns: minmax(0, 1fr) minmax(240px, 300px); gap: 40px; align-items: center;
+.fc-panels { min-height: 520px; }
+.fc-panel {
   padding: 36px; border-radius: 24px; border: 1px solid var(--line); background: var(--glass);
   -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); box-shadow: var(--shadow);
 }
-html.js .app-panel[hidden] { display: none; }
-html:not(.js) .app-panel + .app-panel { margin-top: 24px; }
-html:not(.js) .app-tabs { position: static; }
-.app-panel .kicker { display: flex; align-items: center; gap: 10px; }
-.app-panel h3 { margin: 14px 0 0; font-size: clamp(26px, 2.8vw, 36px); line-height: 1.08; letter-spacing: -0.025em; font-family: var(--font-display); font-weight: var(--disp-weight); text-wrap: balance; }
-.app-panel .value { margin: 16px 0 0; font-size: 16.5px; line-height: 1.6; color: var(--ink2); max-width: 520px; text-wrap: pretty; }
-.app-panel .chips { margin-top: 20px; }
-.app-panel .store-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; align-items: center; }
-.store-badge {
-  display: inline-flex; align-items: center; gap: 9px; padding: 9px 16px 9px 12px; border-radius: 10px;
-  background: var(--ink); color: var(--bg); font-size: 13.5px; font-weight: 600; line-height: 1.1;
-  transition: transform .15s, opacity .15s;
-}
-.store-badge:hover { transform: translateY(-2px); color: var(--bg); opacity: 0.92; }
-.store-badge small { display: block; font-weight: 400; font-size: 10px; opacity: 0.7; letter-spacing: 0.02em; margin-bottom: 2px; }
-.store-badge svg { width: 18px; height: 18px; flex-shrink: 0; }
-.link-ghost { display: inline-flex; align-items: center; gap: 6px; padding: 9px 14px; border-radius: 10px; border: 1px solid var(--line); color: var(--ink); font-size: 13.5px; font-weight: 600; }
-.link-ghost:hover { border-color: var(--accent-ink); color: var(--accent-ink); }
+html.js .fc-panel[hidden] { display: none; }
+html:not(.js) .fc-panel + .fc-panel { margin-top: 24px; }
+html:not(.js) .fc-tabs { position: static; }
+.fc-panel .kicker { display: flex; align-items: center; gap: 10px; }
+.fc-panel h3 { margin: 14px 0 0; font-size: clamp(24px, 2.6vw, 32px); line-height: 1.1; letter-spacing: -0.025em; font-family: var(--font-display); font-weight: var(--disp-weight); text-wrap: balance; max-width: 640px; }
+.fc-pain { margin: 14px 0 0; font-size: 15.5px; line-height: 1.6; color: var(--ink2); max-width: 640px; text-wrap: pretty; }
+.fc-pain a { font-family: var(--font-mono); font-size: 11.5px; white-space: nowrap; margin-left: 6px; border-bottom: 1px dotted currentColor; }
+.fc-pain a:hover { color: var(--accent-ink); }
 
-/* CSS phone frame with a stylised, abstract screen per app (not a real screenshot). */
-.device { justify-self: center; width: 100%; max-width: 260px; aspect-ratio: 9 / 19; position: relative; }
-.device .shell {
-  position: absolute; inset: 0; border-radius: 40px; padding: 10px;
-  background: linear-gradient(160deg, #2A2E2C, #0F1211); box-shadow: 0 30px 60px -28px rgba(0,0,0,0.6), inset 0 0 0 1px rgba(255,255,255,0.08);
+/* The flow: three nodes joined by a line that "fills" step by step. */
+.flow { list-style: none; margin: 28px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; counter-reset: step; }
+.flow-step { position: relative; padding: 26px 20px 0 0; --i: 0; counter-increment: step; }
+.flow-node::before { content: counter(step); }
+.flow-step:nth-child(2) { --i: 1; }
+.flow-step:nth-child(3) { --i: 2; }
+.flow-step::before { /* base line */
+  content: ""; position: absolute; left: 0; right: 0; top: 13px; height: 2px;
+  background: var(--line); border-radius: 2px;
 }
-.device .screen {
-  position: relative; width: 100%; height: 100%; border-radius: 31px; overflow: hidden;
-  background: linear-gradient(170deg, color-mix(in srgb, var(--app-a) 18%, var(--bg2)), var(--bg2) 60%);
-  display: flex; flex-direction: column; gap: 12px; padding: 44px 16px 20px; color: var(--ink);
+.flow-step:last-child::before { right: 20px; }
+.flow-step::after { /* filled line */
+  content: ""; position: absolute; left: 0; right: 0; top: 13px; height: 2px; border-radius: 2px;
+  background: var(--grad); transform-origin: left; transform: scaleX(0);
 }
-.device .island { position: absolute; top: 12px; left: 50%; transform: translateX(-50%); width: 84px; height: 24px; border-radius: 99px; background: #0F1211; }
-.scr-title { font-family: var(--font-display); font-weight: 700; font-size: 15px; letter-spacing: -0.02em; }
-.scr-card { border-radius: 14px; background: color-mix(in srgb, var(--bg) 78%, transparent); border: 1px solid var(--line); padding: 12px; display: flex; flex-direction: column; gap: 8px; }
-.scr-line { height: 8px; border-radius: 99px; background: color-mix(in srgb, var(--ink2) 28%, transparent); }
-.scr-line.w60 { width: 60%; } .scr-line.w40 { width: 40%; } .scr-line.w80 { width: 80%; }
-.scr-pill { align-self: flex-start; font-family: var(--font-mono); font-size: 10px; padding: 3px 8px; border-radius: 99px; color: #fff; background: linear-gradient(135deg, var(--app-a), var(--app-b)); }
-.scr-viewfinder { aspect-ratio: 4 / 3; border-radius: 14px; position: relative; background: linear-gradient(135deg, color-mix(in srgb, var(--app-a) 45%, var(--bg2)), color-mix(in srgb, var(--app-b) 35%, var(--bg2))); }
-.scr-viewfinder::before { content: ""; position: absolute; inset: 14px; border: 2px solid rgba(255,255,255,0.75); border-radius: 10px; mask: linear-gradient(#000 0 0) top/100% 22px no-repeat, linear-gradient(#000 0 0) bottom/100% 22px no-repeat, linear-gradient(#000 0 0) left/22px 100% no-repeat, linear-gradient(#000 0 0) right/22px 100% no-repeat; -webkit-mask: linear-gradient(#000 0 0) top/100% 22px no-repeat, linear-gradient(#000 0 0) bottom/100% 22px no-repeat, linear-gradient(#000 0 0) left/22px 100% no-repeat, linear-gradient(#000 0 0) right/22px 100% no-repeat; }
-.scr-ring { width: 108px; height: 108px; border-radius: 50%; margin: 6px auto; display: grid; place-items: center; background: conic-gradient(var(--app-a) 0 62%, color-mix(in srgb, var(--ink2) 22%, transparent) 62% 100%); }
-.scr-ring span { width: 82px; height: 82px; border-radius: 50%; background: var(--bg2); display: grid; place-items: center; font-family: var(--font-display); font-weight: 700; font-size: 15px; letter-spacing: -0.02em; }
-.scr-macros { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
-.scr-macros div { border-radius: 10px; padding: 8px 6px; text-align: center; font-family: var(--font-mono); font-size: 10px; color: var(--ink2); background: color-mix(in srgb, var(--bg) 78%, transparent); border: 1px solid var(--line); }
-.scr-macros b { display: block; font-family: var(--font-display); font-size: 14px; color: var(--ink); }
-.scr-verdict { border-radius: 14px; padding: 14px; color: #fff; background: linear-gradient(135deg, var(--app-a), var(--app-b)); display: flex; flex-direction: column; gap: 6px; }
-.scr-verdict b { font-family: var(--font-display); font-size: 18px; letter-spacing: -0.02em; }
-.scr-verdict span { font-size: 11px; opacity: 0.9; line-height: 1.4; }
-.scr-orbit { position: relative; aspect-ratio: 1; margin: 4px 10px; }
-.scr-orbit .o { position: absolute; border-radius: 50%; border: 1px dashed color-mix(in srgb, var(--ink2) 40%, transparent); }
-.scr-orbit .o1 { inset: 0; } .scr-orbit .o2 { inset: 18%; } .scr-orbit .o3 { inset: 36%; }
-.scr-orbit .c { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 46px; height: 46px; border-radius: 50%; background: linear-gradient(135deg, var(--app-a), var(--app-b)); color: #fff; display: grid; place-items: center; font-family: var(--font-mono); font-size: 10px; }
-.scr-orbit .p { position: absolute; border-radius: 50%; background: var(--app-b); box-shadow: 0 0 0 3px color-mix(in srgb, var(--bg2) 80%, transparent); }
-.scr-orbit .p1 { width: 16px; height: 16px; left: 8%;  top: 30%; }
-.scr-orbit .p2 { width: 11px; height: 11px; right: 14%; top: 16%; background: var(--app-a); }
-.scr-orbit .p3 { width: 20px; height: 20px; right: 10%; bottom: 20%; }
-.scr-orbit .p4 { width: 9px;  height: 9px;  left: 34%; bottom: 8%; background: var(--app-a); }
+.flow-step:last-child::after { right: 20px; }
+.flow-node {
+  position: absolute; top: 0; left: 0; z-index: 1; width: 28px; height: 28px; border-radius: 50%;
+  display: grid; place-items: center; font-family: var(--font-mono); font-size: 11px;
+  color: var(--ink2); background: var(--bg2); border: 2px solid var(--line);
+  transition: color .3s, border-color .3s, background .3s, box-shadow .3s;
+}
+.flow-step b { display: block; margin-top: 14px; font-size: 15px; font-weight: 650; letter-spacing: -0.01em; }
+.flow-step > span { display: block; margin-top: 6px; font-size: 13.5px; line-height: 1.55; color: var(--ink2); text-wrap: pretty; padding-right: 8px; }
+.flow-step .flow-io { display: inline-block; margin-top: 10px; font-family: var(--font-mono); font-size: 11px; color: var(--accent-ink); }
 
-/* Services (compact row under the showcase) */
-.svc-head { margin-top: 72px; }
+@keyframes flowLine { to { transform: scaleX(1); } }
+@keyframes flowNode {
+  to { color: var(--on-accent); background: var(--accent); border-color: var(--accent); box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 18%, transparent); }
+}
+@keyframes flowLineLoop { 0%, 8% { transform: scaleX(0); } 20%, 72% { transform: scaleX(1); } 84%, 100% { transform: scaleX(0); } }
+@keyframes flowNodeLoop {
+  0%, 8% { color: var(--ink2); background: var(--bg2); border-color: var(--line); box-shadow: none; }
+  20%, 72% { color: var(--on-accent); background: var(--accent); border-color: var(--accent); box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 18%, transparent); }
+  84%, 100% { color: var(--ink2); background: var(--bg2); border-color: var(--line); box-shadow: none; }
+}
+/* Play on hover, keyboard focus, or when JS marks the panel as freshly selected. */
+.flow:hover .flow-step::after, .flow:focus-within .flow-step::after, .fc-panel.is-playing .flow-step::after {
+  animation: flowLine .55s cubic-bezier(.3,.7,.2,1) forwards; animation-delay: calc(var(--i) * .5s);
+}
+.flow:hover .flow-node, .flow:focus-within .flow-node, .fc-panel.is-playing .flow-node {
+  animation: flowNode .35s ease-out forwards; animation-delay: calc(var(--i) * .5s);
+}
+.flow-step:first-child::after { transform: scaleX(1); opacity: 0; } /* the first node has no incoming line */
+/* Touch devices have no hover: loop gently instead. */
+@media (hover: none) {
+  .flow .flow-step::after { animation: flowLineLoop 5s ease-in-out infinite; animation-delay: calc(var(--i) * .6s); }
+  .flow .flow-node { animation: flowNodeLoop 5s ease-in-out infinite; animation-delay: calc(var(--i) * .6s); }
+}
+
+/* Exception queue (case 1): the items a human must still touch, with their contact state. */
+.fc-queue { margin-top: 22px; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: color-mix(in srgb, var(--bg2) 60%, transparent); }
+.fc-queue .qh { display: flex; justify-content: space-between; gap: 12px; padding: 10px 14px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink2); border-bottom: 1px solid var(--line); }
+.fc-queue .qr { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 12px; padding: 10px 14px; font-size: 13.5px; }
+.fc-queue .qr + .qr { border-top: 1px solid var(--line); }
+.fc-queue .qr span { color: var(--ink2); }
+.fc-queue .qr .who { color: var(--ink); font-weight: 600; }
+.qs { font-family: var(--font-mono); font-size: 11px; padding: 3px 9px; border-radius: 99px; border: 1px solid var(--line); white-space: nowrap; }
+.qs.contact { color: var(--accent-ink); border-color: color-mix(in srgb, var(--accent-ink) 40%, transparent); }
+.qs.waiting { color: #B07A00; border-color: color-mix(in srgb, #B07A00 40%, transparent); }
+.qs.answered { color: #1E8A5A; border-color: color-mix(in srgb, #1E8A5A 40%, transparent); }
+:root[data-theme="dark"] .qs.waiting { color: #F0B840; }
+:root[data-theme="dark"] .qs.answered { color: #4FD38F; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .qs.waiting { color: #F0B840; }
+  :root:not([data-theme="light"]) .qs.answered { color: #4FD38F; }
+}
+
+.fc-foot { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 28px; margin-top: 28px; padding-top: 22px; border-top: 1px solid var(--line); }
+.fc-foot h4 { margin: 0 0 10px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink2); font-weight: 500; }
+.fc-outcome { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.fc-outcome li { position: relative; padding-left: 18px; font-size: 14px; line-height: 1.55; color: var(--ink); text-wrap: pretty; }
+.fc-outcome li::before { content: "→"; position: absolute; left: 0; color: var(--accent-ink); font-family: var(--font-mono); }
+.fc-tools .chips span { color: var(--ink); background: color-mix(in srgb, var(--bg2) 60%, transparent); }
+
+/* Services (four-column row) */
 .svc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-top: 32px; }
 .svc { border-top: 2px solid var(--ink); padding-top: 20px; display: flex; flex-direction: column; gap: 12px; }
 .svc h3 { margin: 0; font-size: 18px; font-weight: 650; letter-spacing: -0.015em; }
@@ -630,18 +698,18 @@ html:not(.js) .app-tabs { position: static; }
 
 /* ── Responsive ── */
 @media (max-width: 960px) {
-  .showcase { grid-template-columns: 1fr; gap: 20px; }
-  .app-tabs {
+  .fc-wrap { grid-template-columns: 1fr; gap: 20px; }
+  .fc-tabs {
     position: static; flex-direction: row; gap: 8px; overflow-x: auto; padding: 2px 2px 8px;
     scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch; scrollbar-width: none;
   }
-  .app-tabs::-webkit-scrollbar { display: none; }
-  .app-tab { flex: 0 0 auto; grid-template-columns: 32px 1fr; padding: 10px 14px 10px 10px; scroll-snap-align: start; border-color: var(--line); }
-  .app-tab .arrow, .app-tab small { display: none; }
-  .app-glyph { width: 32px; height: 32px; border-radius: 10px; font-size: 14px; }
-  .app-panel { grid-template-columns: 1fr; gap: 28px; padding: 24px; }
-  .device { grid-row: 1; max-width: 190px; }
-  .app-panels { min-height: 0; }
+  .fc-tabs::-webkit-scrollbar { display: none; }
+  .fc-tab { flex: 0 0 auto; grid-template-columns: 30px 1fr; padding: 10px 14px 10px 10px; scroll-snap-align: start; border-color: var(--line); }
+  .fc-tab .arrow, .fc-tab small { display: none; }
+  .fc-num { width: 30px; height: 30px; border-radius: 9px; font-size: 11px; }
+  .fc-panel { padding: 24px; }
+  .fc-panels { min-height: 0; }
+  .fc-foot { grid-template-columns: 1fr; gap: 20px; }
 }
 @media (max-width: 860px) {
   .faq-wrap { grid-template-columns: 1fr; gap: 24px; }
@@ -652,9 +720,18 @@ html:not(.js) .app-tabs { position: static; }
   .section { padding-top: 88px; }
   .hero { padding-top: 72px; }
   .hero-row { gap: 28px; }
-  .app-panel { padding: 20px 16px; border-radius: 18px; }
+  .fc-panel { padding: 20px 16px; border-radius: 18px; }
+  /* Vertical stepper: the line runs down the left, nodes sit on it. */
+  .flow { grid-template-columns: 1fr; gap: 18px; }
+  .flow-step { padding: 0 0 0 42px; }
+  .flow-step::before, .flow-step::after { left: 13px; right: auto; top: 0; bottom: -18px; width: 2px; height: auto; transform-origin: top; }
+  .flow-step::after { transform: scaleY(0); }
+  .flow-step:last-child::before, .flow-step:last-child::after { display: none; }
+  .flow-step:first-child::after { transform: scaleY(1); opacity: 1; }
+  .flow-step b { margin-top: 3px; }
+  @keyframes flowLine { to { transform: scaleY(1); } }
+  @keyframes flowLineLoop { 0%, 8% { transform: scaleY(0); } 20%, 72% { transform: scaleY(1); } 84%, 100% { transform: scaleY(0); } }
   .why-band { border-radius: 18px; }
-  .hero-apps .lbl { flex-basis: 100%; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -712,13 +789,6 @@ html:not(.js) .app-tabs { position: static; }
         <a href="#examples" class="btn btn-ghost" data-en="See concrete examples" data-de="Konkrete Beispiele ansehen">See concrete examples</a>
       </div>
     </div>
-    <div class="hero-apps reveal" aria-label="Apps we ship">
-      <span class="lbl" data-en="Our apps on the App Store" data-de="Unsere Apps im App Store">Our apps on the App Store</span>
-      <a href="#app-recipics" class="app-recipics"><span class="dot" aria-hidden="true"></span>ReciPics</a>
-      <a href="#app-mealog" class="app-mealog"><span class="dot" aria-hidden="true"></span>Mealog</a>
-      <a href="#app-calmclick" class="app-calmclick"><span class="dot" aria-hidden="true"></span>CalmClick</a>
-      <a href="#app-suborbs" class="app-suborbs"><span class="dot" aria-hidden="true"></span>SubOrbs</a>
-    </div>
     <div class="stats reveal">
       <div class="stat"><span class="num">1</span><span class="lbl" data-en="business day to a first response" data-de="Arbeitstag bis zur ersten Antwort">business day to a first response</span></div>
       <div class="stat"><span class="num">2–6</span><span class="lbl" data-en="weeks for a typical first project" data-de="Wochen für ein typisches erstes Projekt">weeks for a typical first project</span></div>
@@ -726,215 +796,259 @@ html:not(.js) .app-tabs { position: static; }
     </div>
   </section>
 
-  <!-- ═══════════════ EXAMPLES ═══════════════ -->
+  <!-- ═══════════════ CASES ═══════════════ -->
   <section class="section" id="examples">
     <div class="sec-head-row reveal">
       <div>
-        <div class="kicker" data-en="Concrete examples" data-de="Konkrete Beispiele">Concrete examples</div>
-        <h2 class="h-display sec-title" data-en="What automation actually looks like" data-de="So sieht Automatisierung in der Praxis aus">What automation actually looks like</h2>
+        <div class="kicker" data-en="Concrete cases" data-de="Konkrete Fälle">Concrete cases</div>
+        <h2 class="h-display sec-title" data-en="Five back-office processes we automate — step by step." data-de="Fünf Backoffice-Prozesse, die wir automatisieren — Schritt für Schritt.">Five back-office processes we automate — step by step.</h2>
       </div>
-      <p class="sec-sub" data-en="The things we build most often — with the tools you already use." data-de="Die Lösungen, die wir am häufigsten bauen — mit den Tools, die Sie bereits nutzen.">The things we build most often — with the tools you already use.</p>
+      <p class="sec-sub" data-en="Each case: the pain, three steps, what changes. Numbers only where a Swiss source measured them." data-de="Pro Fall: das Problem, drei Schritte, was sich ändert. Zahlen nur dort, wo eine Schweizer Quelle sie gemessen hat.">Each case: the pain, three steps, what changes. Numbers only where a Swiss source measured them.</p>
     </div>
-    <div class="grid-cells">
-      <div class="cell reveal">
-        <div class="idx">01</div>
-        <h3 data-en="Invoice &amp; receipt processing" data-de="Rechnungsverarbeitung">Invoice &amp; receipt processing</h3>
-        <p data-en="Invoices arrive as PDF or email → data is extracted, checked against orders, and booked into Bexio or Abacus. You approve exceptions only." data-de="Rechnungen kommen als PDF oder E-Mail → Daten werden extrahiert, gegen Bestellungen geprüft und in Bexio oder Abacus verbucht. Sie prüfen nur Ausnahmen.">Invoices arrive as PDF or email → data is extracted, checked against orders, and booked into Bexio or Abacus. You approve exceptions only.</p>
-        <div class="metric" data-en="→ ~6 h/week saved" data-de="→ ~6 Std./Woche gespart">→ ~6 h/week saved</div>
+<!-- CASES:START (generated by agents-artifacts/ceo/build_cases.py — edit there, not here) -->
+    <div class="fc-wrap reveal">
+      <div class="fc-tabs" role="tablist" aria-label="Automation cases" aria-orientation="vertical">
+        <a class="fc-tab" role="tab" id="tab-case-belege" href="#case-belege" aria-controls="case-belege" aria-selected="true">
+          <span class="fc-num" aria-hidden="true">01</span>
+          <span><span data-en="Belege → Buchhaltung" data-de="Belege → Buchhaltung">Belege → Buchhaltung</span><small data-en="Receipts collected, extracted, booked" data-de="Belege sammeln, erfassen, verbuchen">Receipts collected, extracted, booked</small></span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="fc-tab" role="tab" id="tab-case-zahlungen" href="#case-zahlungen" aria-controls="case-zahlungen" aria-selected="false" tabindex="-1">
+          <span class="fc-num" aria-hidden="true">02</span>
+          <span><span data-en="Supplier invoices &amp; payments" data-de="Lieferantenrechnungen &amp; Zahlungen">Supplier invoices &amp; payments</span><small data-en="QR-Rechnung in, one payment run out" data-de="QR-Rechnung rein, ein Zahlungslauf raus">QR-Rechnung in, one payment run out</small></span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="fc-tab" role="tab" id="tab-case-mahnwesen" href="#case-mahnwesen" aria-controls="case-mahnwesen" aria-selected="false" tabindex="-1">
+          <span class="fc-num" aria-hidden="true">03</span>
+          <span><span data-en="Mahnwesen" data-de="Mahnwesen">Mahnwesen</span><small data-en="Receivables chased without the phone round" data-de="Forderungen nachfassen ohne Telefonrunde">Receivables chased without the phone round</small></span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="fc-tab" role="tab" id="tab-case-mwst" href="#case-mwst" aria-controls="case-mwst" aria-selected="false" tabindex="-1">
+          <span class="fc-num" aria-hidden="true">04</span>
+          <span><span data-en="MWST preparation" data-de="MWST-Vorbereitung">MWST preparation</span><small data-en="Quarterly return without the end-of-quarter scramble" data-de="Quartalsabrechnung ohne Endspurt">Quarterly return without the end-of-quarter scramble</small></span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="fc-tab" role="tab" id="tab-case-offerten" href="#case-offerten" aria-controls="case-offerten" aria-selected="false" tabindex="-1">
+          <span class="fc-num" aria-hidden="true">05</span>
+          <span><span data-en="Quotes &amp; appointments" data-de="Offerten &amp; Termine">Quotes &amp; appointments</span><small data-en="No quote and no appointment goes quiet" data-de="Keine Offerte, kein Termin bleibt still">No quote and no appointment goes quiet</small></span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
       </div>
-      <div class="cell reveal">
-        <div class="idx">02</div>
-        <h3 data-en="Offer &amp; quote drafting" data-de="Offerten-Erstellung">Offer &amp; quote drafting</h3>
-        <p data-en="A short brief becomes a complete offer in your own template — prices, terms, and references from past projects included." data-de="Aus einem kurzen Briefing wird eine vollständige Offerte in Ihrer Vorlage — inklusive Preisen, Konditionen und Referenzen.">A short brief becomes a complete offer in your own template — prices, terms, and references from past projects included.</p>
-        <div class="metric" data-en="→ 15 min instead of 2 h" data-de="→ 15 Min. statt 2 Std.">→ 15 min instead of 2 h</div>
-      </div>
-      <div class="cell reveal">
-        <div class="idx">03</div>
-        <h3 data-en="Inbox triage &amp; replies" data-de="E-Mail-Triage &amp; Antworten">Inbox triage &amp; replies</h3>
-        <p data-en="Incoming mail is sorted by topic and urgency; standard requests get a drafted reply waiting for your OK." data-de="Eingehende Mails werden nach Thema und Dringlichkeit sortiert; Standardanfragen erhalten einen Antwortentwurf zur Freigabe.">Incoming mail is sorted by topic and urgency; standard requests get a drafted reply waiting for your OK.</p>
-        <div class="metric" data-en="→ 50–100 mails/day handled" data-de="→ 50–100 Mails/Tag">→ 50–100 mails/day handled</div>
-      </div>
-      <div class="cell reveal">
-        <div class="idx">04</div>
-        <h3 data-en="Meeting notes → CRM" data-de="Gesprächsnotizen → CRM">Meeting notes → CRM</h3>
-        <p data-en="Calls are transcribed and summarised; contacts, follow-ups, and deadlines land in your CRM automatically." data-de="Anrufe werden transkribiert und zusammengefasst; Kontakte, Follow-ups und Fristen landen automatisch im CRM.">Calls are transcribed and summarised; contacts, follow-ups, and deadlines land in your CRM automatically.</p>
-        <div class="metric" data-en="→ 0 forgotten follow-ups" data-de="→ 0 vergessene Follow-ups">→ 0 forgotten follow-ups</div>
-      </div>
-      <div class="cell reveal">
-        <div class="idx">05</div>
-        <h3 data-en="Weekly reporting" data-de="Wöchentliches Reporting">Weekly reporting</h3>
-        <p data-en="Numbers are pulled from your tools overnight and assembled into the report your Monday meeting actually needs." data-de="Zahlen werden über Nacht aus Ihren Tools gezogen und zum Bericht zusammengestellt, den Ihr Montagsmeeting wirklich braucht.">Numbers are pulled from your tools overnight and assembled into the report your Monday meeting actually needs.</p>
-        <div class="metric" data-en="→ Ready Monday 07:00" data-de="→ Bereit Montag 07:00">→ Ready Monday 07:00</div>
-      </div>
-      <div class="cell reveal">
-        <div class="idx">06</div>
-        <h3 data-en="Customer FAQ assistant" data-de="Kunden-FAQ-Assistent">Customer FAQ assistant</h3>
-        <p data-en="Answers questions from your own documents — and hands over to a human the moment it's unsure." data-de="Beantwortet Fragen aus Ihren eigenen Dokumenten — und übergibt an einen Menschen, sobald er unsicher ist.">Answers questions from your own documents — and hands over to a human the moment it's unsure.</p>
-        <div class="metric" data-en="→ Fewer routine support tickets" data-de="→ Weniger Routine-Support-Tickets">→ Fewer routine support tickets</div>
+      <div class="fc-panels">
+        <article class="fc-panel" id="case-belege" role="tabpanel" aria-labelledby="tab-case-belege">
+          <div class="kicker"><span data-en="Case 01 · Buchhaltung" data-de="Fall 01 · Buchhaltung">Case 01 · Buchhaltung</span></div>
+          <h3 data-en="Every Beleg lands in the books — and open questions become a list, not a pile." data-de="Jeder Beleg landet in der Buchhaltung — und offene Fragen werden eine Liste statt ein Stapel.">Every Beleg lands in the books — and open questions become a list, not a pile.</h3>
+          <p class="fc-pain"><span data-en="Receipts arrive by email, photo, post and portal. By law they must be kept for ten years, on paper or electronically — and the Treuhand sector still handles 46 % of its mandates on paper." data-de="Belege kommen per E-Mail, Foto, Post und Portal. Von Gesetzes wegen sind sie zehn Jahre aufzubewahren, auf Papier oder elektronisch — und die Treuhandbranche wickelt noch 46 % ihrer Mandate analog ab.">Receipts arrive by email, photo, post and portal. By law they must be kept for ten years, on paper or electronically — and the Treuhand sector still handles 46 % of its mandates on paper.</span> <a href="https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_958_f" target="_blank" rel="noopener" data-en="Source: OR Art. 958f ↗" data-de="Quelle: OR Art. 958f ↗">Source: OR Art. 958f ↗</a> <a href="https://www.obt.ch/de/infoboard/digitalisierung-des-treuhandbereichs-von-kmu-alles-klar-oder-eben-doch-nicht" target="_blank" rel="noopener" data-en="Source: EXPERTsuisse / OBT 2023 ↗" data-de="Quelle: EXPERTsuisse / OBT 2023 ↗">Source: EXPERTsuisse / OBT 2023 ↗</a></p>
+          <ol class="flow" aria-label="Three steps">
+            <li class="flow-step">
+              <span class="flow-node" aria-hidden="true"></span>
+              <b data-en="Collect" data-de="Sammeln">Collect</b>
+              <span data-en="One mailbox, one photo share and one Drive folder feed a single inbox. Nothing is retyped." data-de="Ein Postfach, ein Foto-Share und ein Drive-Ordner füllen einen einzigen Eingang. Nichts wird abgetippt.">One mailbox, one photo share and one Drive folder feed a single inbox. Nothing is retyped.</span>
+              <span class="flow-io">E-Mail · Foto · Drive</span>
+            </li>
+            <li class="flow-step">
+              <span class="flow-node" aria-hidden="true"></span>
+              <b data-en="Extract &amp; check" data-de="Erfassen &amp; prüfen">Extract &amp; check</b>
+              <span data-en="Date, supplier, amount, MWST and account are read out and matched to your chart of accounts. Anything unclear is flagged, not guessed." data-de="Datum, Lieferant, Betrag, MWST und Konto werden ausgelesen und Ihrem Kontenplan zugeordnet. Unklares wird markiert, nicht geraten.">Date, supplier, amount, MWST and account are read out and matched to your chart of accounts. Anything unclear is flagged, not guessed.</span>
+              <span class="flow-io">OCR + Regeln</span>
+            </li>
+            <li class="flow-step">
+              <span class="flow-node" aria-hidden="true"></span>
+              <b data-en="Book &amp; follow up" data-de="Verbuchen &amp; nachfassen">Book &amp; follow up</b>
+              <span data-en="Clean items are booked in bexio or Abacus with the original attached. Problem items go into a queue: contact → waiting → answered." data-de="Saubere Positionen werden in bexio oder Abacus verbucht, Original angehängt. Problemfälle wandern in eine Warteschlange: Kontakt → wartet → beantwortet.">Clean items are booked in bexio or Abacus with the original attached. Problem items go into a queue: contact → waiting → answered.</span>
+              <span class="flow-io">bexio · Abacus</span>
+            </li>
+          </ol>
+          <div class="fc-queue" role="table" aria-label="Problem items queue">
+            <div class="qh" role="row"><span data-en="Problem items" data-de="Problemfälle">Problem items</span><span data-en="Status" data-de="Status">Status</span></div>
+            <div class="qr" role="row"><div><span data-en="Receipt 14.09., CHF 312.40 — no MWST number" data-de="Beleg 14.09., CHF 312.40 — keine MWST-Nummer">Receipt 14.09., CHF 312.40 — no MWST number</span> · <span class="who" data-en="Treuhand" data-de="Treuhand">Treuhand</span></div><span class="qs contact" data-en="Contacted" data-de="Kontaktiert">Contacted</span></div>
+            <div class="qr" role="row"><div><span data-en="Müller AG — same invoice twice?" data-de="Müller AG — Rechnung doppelt?">Müller AG — same invoice twice?</span> · <span class="who" data-en="Supplier" data-de="Lieferant">Supplier</span></div><span class="qs waiting" data-en="Waiting for reply" data-de="Wartet auf Antwort">Waiting for reply</span></div>
+            <div class="qr" role="row"><div><span data-en="Hotel receipt — private or business?" data-de="Hotelbeleg — privat oder geschäftlich?">Hotel receipt — private or business?</span> · <span class="who" data-en="Owner" data-de="Inhaber">Owner</span></div><span class="qs answered" data-en="Answered" data-de="Beantwortet">Answered</span></div>
+          </div>
+          <div class="fc-foot">
+            <div>
+              <h4 data-en="What changes" data-de="Was sich ändert">What changes</h4>
+              <ul class="fc-outcome">
+                <li data-en="Belege are in the system within a day of arriving, original attached — the ten-year archive builds itself." data-de="Belege sind innert eines Tages im System, Original angehängt — das Zehn-Jahres-Archiv entsteht von selbst.">Belege are in the system within a day of arriving, original attached — the ten-year archive builds itself.</li>
+                <li data-en="Your Treuhänder gets complete months, not a shoebox in January." data-de="Ihr Treuhänder erhält vollständige Monate, keine Schuhschachtel im Januar.">Your Treuhänder gets complete months, not a shoebox in January.</li>
+                <li data-en="Every open question has an owner and a status. Nothing waits silently." data-de="Jede offene Frage hat einen Zuständigen und einen Status. Nichts wartet stumm.">Every open question has an owner and a status. Nothing waits silently.</li>
+              </ul>
+            </div>
+            <div class="fc-tools">
+              <h4 data-en="Works with" data-de="Funktioniert mit">Works with</h4>
+              <div class="chips"><span>bexio</span><span>Abacus</span><span>Banana</span><span>Outlook / Gmail</span><span>Dropbox / Drive</span></div>
+            </div>
+          </div>
+        </article>
+        <article class="fc-panel" id="case-zahlungen" role="tabpanel" aria-labelledby="tab-case-zahlungen" hidden>
+          <div class="kicker"><span data-en="Case 02 · Kreditoren" data-de="Fall 02 · Kreditoren">Case 02 · Kreditoren</span></div>
+          <h3 data-en="Supplier invoices arrive three ways. They leave as one approved payment run." data-de="Lieferantenrechnungen kommen auf drei Wegen. Sie gehen als ein freigegebener Zahlungslauf raus.">Supplier invoices arrive three ways. They leave as one approved payment run.</h3>
+          <p class="fc-pain"><span data-en="Paper QR-Rechnung, PDF by email, eBill — three channels, one spreadsheet. eBill alone passed four million users in June 2026, and the federal administration has required e-invoices above CHF 5,000 since 2016." data-de="QR-Rechnung auf Papier, PDF per E-Mail, eBill — drei Kanäle, eine Tabelle. Allein eBill hat im Juni 2026 vier Millionen Nutzer überschritten, und die Bundesverwaltung verlangt seit 2016 E-Rechnungen ab 5&#x27;000 Franken.">Paper QR-Rechnung, PDF by email, eBill — three channels, one spreadsheet. eBill alone passed four million users in June 2026, and the federal administration has required e-invoices above CHF 5,000 since 2016.</span> <a href="https://www.six-group.com/en/newsroom/media-releases/2026/20260826-ebill-surpasses-four-million-user-mark.html" target="_blank" rel="noopener" data-en="Source: SIX 2026 ↗" data-de="Quelle: SIX 2026 ↗">Source: SIX 2026 ↗</a> <a href="https://www.admin.ch/de/nsb?id=54757" target="_blank" rel="noopener" data-en="Source: Bundesrat 2014 ↗" data-de="Quelle: Bundesrat 2014 ↗">Source: Bundesrat 2014 ↗</a></p>
+          <ol class="flow" aria-label="Three steps">
+            <li class="flow-step">
+              <span class="flow-node" aria-hidden="true"></span>
+              <b data-en="Capture" data-de="Erfassen">Capture</b>
+              <span data-en="QR code, PDF or eBill is read into one list: supplier, IBAN, amount, due date, reference." data-de="QR-Code, PDF oder eBill werden in eine Liste gelesen: Lieferant, IBAN, Betrag, Fälligkeit, Referenz.">QR code, PDF or eBill is read into one list: supplier, IBAN, amount, due date, reference.</span>
+              <span class="flow-io">QR · PDF · eBill</span>
+            </li>
+            <li class="flow-step">
+              <span class="flow-node" aria-hidden="true"></span>
+              <b data-en="Match &amp; approve" data-de="Abgleichen &amp; freigeben">Match &amp; approve</b>
+              <span data-en="Each invoice is matched to its order or project. Only exceptions reach you — approved with one tap from email or chat." data-de="Jede Rechnung wird der Bestellung oder dem Projekt zugeordnet. Nur Ausnahmen landen bei Ihnen — Freigabe mit einem Tipp aus E-Mail oder Chat.">Each invoice is matched to its order or project. Only exceptions reach you — approved with one tap from email or chat.</span>
+              <span class="flow-io">Bestellung ↔ Rechnung</span>
+            </li>
+            <li class="flow-step">
+              <span class="flow-node" aria-hidden="true"></span>
+              <b data-en="Pay &amp; notify" data-de="Zahlen &amp; melden">Pay &amp; notify</b>
+              <span data-en="A pain.001 payment file goes to your e-banking on the due date. The supplier and your books get the payment notice automatically." data-de="Eine pain.001-Zahlungsdatei geht am Fälligkeitstag ins E-Banking. Lieferant und Buchhaltung erhalten die Zahlungsmeldung automatisch.">A pain.001 payment file goes to your e-banking on the due date. The supplier and your books get the payment notice automatically.</span>
+              <span class="flow-io">pain.001 · Zahlungsavis</span>
+            </li>
+          </ol>
+          <div class="fc-foot">
+            <div>
+              <h4 data-en="What changes" data-de="Was sich ändert">What changes</h4>
+              <ul class="fc-outcome">
+                <li data-en="One payment run a week instead of invoices paid one by one." data-de="Ein Zahlungslauf pro Woche statt Rechnungen einzeln bezahlen.">One payment run a week instead of invoices paid one by one.</li>
+                <li data-en="Due dates are kept without anyone watching a calendar; Skonto is taken where it exists." data-de="Fälligkeiten werden eingehalten, ohne dass jemand den Kalender hütet; Skonto wird genutzt, wo es eines gibt.">Due dates are kept without anyone watching a calendar; Skonto is taken where it exists.</li>
+                <li data-en="Suppliers stop calling to ask whether you paid — the notice leaves the moment the run does." data-de="Lieferanten rufen nicht mehr an, ob bezahlt wurde — die Meldung geht raus, sobald der Lauf läuft.">Suppliers stop calling to ask whether you paid — the notice leaves the moment the run does.</li>
+              </ul>
+            </div>
+            <div class="fc-tools">
+              <h4 data-en="Works with" data-de="Funktioniert mit">Works with</h4>
+              <div class="chips"><span>bexio</span><span>Abacus</span><span>E-Banking (pain.001)</span><span>eBill</span><span>Outlook / Gmail</span></div>
+            </div>
+          </div>
+        </article>
+        <article class="fc-panel" id="case-mahnwesen" role="tabpanel" aria-labelledby="tab-case-mahnwesen" hidden>
+          <div class="kicker"><span data-en="Case 03 · Debitoren" data-de="Fall 03 · Debitoren">Case 03 · Debitoren</span></div>
+          <h3 data-en="Late payers get a polite, punctual Mahnung — and you see who still owes what." data-de="Säumige Zahler erhalten eine höfliche, pünktliche Mahnung — und Sie sehen, wer noch was schuldet.">Late payers get a polite, punctual Mahnung — and you see who still owes what.</h3>
+          <p class="fc-pain"><span data-en="In the first half of 2024, 17.9 % of Swiss B2B invoices were paid late, on average 15.1 days overdue. Swiss companies surveyed by Intrum report 10.7 hours a week spent chasing open receivables." data-de="Im ersten Halbjahr 2024 wurden 17,9 % der Schweizer B2B-Rechnungen zu spät bezahlt, im Schnitt 15,1 Tage. Von Intrum befragte Schweizer Firmen melden 10,7 Stunden pro Woche fürs Nachfassen offener Forderungen.">In the first half of 2024, 17.9 % of Swiss B2B invoices were paid late, on average 15.1 days overdue. Swiss companies surveyed by Intrum report 10.7 hours a week spent chasing open receivables.</span> <a href="https://www.dnb.com/de-ch/news/zahlungsverhalten-b2b-schweiz-1HJ_2024.html" target="_blank" rel="noopener" data-en="Source: Dun &amp; Bradstreet 2024 ↗" data-de="Quelle: Dun &amp; Bradstreet 2024 ↗">Source: Dun &amp; Bradstreet 2024 ↗</a> <a href="https://www.presseportal.ch/de/pm/100090319/100930598" target="_blank" rel="noopener" data-en="Source: Intrum 2025 ↗" data-de="Quelle: Intrum 2025 ↗">Source: Intrum 2025 ↗</a></p>
+          <ol class="flow" aria-label="Three steps">
+            <li class="flow-step">
+              <span class="flow-node" aria-hidden="true"></span>
+              <b data-en="Watch" data-de="Beobachten">Watch</b>
+              <span data-en="Open invoices are read from bexio or Abacus every day and matched against incoming camt.054 payments." data-de="Offene Rechnungen werden täglich aus bexio oder Abacus gelesen und mit eingehenden camt.054-Zahlungen abgeglichen.">Open invoices are read from bexio or Abacus every day and matched against incoming camt.054 payments.</span>
+              <span class="flow-io">camt.054</span>
+            </li>
+            <li class="flow-step">
+              <span class="flow-node" aria-hidden="true"></span>
+              <b data-en="Remind" data-de="Mahnen">Remind</b>
+              <span data-en="Day 1 overdue: a friendly reminder with the QR-Rechnung and a TWINT link. Day 14: the first Mahnung — in your tone, in DE or FR. You set the ladder; the law sets the 5 % Verzugszins." data-de="Tag 1 nach Fälligkeit: eine freundliche Erinnerung mit QR-Rechnung und TWINT-Link. Tag 14: die erste Mahnung — in Ihrem Ton, auf DE oder FR. Die Staffel bestimmen Sie; den Verzugszins von 5 % das Gesetz.">Day 1 overdue: a friendly reminder with the QR-Rechnung and a TWINT link. Day 14: the first Mahnung — in your tone, in DE or FR. You set the ladder; the law sets the 5 % Verzugszins.</span>
+              <span class="flow-io">Erinnerung → Mahnung</span>
+            </li>
+            <li class="flow-step">
+              <span class="flow-node" aria-hidden="true"></span>
+              <b data-en="Escalate or close" data-de="Eskalieren oder schliessen">Escalate or close</b>
+              <span data-en="Payment received → closed automatically. No reaction after the last step → one line in your inbox with the file ready for Betreibung or Inkasso." data-de="Zahlung eingegangen → automatisch geschlossen. Keine Reaktion nach der letzten Stufe → eine Zeile in Ihrem Posteingang, Dossier bereit für Betreibung oder Inkasso.">Payment received → closed automatically. No reaction after the last step → one line in your inbox with the file ready for Betreibung or Inkasso.</span>
+              <span class="flow-io">Betreibung-ready</span>
+            </li>
+          </ol>
+          <div class="fc-foot">
+            <div>
+              <h4 data-en="What changes" data-de="Was sich ändert">What changes</h4>
+              <ul class="fc-outcome">
+                <li data-en="Every overdue invoice gets the same ladder on the same day — nothing slips because someone was on holiday." data-de="Jede überfällige Rechnung bekommt dieselbe Staffel am selben Tag — nichts rutscht durch, weil jemand in den Ferien war.">Every overdue invoice gets the same ladder on the same day — nothing slips because someone was on holiday.</li>
+                <li data-en="You personally chase only the cases that reached the last step." data-de="Sie selbst fassen nur bei den Fällen nach, die die letzte Stufe erreicht haben.">You personally chase only the cases that reached the last step.</li>
+                <li data-en="A live list: who owes what, since when, and what was already sent." data-de="Eine Live-Liste: wer schuldet was, seit wann, und was bereits verschickt wurde.">A live list: who owes what, since when, and what was already sent.</li>
+              </ul>
+            </div>
+            <div class="fc-tools">
+              <h4 data-en="Works with" data-de="Funktioniert mit">Works with</h4>
+              <div class="chips"><span>bexio</span><span>Abacus</span><span>Banana</span><span>E-Banking (camt.054)</span><span>TWINT</span><span>Outlook / Gmail</span></div>
+            </div>
+          </div>
+        </article>
+        <article class="fc-panel" id="case-mwst" role="tabpanel" aria-labelledby="tab-case-mwst" hidden>
+          <div class="kicker"><span data-en="Case 04 · Steuern" data-de="Fall 04 · Steuern">Case 04 · Steuern</span></div>
+          <h3 data-en="The MWST return is ready for review on day one of the 60-day window." data-de="Die MWST-Abrechnung liegt am ersten Tag der 60-Tage-Frist zur Prüfung bereit.">The MWST return is ready for review on day one of the 60-day window.</h3>
+          <p class="fc-pain"><span data-en="Since 1 January 2025 every MWST-liable company files online via the ESTV ePortal — normally per quarter, within 60 days. 420,964 businesses are registered, 28 % of them on Saldosteuersatz." data-de="Seit 1. Januar 2025 rechnen alle MWST-pflichtigen Unternehmen online über das ESTV-ePortal ab — in der Regel pro Quartal, innert 60 Tagen. 420&#x27;964 Betriebe sind registriert, 28 % davon mit Saldosteuersatz.">Since 1 January 2025 every MWST-liable company files online via the ESTV ePortal — normally per quarter, within 60 days. 420,964 businesses are registered, 28 % of them on Saldosteuersatz.</span> <a href="https://www.estv.admin.ch/de/mwst-online-abrechnen" target="_blank" rel="noopener" data-en="Source: ESTV ePortal ↗" data-de="Quelle: ESTV ePortal ↗">Source: ESTV ePortal ↗</a> <a href="https://www.estv.admin.ch/dam/de/sd-web/jMLn6NQyU6-8/statistik-mwst-2023-de.pdf" target="_blank" rel="noopener" data-en="Source: ESTV MWST-Statistik 2023 ↗" data-de="Quelle: ESTV MWST-Statistik 2023 ↗">Source: ESTV MWST-Statistik 2023 ↗</a></p>
+          <ol class="flow" aria-label="Three steps">
+            <li class="flow-step">
+              <span class="flow-node" aria-hidden="true"></span>
+              <b data-en="Reconcile continuously" data-de="Laufend abstimmen">Reconcile continuously</b>
+              <span data-en="Every booked Beleg carries its MWST code. Gaps — no MWST number, wrong rate, missing receipt — are flagged the week they occur, not at quarter-end." data-de="Jeder verbuchte Beleg trägt seinen MWST-Code. Lücken — keine MWST-Nummer, falscher Satz, fehlender Beleg — werden in der Woche markiert, in der sie entstehen, nicht am Quartalsende.">Every booked Beleg carries its MWST code. Gaps — no MWST number, wrong rate, missing receipt — are flagged the week they occur, not at quarter-end.</span>
+              <span class="flow-io">8.1 · 2.6 % · Saldo</span>
+            </li>
+            <li class="flow-step">
+              <span class="flow-node" aria-hidden="true"></span>
+              <b data-en="Draft the return" data-de="Abrechnung entwerfen">Draft the return</b>
+              <span data-en="Turnover and Vorsteuer are compiled from the ledger and reconciled against revenue. Your Treuhänder gets a one-page check, not a pile." data-de="Umsatz und Vorsteuer werden aus dem Hauptbuch zusammengestellt und mit dem Ertrag abgestimmt. Ihr Treuhänder erhält eine Seite zum Prüfen, keinen Stapel.">Turnover and Vorsteuer are compiled from the ledger and reconciled against revenue. Your Treuhänder gets a one-page check, not a pile.</span>
+              <span class="flow-io">Umsatz ↔ Vorsteuer</span>
+            </li>
+            <li class="flow-step">
+              <span class="flow-node" aria-hidden="true"></span>
+              <b data-en="File &amp; archive" data-de="Einreichen &amp; ablegen">File &amp; archive</b>
+              <span data-en="After your OK the return goes into the ePortal, the confirmation lands in the archive and the payment is scheduled for the due date." data-de="Nach Ihrem OK geht die Abrechnung ins ePortal, die Bestätigung landet im Archiv und die Zahlung wird auf den Fälligkeitstag terminiert.">After your OK the return goes into the ePortal, the confirmation lands in the archive and the payment is scheduled for the due date.</span>
+              <span class="flow-io">ESTV ePortal</span>
+            </li>
+          </ol>
+          <div class="fc-foot">
+            <div>
+              <h4 data-en="What changes" data-de="Was sich ändert">What changes</h4>
+              <ul class="fc-outcome">
+                <li data-en="Quarter-end becomes a review, not a hunt for missing Belege." data-de="Das Quartalsende wird eine Prüfung, keine Suche nach fehlenden Belegen.">Quarter-end becomes a review, not a hunt for missing Belege.</li>
+                <li data-en="Deadline and payment are not missed — the system is the calendar." data-de="Frist und Zahlung werden nicht verpasst — das System ist der Kalender.">Deadline and payment are not missed — the system is the calendar.</li>
+                <li data-en="Your Treuhänder reviews a reconciled draft instead of building one." data-de="Ihr Treuhänder prüft einen abgestimmten Entwurf, statt ihn zu bauen.">Your Treuhänder reviews a reconciled draft instead of building one.</li>
+              </ul>
+            </div>
+            <div class="fc-tools">
+              <h4 data-en="Works with" data-de="Funktioniert mit">Works with</h4>
+              <div class="chips"><span>bexio</span><span>Abacus</span><span>Banana</span><span>ESTV ePortal</span><span>Dropbox / Drive</span></div>
+            </div>
+          </div>
+        </article>
+        <article class="fc-panel" id="case-offerten" role="tabpanel" aria-labelledby="tab-case-offerten" hidden>
+          <div class="kicker"><span data-en="Case 05 · Verkauf &amp; Termine" data-de="Fall 05 · Verkauf &amp; Termine">Case 05 · Verkauf &amp; Termine</span></div>
+          <h3 data-en="Every Offerte gets followed up. Every appointment gets a reminder." data-de="Jede Offerte wird nachgefasst. Jeder Termin wird erinnert.">Every Offerte gets followed up. Every appointment gets a reminder.</h3>
+          <p class="fc-pain"><span data-en="We looked for a Swiss statistic on unanswered quotes and missed appointments and found none we would trust — so we print none. Owners describe the pain the same way everywhere: the quote sits unanswered, the reminder never gets sent, the slot stays empty." data-de="Wir haben nach einer Schweizer Statistik zu unbeantworteten Offerten und verpassten Terminen gesucht und keine gefunden, der wir trauen — also drucken wir keine. Inhaber beschreiben das Problem überall gleich: Die Offerte liegt unbeantwortet, die Erinnerung wird nie verschickt, der Termin bleibt leer.">We looked for a Swiss statistic on unanswered quotes and missed appointments and found none we would trust — so we print none. Owners describe the pain the same way everywhere: the quote sits unanswered, the reminder never gets sent, the slot stays empty.</span></p>
+          <ol class="flow" aria-label="Three steps">
+            <li class="flow-step">
+              <span class="flow-node" aria-hidden="true"></span>
+              <b data-en="Track" data-de="Verfolgen">Track</b>
+              <span data-en="Every quote sent from your template and every booked appointment is logged with a date and an owner." data-de="Jede Offerte aus Ihrer Vorlage und jeder gebuchte Termin wird mit Datum und Zuständigem erfasst.">Every quote sent from your template and every booked appointment is logged with a date and an owner.</span>
+              <span class="flow-io">Offerte · Termin</span>
+            </li>
+            <li class="flow-step">
+              <span class="flow-node" aria-hidden="true"></span>
+              <b data-en="Follow up" data-de="Nachfassen">Follow up</b>
+              <span data-en="Day 3 and day 10 after a quote: a short, personal follow-up drafted for your OK. 48 h and 2 h before an appointment: an SMS or email reminder with one-tap rescheduling." data-de="Tag 3 und Tag 10 nach der Offerte: ein kurzes, persönliches Nachfassen als Entwurf zur Freigabe. 48 h und 2 h vor dem Termin: SMS- oder E-Mail-Erinnerung mit Umbuchen per Tipp.">Day 3 and day 10 after a quote: a short, personal follow-up drafted for your OK. 48 h and 2 h before an appointment: an SMS or email reminder with one-tap rescheduling.</span>
+              <span class="flow-io">E-Mail · SMS</span>
+            </li>
+            <li class="flow-step">
+              <span class="flow-node" aria-hidden="true"></span>
+              <b data-en="Close the loop" data-de="Abschliessen">Close the loop</b>
+              <span data-en="Replies are read: accepted → order and invoice prepared; declined → reason captured; silent → one line in your Monday list." data-de="Antworten werden gelesen: angenommen → Auftrag und Rechnung vorbereitet; abgelehnt → Grund erfasst; still → eine Zeile in Ihrer Montagsliste.">Replies are read: accepted → order and invoice prepared; declined → reason captured; silent → one line in your Monday list.</span>
+              <span class="flow-io">Angenommen / Abgelehnt / Offen</span>
+            </li>
+          </ol>
+          <div class="fc-foot">
+            <div>
+              <h4 data-en="What changes" data-de="Was sich ändert">What changes</h4>
+              <ul class="fc-outcome">
+                <li data-en="No quote is forgotten: each one has a next action and a date." data-de="Keine Offerte geht vergessen: Jede hat einen nächsten Schritt und ein Datum.">No quote is forgotten: each one has a next action and a date.</li>
+                <li data-en="Reminders go out without anyone typing them." data-de="Erinnerungen gehen raus, ohne dass sie jemand tippt.">Reminders go out without anyone typing them.</li>
+                <li data-en="Your pipeline on one page: open, won, lost — with reasons." data-de="Ihre Pipeline auf einer Seite: offen, gewonnen, verloren — mit Gründen.">Your pipeline on one page: open, won, lost — with reasons.</li>
+              </ul>
+            </div>
+            <div class="fc-tools">
+              <h4 data-en="Works with" data-de="Funktioniert mit">Works with</h4>
+              <div class="chips"><span>Outlook / Gmail</span><span>Google / Outlook Calendar</span><span>bexio</span><span>SMS</span></div>
+            </div>
+          </div>
+        </article>
       </div>
     </div>
+    <!-- CASES:END -->
   </section>
 
   <!-- ═══════════════ SERVICES ═══════════════ -->
   <section class="section" id="services">
-    <div class="sec-head-row reveal" id="apps">
+    <div class="sec-head-row reveal">
       <div>
         <div class="kicker" data-en="What we do" data-de="Was wir tun">What we do</div>
-        <h2 class="h-display sec-title" data-en="We ship our own iOS apps — and build the same for you." data-de="Wir veröffentlichen eigene iOS-Apps — und bauen dasselbe für Sie.">We ship our own iOS apps — and build the same for you.</h2>
+        <h2 class="h-display sec-title" data-en="Four ways we take manual work off your desk." data-de="Vier Wege, wie wir Ihnen Handarbeit vom Tisch nehmen.">Four ways we take manual work off your desk.</h2>
       </div>
-      <p class="sec-sub" data-en="Four apps live on the App Store, designed, built and supported in-house. Pick one to see what it does." data-de="Vier Apps live im App Store — intern konzipiert, gebaut und betreut. Wählen Sie eine aus.">Four apps live on the App Store, designed, built and supported in-house. Pick one to see what it does.</p>
-    </div>
-
-    <!-- App showcase. Progressive enhancement: without JS all four panels render stacked and the
-         tabs are in-page anchors; with JS the tabs switch panels (role=tablist, arrow keys). -->
-    <div class="showcase reveal">
-      <div class="app-tabs" role="tablist" aria-label="Our apps" aria-orientation="vertical">
-        <a class="app-tab app-recipics" role="tab" id="tab-recipics" href="#app-recipics" aria-controls="app-recipics" aria-selected="true">
-          <span class="app-glyph" aria-hidden="true">R</span>
-          <span>ReciPics<small data-en="Recipe keeper with AI camera" data-de="Rezeptbuch mit KI-Kamera">Recipe keeper with AI camera</small></span>
-          <span class="arrow" aria-hidden="true">→</span>
-        </a>
-        <a class="app-tab app-mealog" role="tab" id="tab-mealog" href="#app-mealog" aria-controls="app-mealog" aria-selected="false" tabindex="-1">
-          <span class="app-glyph" aria-hidden="true">M</span>
-          <span>Mealog<small data-en="AI food diary" data-de="KI-Ernährungstagebuch">AI food diary</small></span>
-          <span class="arrow" aria-hidden="true">→</span>
-        </a>
-        <a class="app-tab app-calmclick" role="tab" id="tab-calmclick" href="#app-calmclick" aria-controls="app-calmclick" aria-selected="false" tabindex="-1">
-          <span class="app-glyph" aria-hidden="true">C</span>
-          <span>CalmClick<small data-en="Is this message real?" data-de="Ist diese Nachricht echt?">Is this message real?</small></span>
-          <span class="arrow" aria-hidden="true">→</span>
-        </a>
-        <a class="app-tab app-suborbs" role="tab" id="tab-suborbs" href="#app-suborbs" aria-controls="app-suborbs" aria-selected="false" tabindex="-1">
-          <span class="app-glyph" aria-hidden="true">S</span>
-          <span>SubOrbs<small data-en="Subscription tracker" data-de="Abo-Tracker">Subscription tracker</small></span>
-          <span class="arrow" aria-hidden="true">→</span>
-        </a>
-      </div>
-
-      <div class="app-panels">
-        <!-- ReciPics -->
-        <article class="app-panel app-recipics" id="app-recipics" role="tabpanel" aria-labelledby="tab-recipics">
-          <div>
-            <div class="kicker"><span data-en="iOS · Food &amp; Drink" data-de="iOS · Essen &amp; Trinken">iOS · Food &amp; Drink</span></div>
-            <h3 data-en="Point your camera at ingredients. Get a recipe." data-de="Kamera auf die Zutaten richten. Rezept erhalten.">Point your camera at ingredients. Get a recipe.</h3>
-            <p class="value" data-en="ReciPics scans what you have, recognises a finished dish from a photo or takes a voice request — and turns it into a structured recipe in your own cookbook." data-de="ReciPics scannt, was Sie haben, erkennt ein fertiges Gericht auf dem Foto oder nimmt eine Sprachanfrage — und macht daraus ein strukturiertes Rezept in Ihrem Kochbuch.">ReciPics scans what you have, recognises a finished dish from a photo or takes a voice request — and turns it into a structured recipe in your own cookbook.</p>
-            <div class="chips">
-              <span data-en="AI camera" data-de="KI-Kamera">AI camera</span>
-              <span data-en="Voice input" data-de="Spracheingabe">Voice input</span>
-              <span data-en="Recipe book" data-de="Rezeptbuch">Recipe book</span>
-              <span>EN · DE</span>
-            </div>
-            <div class="store-row">
-              <a class="store-badge" href="https://apps.apple.com/app/id6740248018" target="_blank" rel="noopener" aria-label="ReciPics on the App Store">
-                <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
-                <span><small data-en="Download on the" data-de="Laden im">Download on the</small>App Store</span>
-              </a>
-              <a class="link-ghost" href="https://recipics.app" target="_blank" rel="noopener">recipics.app ↗</a>
-            </div>
-          </div>
-          <div class="device" aria-hidden="true">
-            <div class="shell"><div class="screen">
-              <div class="island"></div>
-              <div class="scr-title">ReciPics</div>
-              <div class="scr-viewfinder"></div>
-              <div class="scr-card"><span class="scr-pill">Recipe found</span><div class="scr-line w80"></div><div class="scr-line w60"></div><div class="scr-line w40"></div></div>
-            </div></div>
-          </div>
-        </article>
-
-        <!-- Mealog -->
-        <article class="app-panel app-mealog" id="app-mealog" role="tabpanel" aria-labelledby="tab-mealog" hidden>
-          <div>
-            <div class="kicker"><span data-en="iOS · Health &amp; Fitness" data-de="iOS · Gesundheit &amp; Fitness">iOS · Health &amp; Fitness</span></div>
-            <h3 data-en="Log a meal by photo, voice or one line of text." data-de="Mahlzeit per Foto, Sprache oder einer Textzeile loggen.">Log a meal by photo, voice or one line of text.</h3>
-            <p class="value" data-en="Mealog estimates calories, protein, carbs and fat in seconds — no database searching, no weighing. Every estimate shows its reasoning and can be corrected." data-de="Mealog schätzt Kalorien, Protein, Kohlenhydrate und Fett in Sekunden — ohne Datenbanksuche, ohne Waage. Jede Schätzung zeigt ihre Begründung und lässt sich korrigieren.">Mealog estimates calories, protein, carbs and fat in seconds — no database searching, no weighing. Every estimate shows its reasoning and can be corrected.</p>
-            <div class="chips">
-              <span data-en="Photo · voice · text" data-de="Foto · Sprache · Text">Photo · voice · text</span>
-              <span data-en="Editable estimates" data-de="Korrigierbare Schätzungen">Editable estimates</span>
-              <span data-en="Chronological log" data-de="Chronologisches Log">Chronological log</span>
-              <span>EN · DE</span>
-            </div>
-            <div class="store-row">
-              <a class="store-badge" href="https://apps.apple.com/app/id6800812845" target="_blank" rel="noopener" aria-label="Mealog on the App Store">
-                <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
-                <span><small data-en="Download on the" data-de="Laden im">Download on the</small>App Store</span>
-              </a>
-            </div>
-          </div>
-          <div class="device" aria-hidden="true">
-            <div class="shell"><div class="screen">
-              <div class="island"></div>
-              <div class="scr-title">Mealog</div>
-              <div class="scr-ring"><span>kcal</span></div>
-              <div class="scr-macros"><div><b>P</b>protein</div><div><b>C</b>carbs</div><div><b>F</b>fat</div></div>
-              <div class="scr-card"><div class="scr-line w60"></div><div class="scr-line w40"></div></div>
-            </div></div>
-          </div>
-        </article>
-
-        <!-- CalmClick -->
-        <article class="app-panel app-calmclick" id="app-calmclick" role="tabpanel" aria-labelledby="tab-calmclick" hidden>
-          <div>
-            <div class="kicker"><span data-en="iOS · Utilities" data-de="iOS · Dienstprogramme">iOS · Utilities</span></div>
-            <h3 data-en="A strange text, an odd bill, a scary pop-up — is it real?" data-de="Seltsame SMS, komische Rechnung, Schock-Pop-up — ist das echt?">A strange text, an odd bill, a scary pop-up — is it real?</h3>
-            <p class="value" data-en="Photograph it or upload a screenshot. In about ten seconds CalmClick explains what it is in plain words and gives a clear verdict — Safe, Be careful or Warning — with exact next steps." data-de="Fotografieren oder Screenshot hochladen. In rund zehn Sekunden erklärt CalmClick in einfachen Worten, was das ist, und gibt ein klares Urteil — Sicher, Vorsicht oder Warnung — mit konkreten nächsten Schritten.">Photograph it or upload a screenshot. In about ten seconds CalmClick explains what it is in plain words and gives a clear verdict — Safe, Be careful or Warning — with exact next steps.</p>
-            <div class="chips">
-              <span data-en="Plain language" data-de="Einfache Sprache">Plain language</span>
-              <span data-en="Honest about uncertainty" data-de="Ehrlich bei Unsicherheit">Honest about uncertainty</span>
-              <span data-en="Follow-up questions" data-de="Rückfragen">Follow-up questions</span>
-            </div>
-            <div class="store-row">
-              <a class="store-badge" href="https://apps.apple.com/app/id6783985536" target="_blank" rel="noopener" aria-label="CalmClick on the App Store">
-                <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
-                <span><small data-en="Download on the" data-de="Laden im">Download on the</small>App Store</span>
-              </a>
-            </div>
-          </div>
-          <div class="device" aria-hidden="true">
-            <div class="shell"><div class="screen">
-              <div class="island"></div>
-              <div class="scr-title">CalmClick</div>
-              <div class="scr-card"><div class="scr-line w80"></div><div class="scr-line w60"></div><div class="scr-line w80"></div></div>
-              <div class="scr-verdict"><b>Be careful</b><span>This looks like a phishing message. Don't tap the link.</span></div>
-              <div class="scr-card"><div class="scr-line w40"></div></div>
-            </div></div>
-          </div>
-        </article>
-
-        <!-- SubOrbs -->
-        <article class="app-panel app-suborbs" id="app-suborbs" role="tabpanel" aria-labelledby="tab-suborbs" hidden>
-          <div>
-            <div class="kicker"><span data-en="iOS · Finance" data-de="iOS · Finanzen">iOS · Finance</span></div>
-            <h3 data-en="Every subscription in one calm orbit." data-de="Jedes Abo in einer ruhigen Umlaufbahn.">Every subscription in one calm orbit.</h3>
-            <p class="value" data-en="Your total spend sits at the centre; each subscription orbits it, sized by cost and placed by renewal date. Reminders land before a payment or a cancellation window does." data-de="Ihre Gesamtausgaben stehen im Zentrum; jedes Abo kreist darum — nach Kosten skaliert, nach Verlängerungsdatum platziert. Erinnerungen kommen, bevor eine Zahlung oder eine Kündigungsfrist fällig wird.">Your total spend sits at the centre; each subscription orbits it, sized by cost and placed by renewal date. Reminders land before a payment or a cancellation window does.</p>
-            <div class="chips">
-              <span data-en="Orbit view" data-de="Orbit-Ansicht">Orbit view</span>
-              <span data-en="Renewal reminders" data-de="Verlängerungs-Erinnerungen">Renewal reminders</span>
-              <span data-en="Snap &amp; Read bills" data-de="Rechnungen scannen">Snap &amp; Read bills</span>
-              <span>EN · DE</span>
-            </div>
-            <div class="store-row">
-              <a class="store-badge" href="https://apps.apple.com/app/id6790872622" target="_blank" rel="noopener" aria-label="SubOrbs on the App Store">
-                <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
-                <span><small data-en="Download on the" data-de="Laden im">Download on the</small>App Store</span>
-              </a>
-            </div>
-          </div>
-          <div class="device" aria-hidden="true">
-            <div class="shell"><div class="screen">
-              <div class="island"></div>
-              <div class="scr-title">SubOrbs</div>
-              <div class="scr-orbit"><div class="o o1"></div><div class="o o2"></div><div class="o o3"></div><div class="c">month</div><div class="p p1"></div><div class="p p2"></div><div class="p p3"></div><div class="p p4"></div></div>
-              <div class="scr-card"><div class="scr-line w60"></div><div class="scr-line w40"></div></div>
-            </div></div>
-          </div>
-        </article>
-      </div>
-    </div>
-
-    <div class="svc-head reveal">
-      <div class="kicker" data-en="For your business" data-de="Für Ihr Unternehmen">For your business</div>
-      <h2 class="h-display sec-title" style="font-size:clamp(26px,3vw,38px)" data-en="The same craft, four ways" data-de="Dasselbe Handwerk, auf vier Arten">The same craft, four ways</h2>
+      <p class="sec-sub" data-en="Every engagement starts with one process and the tools you already run. Nothing to migrate, nothing to replace." data-de="Jedes Mandat beginnt mit einem Prozess und den Tools, die Sie bereits nutzen. Nichts migrieren, nichts ersetzen.">Every engagement starts with one process and the tools you already run. Nothing to migrate, nothing to replace.</p>
     </div>
     <div class="svc-grid">
       <div class="svc reveal">
@@ -948,7 +1062,7 @@ html:not(.js) .app-tabs { position: static; }
       </div>
       <div class="svc reveal">
         <h3 data-en="Mobile Development" data-de="Mobile Development">Mobile Development</h3>
-        <p data-en="Native iOS and Android apps, from first prototype to App Store launch." data-de="Native iOS- und Android-Apps — vom ersten Prototyp bis zum App-Store-Launch.">Native iOS and Android apps, from first prototype to App Store launch.</p>
+        <p data-en="Internal and customer-facing iOS and Android apps for your business — from first prototype to launch." data-de="Interne und kundenseitige iOS- und Android-Apps für Ihr Unternehmen — vom ersten Prototyp bis zum Launch.">Internal and customer-facing iOS and Android apps for your business — from first prototype to launch.</p>
         <div class="chips">
           <span>iOS</span>
           <span>Android</span>
@@ -1020,7 +1134,7 @@ html:not(.js) .app-tabs { position: static; }
           <div class="sector" data-en="Financial services" data-de="Finanzdienstleistungen">Financial services</div>
           <h3 data-en="Client onboarding in hours, not days" data-de="Kunden-Onboarding in Stunden statt Tagen">Client onboarding in hours, not days</h3>
           <p data-en="Document checks, data entry, and compliance verification can run automatically, so staff handle exceptions only." data-de="Dokumentenprüfung, Datenerfassung und Compliance-Verifikation können automatisch laufen, sodass Mitarbeitende nur Ausnahmen bearbeiten.">Document checks, data entry, and compliance verification can run automatically, so staff handle exceptions only.</p>
-          <div class="metric" data-en="up to 85% faster" data-de="bis zu 85% schneller">up to 85% faster</div>
+          <div class="metric" data-en="hours instead of days" data-de="Stunden statt Tage">hours instead of days</div>
         </div>
       </div>
       <div class="case reveal">
@@ -1048,7 +1162,7 @@ html:not(.js) .app-tabs { position: static; }
   <section class="section">
     <div class="why-band reveal">
       <div class="kicker line" data-en="Why Appligent" data-de="Warum Appligent">Why Appligent</div>
-      <p class="cap" data-en="Built in the Zurich area. Shipped to the App Store. Supported after launch." data-de="Im Raum Zürich gebaut. Im App Store veröffentlicht. Nach dem Launch betreut.">Built in the Zurich area. Shipped to the App Store. Supported after launch.</p>
+      <p class="cap" data-en="Built in the Zurich area. Running inside your business. Supported after launch." data-de="Im Raum Zürich gebaut. In Ihrem Betrieb im Einsatz. Nach dem Launch betreut.">Built in the Zurich area. Running inside your business. Supported after launch.</p>
     </div>
     <div class="why-grid">
       <div class="why-item reveal">
@@ -1203,10 +1317,18 @@ html:not(.js) .app-tabs { position: static; }
   });
   applyLang(lang, false);
 
-  /* ── App showcase tabs (progressive enhancement over anchor links) ── */
-  var tabs = Array.prototype.slice.call(document.querySelectorAll(".app-tab[role=tab]"));
-  var panels = Array.prototype.slice.call(document.querySelectorAll(".app-panel[role=tabpanel]"));
-  function selectApp(id, focus) {
+  /* ── Case tabs (progressive enhancement over anchor links) ── */
+  var tabs = Array.prototype.slice.call(document.querySelectorAll(".fc-tab[role=tab]"));
+  var panels = Array.prototype.slice.call(document.querySelectorAll(".fc-panel[role=tabpanel]"));
+  var playTimer = null;
+  function playFlow(panel) {
+    panel.classList.remove("is-playing");
+    void panel.offsetWidth; /* restart the CSS animation */
+    panel.classList.add("is-playing");
+    clearTimeout(playTimer);
+    playTimer = setTimeout(function () { panel.classList.remove("is-playing"); }, 2600);
+  }
+  function selectCase(id, focus) {
     var found = false;
     tabs.forEach(function (t) {
       var on = t.getAttribute("aria-controls") === id;
@@ -1216,13 +1338,16 @@ html:not(.js) .app-tabs { position: static; }
       if (on) found = true;
     });
     if (!found) return false;
-    panels.forEach(function (p) { p.hidden = p.id !== id; });
+    panels.forEach(function (p) {
+      p.hidden = p.id !== id;
+      if (!p.hidden) playFlow(p);
+    });
     return true;
   }
   tabs.forEach(function (t, i) {
     t.addEventListener("click", function (e) {
       e.preventDefault();
-      selectApp(t.getAttribute("aria-controls"), false);
+      selectCase(t.getAttribute("aria-controls"), false);
       if (history.replaceState) history.replaceState(null, "", "#" + t.getAttribute("aria-controls"));
     });
     t.addEventListener("keydown", function (e) {
@@ -1230,20 +1355,32 @@ html:not(.js) .app-tabs { position: static; }
       if (next < 0) return;
       e.preventDefault();
       next = (next + tabs.length) % tabs.length;
-      selectApp(tabs[next].getAttribute("aria-controls"), true);
+      selectCase(tabs[next].getAttribute("aria-controls"), true);
     });
   });
-  /* Hero chips and any other #app-… link switch the tab, then scroll to the section */
-  document.querySelectorAll('a[href^="#app-"]:not([role=tab])').forEach(function (a) {
+  /* Any other #case-… link switches the tab, then scrolls to the section */
+  document.querySelectorAll('a[href^="#case-"]:not([role=tab])').forEach(function (a) {
     a.addEventListener("click", function (e) {
-      if (selectApp(a.getAttribute("href").slice(1), false)) {
+      if (selectCase(a.getAttribute("href").slice(1), false)) {
         e.preventDefault();
-        document.getElementById("apps").scrollIntoView({ behavior: "smooth", block: "start" });
+        document.getElementById("examples").scrollIntoView({ behavior: "smooth", block: "start" });
         if (history.replaceState) history.replaceState(null, "", a.getAttribute("href"));
       }
     });
   });
-  if (location.hash && /^#app-/.test(location.hash)) selectApp(location.hash.slice(1), false);
+  if (location.hash && /^#case-/.test(location.hash)) selectCase(location.hash.slice(1), false);
+  /* Play the visible flow once when the section scrolls into view */
+  if ("IntersectionObserver" in window && panels.length) {
+    var flowIo = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var open = panels.filter(function (p) { return !p.hidden; })[0];
+        if (open) playFlow(open);
+        flowIo.disconnect();
+      });
+    }, { threshold: 0.35 });
+    flowIo.observe(document.getElementById("examples"));
+  }
 
   /* ── Reveal on scroll ── */
   var reveals = document.querySelectorAll(".reveal");

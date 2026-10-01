@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Appligent AI — Process Automation for Swiss SMEs, Zurich</title>
-<meta name="description" content="Appligent AI automates back-office processes for Swiss SMEs: Belege and invoice intake, QR-Rechnung and supplier payments, Mahnwesen, MWST preparation, quote follow-ups. Works with bexio, Abacus, Banana, Outlook and Gmail. Zurich area, no lock-in.">
+<meta name="description" content="Appligent AI automates processes for Swiss SMEs: an AI agent team that builds apps from idea to App Store and Google Play, plus back-office automation — Belege and invoice intake, QR-Rechnung and supplier payments, Mahnwesen, MWST preparation. Works with bexio, Abacus, Banana, Outlook and Gmail. Zurich area, no lock-in.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://appligent.ai/">
 <link rel="preload" href="/assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="Appligent AI">
 <meta property="og:url" content="https://appligent.ai/">
 <meta property="og:title" content="Appligent AI — Process Automation for Swiss SMEs, Zurich">
-<meta property="og:description" content="We automate the back office of Swiss SMEs — Belege, QR-Rechnung and supplier payments, Mahnwesen, MWST prep, quote follow-ups — with the tools you already use. Zurich area, no lock-in.">
+<meta property="og:description" content="We automate for Swiss SMEs — an AI agent team that builds apps from idea to the store, plus Belege, QR-Rechnung and supplier payments, Mahnwesen and MWST prep with the tools you already use. Zurich area, no lock-in.">
 <meta property="og:image" content="https://appligent.ai/assets/img/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -33,7 +33,7 @@
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Appligent AI — Process Automation for Swiss SMEs, Zurich">
-<meta name="twitter:description" content="We automate the back office of Swiss SMEs — Belege, QR-Rechnung and supplier payments, Mahnwesen, MWST prep, quote follow-ups — with the tools you already use. Zurich area, no lock-in.">
+<meta name="twitter:description" content="We automate for Swiss SMEs — an AI agent team that builds apps from idea to the store, plus Belege, QR-Rechnung and supplier payments, Mahnwesen and MWST prep with the tools you already use. Zurich area, no lock-in.">
 <meta name="twitter:image" content="https://appligent.ai/assets/img/og.png">
 <meta name="twitter:image:alt" content="Appligent AI — process automation for Swiss SMEs, Zurich">
 
@@ -54,7 +54,7 @@
       "logo": "https://appligent.ai/assets/img/logo.svg",
       "image": "https://appligent.ai/assets/img/og.png",
       "email": "hello@appligent.ai",
-      "description": "Zurich-area company automating back-office processes for Swiss SMEs: receipt and invoice intake, QR-Rechnung and supplier payments, Mahnwesen, MWST preparation and quote follow-ups, integrated with the tools the business already uses.",
+      "description": "Zurich-area company automating processes for Swiss SMEs: a team of AI agents that takes apps from idea validation to App Store and Google Play, and back-office automation — receipt and invoice intake, QR-Rechnung and supplier payments, Mahnwesen and MWST preparation — integrated with the tools the business already uses.",
       "sameAs": [
         "https://linkedin.com/company/appligent-ai"
       ],
@@ -102,6 +102,25 @@
       "inLanguage": [
         "en",
         "de"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://appligent.ai/#case-app-team",
+      "name": "AI agent team for end-to-end app production",
+      "serviceType": "Business Process Automation",
+      "description": "A team of specialised AI agents that runs the full app-production cycle: idea validation, product spec, design system and Figma handoff, native iOS, Android and web development, code review, automated testing, release build, App Store and Google Play submission, and post-launch monitoring. The owner approves at build and at submission.",
+      "provider": {
+        "@id": "https://appligent.ai/#org"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Switzerland"
+      },
+      "url": "https://appligent.ai/#case-app-team",
+      "availableLanguage": [
+        "de",
+        "en"
       ]
     },
     {
@@ -175,25 +194,6 @@
         "name": "Switzerland"
       },
       "url": "https://appligent.ai/#case-mwst",
-      "availableLanguage": [
-        "de",
-        "en"
-      ]
-    },
-    {
-      "@type": "Service",
-      "@id": "https://appligent.ai/#case-offerten",
-      "name": "Quote follow-up and appointment reminder automation",
-      "serviceType": "Business Process Automation",
-      "description": "Tracking of sent quotes and booked appointments, drafted follow-ups for approval, SMS and email reminders with rescheduling, and reply handling into order, invoice or pipeline list.",
-      "provider": {
-        "@id": "https://appligent.ai/#org"
-      },
-      "areaServed": {
-        "@type": "Country",
-        "name": "Switzerland"
-      },
-      "url": "https://appligent.ai/#case-offerten",
       "availableLanguage": [
         "de",
         "en"
@@ -537,7 +537,62 @@ html:not(.js) .fc-tabs { position: static; }
   .flow .flow-node { animation: flowNodeLoop 5s ease-in-out infinite; animation-delay: calc(var(--i) * .6s); }
 }
 
-/* Exception queue (case 1): the items a human must still touch, with their contact state. */
+/* Agent team (case 1): named roles as chips in working order, joined by arrows. A group of
+   chips stacked under "in parallel" runs side by side; a gate chip carries the owner's approval. */
+.fc-team { margin-top: 22px; }
+.fc-team .th { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink2); }
+.fc-team .legend { display: inline-flex; align-items: center; gap: 6px; text-transform: none; letter-spacing: 0; }
+.gate-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--grad); display: inline-block; }
+.team { list-style: none; margin: 12px 0 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 0; }
+.team > li { position: relative; display: flex; align-items: center; margin-right: 26px; }
+.team > li::after { /* arrow to the next role */
+  content: "→"; position: absolute; right: -20px; top: 50%; transform: translateY(-50%);
+  font-family: var(--font-mono); font-size: 13px; color: var(--ink2);
+}
+.team > li:last-child { margin-right: 0; }
+.team > li:last-child::after { content: none; }
+.team .role {
+  display: grid; align-content: center; gap: 2px; padding: 9px 13px; border-radius: 12px;
+  border: 1px solid var(--line); background: color-mix(in srgb, var(--bg2) 60%, transparent);
+  transition: border-color .3s, box-shadow .3s, background .3s;
+}
+.team .role b { font-size: 13.5px; font-weight: 650; letter-spacing: -0.01em; color: var(--ink); white-space: nowrap; }
+.team .role small { font-family: var(--font-mono); font-size: 10.5px; color: var(--ink2); white-space: nowrap; }
+.team .role.gate { border-color: color-mix(in srgb, var(--accent-ink) 45%, transparent); padding-top: 14px; }
+.team .gate-tag {
+  position: absolute; top: -9px; left: 10px; display: inline-flex; align-items: center; gap: 5px;
+  padding: 1px 8px; border-radius: 99px; background: var(--grad); color: var(--on-accent);
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.04em;
+}
+.team .gate-tag::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
+.team .role.loop::after { content: none; }
+.team .role.loop small::after { content: " ↺"; color: var(--accent-ink); }
+.team .role-group {
+  display: grid; gap: 6px; padding: 24px 8px 8px; border-radius: 14px;
+  border: 1px dashed var(--line);
+}
+.team .role-group .plabel { position: absolute; top: 6px; left: 12px; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent-ink); }
+.team .role-group .role { padding: 6px 11px; }
+/* Light the chips one by one when the panel is selected, hovered or focused. */
+@keyframes teamChip {
+  0% { border-color: var(--line); box-shadow: none; }
+  40% { border-color: var(--accent); box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 18%, transparent); }
+  100% { border-color: color-mix(in srgb, var(--accent) 55%, var(--line)); box-shadow: none; }
+}
+.fc-panel.is-playing .team .role, .team:hover .role, .team:focus-within .role {
+  animation: teamChip .8s ease-out forwards; animation-delay: calc(var(--i) * .22s);
+}
+.fc-panel.is-playing .team .role-group .role, .team:hover .role-group .role, .team:focus-within .role-group .role { animation-delay: calc(var(--i) * .22s + .1s); }
+
+/* Measured facts (case 1): first-hand numbers from our own pipeline, with the measurement caption. */
+.fc-facts { margin-top: 22px; }
+.fc-facts dl { margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+.fc-facts dl > div { background: color-mix(in srgb, var(--bg2) 60%, transparent); padding: 14px 16px; }
+.fc-facts dt { margin: 0; font-family: var(--font-display); font-weight: var(--disp-weight); font-size: 26px; letter-spacing: -0.02em; line-height: 1; color: var(--ink); }
+.fc-facts dd { margin: 6px 0 0; font-size: 12.5px; line-height: 1.45; color: var(--ink2); text-wrap: pretty; }
+.fc-facts .cap { margin: 8px 0 0; font-family: var(--font-mono); font-size: 11px; color: var(--ink2); }
+
+/* Exception queue (case 2): the items a human must still touch, with their contact state. */
 .fc-queue { margin-top: 22px; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: color-mix(in srgb, var(--bg2) 60%, transparent); }
 .fc-queue .qh { display: flex; justify-content: space-between; gap: 12px; padding: 10px 14px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink2); border-bottom: 1px solid var(--line); }
 .fc-queue .qr { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 12px; padding: 10px 14px; font-size: 13.5px; }
@@ -710,6 +765,7 @@ html:not(.js) .fc-tabs { position: static; }
   .fc-panel { padding: 24px; }
   .fc-panels { min-height: 0; }
   .fc-foot { grid-template-columns: 1fr; gap: 20px; }
+  .fc-facts dl { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 860px) {
   .faq-wrap { grid-template-columns: 1fr; gap: 24px; }
@@ -729,6 +785,12 @@ html:not(.js) .fc-tabs { position: static; }
   .flow-step:last-child::before, .flow-step:last-child::after { display: none; }
   .flow-step:first-child::after { transform: scaleY(1); opacity: 1; }
   .flow-step b { margin-top: 3px; }
+  /* Team: one role per row, arrows point down. */
+  .team { flex-direction: column; align-items: stretch; gap: 22px; }
+  .team > li { margin-right: 0; }
+  .team > li::after { content: "↓"; right: auto; left: 14px; top: auto; bottom: -19px; transform: none; }
+  .team .role b, .team .role small { white-space: normal; }
+  .team .role-group { grid-template-columns: 1fr; }
   @keyframes flowLine { to { transform: scaleY(1); } }
   @keyframes flowLineLoop { 0%, 8% { transform: scaleY(0); } 20%, 72% { transform: scaleY(1); } 84%, 100% { transform: scaleY(0); } }
   .why-band { border-radius: 18px; }
@@ -801,42 +863,109 @@ html:not(.js) .fc-tabs { position: static; }
     <div class="sec-head-row reveal">
       <div>
         <div class="kicker" data-en="Concrete cases" data-de="Konkrete Fälle">Concrete cases</div>
-        <h2 class="h-display sec-title" data-en="Five back-office processes we automate — step by step." data-de="Fünf Backoffice-Prozesse, die wir automatisieren — Schritt für Schritt.">Five back-office processes we automate — step by step.</h2>
+        <h2 class="h-display sec-title" data-en="Five processes we automate — from app production to the back office." data-de="Fünf Prozesse, die wir automatisieren — von der App-Produktion bis ins Backoffice.">Five processes we automate — from app production to the back office.</h2>
       </div>
-      <p class="sec-sub" data-en="Each case: the pain, three steps, what changes. Numbers only where a Swiss source measured them." data-de="Pro Fall: das Problem, drei Schritte, was sich ändert. Zahlen nur dort, wo eine Schweizer Quelle sie gemessen hat.">Each case: the pain, three steps, what changes. Numbers only where a Swiss source measured them.</p>
+      <p class="sec-sub" data-en="Each case: the pain, three steps, what changes. Numbers only where a Swiss source measured them — or where we measured them ourselves." data-de="Pro Fall: das Problem, drei Schritte, was sich ändert. Zahlen nur dort, wo eine Schweizer Quelle sie gemessen hat — oder wir selbst.">Each case: the pain, three steps, what changes. Numbers only where a Swiss source measured them — or where we measured them ourselves.</p>
     </div>
 <!-- CASES:START (generated by agents-artifacts/ceo/build_cases.py — edit there, not here) -->
     <div class="fc-wrap reveal">
       <div class="fc-tabs" role="tablist" aria-label="Automation cases" aria-orientation="vertical">
-        <a class="fc-tab" role="tab" id="tab-case-belege" href="#case-belege" aria-controls="case-belege" aria-selected="true">
+        <a class="fc-tab" role="tab" id="tab-case-app-team" href="#case-app-team" aria-controls="case-app-team" aria-selected="true">
           <span class="fc-num" aria-hidden="true">01</span>
+          <span><span data-en="An agent team builds your app" data-de="Ein Agententeam baut Ihre App">An agent team builds your app</span><small data-en="Idea → spec → design → code → store → monitoring" data-de="Idee → Spezifikation → Design → Code → Store → Monitoring">Idea → spec → design → code → store → monitoring</small></span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="fc-tab" role="tab" id="tab-case-belege" href="#case-belege" aria-controls="case-belege" aria-selected="false" tabindex="-1">
+          <span class="fc-num" aria-hidden="true">02</span>
           <span><span data-en="Belege → Buchhaltung" data-de="Belege → Buchhaltung">Belege → Buchhaltung</span><small data-en="Receipts collected, extracted, booked" data-de="Belege sammeln, erfassen, verbuchen">Receipts collected, extracted, booked</small></span>
           <span class="arrow" aria-hidden="true">→</span>
         </a>
         <a class="fc-tab" role="tab" id="tab-case-zahlungen" href="#case-zahlungen" aria-controls="case-zahlungen" aria-selected="false" tabindex="-1">
-          <span class="fc-num" aria-hidden="true">02</span>
+          <span class="fc-num" aria-hidden="true">03</span>
           <span><span data-en="Supplier invoices &amp; payments" data-de="Lieferantenrechnungen &amp; Zahlungen">Supplier invoices &amp; payments</span><small data-en="QR-Rechnung in, one payment run out" data-de="QR-Rechnung rein, ein Zahlungslauf raus">QR-Rechnung in, one payment run out</small></span>
           <span class="arrow" aria-hidden="true">→</span>
         </a>
         <a class="fc-tab" role="tab" id="tab-case-mahnwesen" href="#case-mahnwesen" aria-controls="case-mahnwesen" aria-selected="false" tabindex="-1">
-          <span class="fc-num" aria-hidden="true">03</span>
+          <span class="fc-num" aria-hidden="true">04</span>
           <span><span data-en="Mahnwesen" data-de="Mahnwesen">Mahnwesen</span><small data-en="Receivables chased without the phone round" data-de="Forderungen nachfassen ohne Telefonrunde">Receivables chased without the phone round</small></span>
           <span class="arrow" aria-hidden="true">→</span>
         </a>
         <a class="fc-tab" role="tab" id="tab-case-mwst" href="#case-mwst" aria-controls="case-mwst" aria-selected="false" tabindex="-1">
-          <span class="fc-num" aria-hidden="true">04</span>
-          <span><span data-en="MWST preparation" data-de="MWST-Vorbereitung">MWST preparation</span><small data-en="Quarterly return without the end-of-quarter scramble" data-de="Quartalsabrechnung ohne Endspurt">Quarterly return without the end-of-quarter scramble</small></span>
-          <span class="arrow" aria-hidden="true">→</span>
-        </a>
-        <a class="fc-tab" role="tab" id="tab-case-offerten" href="#case-offerten" aria-controls="case-offerten" aria-selected="false" tabindex="-1">
           <span class="fc-num" aria-hidden="true">05</span>
-          <span><span data-en="Quotes &amp; appointments" data-de="Offerten &amp; Termine">Quotes &amp; appointments</span><small data-en="No quote and no appointment goes quiet" data-de="Keine Offerte, kein Termin bleibt still">No quote and no appointment goes quiet</small></span>
+          <span><span data-en="MWST preparation" data-de="MWST-Vorbereitung">MWST preparation</span><small data-en="Quarterly return without the end-of-quarter scramble" data-de="Quartalsabrechnung ohne Endspurt">Quarterly return without the end-of-quarter scramble</small></span>
           <span class="arrow" aria-hidden="true">→</span>
         </a>
       </div>
       <div class="fc-panels">
-        <article class="fc-panel" id="case-belege" role="tabpanel" aria-labelledby="tab-case-belege">
-          <div class="kicker"><span data-en="Case 01 · Buchhaltung" data-de="Fall 01 · Buchhaltung">Case 01 · Buchhaltung</span></div>
+        <article class="fc-panel" id="case-app-team" role="tabpanel" aria-labelledby="tab-case-app-team">
+          <div class="kicker"><span data-en="Case 01 · App production" data-de="Fall 01 · App-Produktion">Case 01 · App production</span></div>
+          <h3 data-en="A team of specialised agents takes an app from idea to the store. You approve twice." data-de="Ein Team spezialisierter Agenten bringt eine App von der Idee bis in den Store. Sie geben zweimal frei.">A team of specialised agents takes an app from idea to the store. You approve twice.</h3>
+          <p class="fc-pain"><span data-en="An app normally passes through a strategist, a designer, developers, testers and a release manager — and waits at every handover. We replaced the waiting with a team of agents that hand over through state files. We found no Swiss statistic on stalled SME app projects that we would trust, so we print none; the numbers below were measured in our own pipeline, not in a vendor&#x27;s benchmark." data-de="Eine App durchläuft normalerweise Strategie, Design, Entwicklung, Test und Release — und wartet bei jeder Übergabe. Wir haben das Warten durch ein Agententeam ersetzt, das über Zustandsdateien übergibt. Eine Schweizer Statistik zu steckengebliebenen KMU-App-Projekten, der wir trauen, haben wir nicht gefunden — also drucken wir keine; die Zahlen unten stammen aus unserer eigenen Pipeline, nicht aus einem Hersteller-Benchmark.">An app normally passes through a strategist, a designer, developers, testers and a release manager — and waits at every handover. We replaced the waiting with a team of agents that hand over through state files. We found no Swiss statistic on stalled SME app projects that we would trust, so we print none; the numbers below were measured in our own pipeline, not in a vendor&#x27;s benchmark.</span></p>
+          <ol class="flow" aria-label="Three steps">
+            <li class="flow-step">
+              <span class="flow-node" aria-hidden="true"></span>
+              <b data-en="Validate &amp; specify" data-de="Validieren &amp; spezifizieren">Validate &amp; specify</b>
+              <span data-en="Idea validation checks demand, competition and store rules. A product spec follows — scope, screens, data, success criteria. Each stage writes its own state file, so the next role starts from facts, not memory." data-de="Die Ideen-Validierung prüft Nachfrage, Wettbewerb und Store-Regeln. Dann die Produktspezifikation — Umfang, Screens, Daten, Erfolgskriterien. Jede Stufe schreibt ihre eigene Zustandsdatei, die nächste Rolle startet mit Fakten, nicht mit Erinnerung.">Idea validation checks demand, competition and store rules. A product spec follows — scope, screens, data, success criteria. Each stage writes its own state file, so the next role starts from facts, not memory.</span>
+              <span class="flow-io">Idee → Spezifikation</span>
+            </li>
+            <li class="flow-step">
+              <span class="flow-node" aria-hidden="true"></span>
+              <b data-en="Design &amp; build" data-de="Gestalten &amp; bauen">Design &amp; build</b>
+              <span data-en="Design system and Figma handoff, then native code for iOS, Android or web — in parallel where the platforms allow. Code review and automated tests run on every change. Your first approval: the build." data-de="Designsystem und Figma-Übergabe, dann nativer Code für iOS, Android oder Web — parallel, wo die Plattformen es zulassen. Code-Review und automatisierte Tests laufen bei jeder Änderung. Ihre erste Freigabe: der Build.">Design system and Figma handoff, then native code for iOS, Android or web — in parallel where the platforms allow. Code review and automated tests run on every change. Your first approval: the build.</span>
+              <span class="flow-io">Figma → Xcode · Android Studio</span>
+            </li>
+            <li class="flow-step">
+              <span class="flow-node" aria-hidden="true"></span>
+              <b data-en="Ship &amp; improve" data-de="Ausliefern &amp; verbessern">Ship &amp; improve</b>
+              <span data-en="Release build, then submission to the App Store and Google Play — your second approval. After launch the team monitors crashes, reviews and ratings and feeds them into the next iteration." data-de="Release-Build, dann Einreichung im App Store und bei Google Play — Ihre zweite Freigabe. Nach dem Launch beobachtet das Team Abstürze, Rezensionen und Bewertungen und speist sie in die nächste Iteration ein.">Release build, then submission to the App Store and Google Play — your second approval. After launch the team monitors crashes, reviews and ratings and feeds them into the next iteration.</span>
+              <span class="flow-io">TestFlight · Play Console</span>
+            </li>
+          </ol>
+          <div class="fc-team">
+            <div class="th"><span data-en="The team — roles in working order" data-de="Das Team — Rollen in Arbeitsreihenfolge">The team — roles in working order</span><span class="legend"><span class="gate-dot" aria-hidden="true"></span><span data-en="Your approval" data-de="Ihre Freigabe">Your approval</span></span></div>
+            <ol class="team" aria-label="Agent roles in working order">
+              <li class="role" style="--i:1"><b data-en="Idea validator" data-de="Ideen-Validierer">Idea validator</b><small data-en="Validation" data-de="Validierung">Validation</small></li>
+              <li class="role" style="--i:2"><b data-en="Product manager" data-de="Produktmanager">Product manager</b><small data-en="Product spec" data-de="Produktspezifikation">Product spec</small></li>
+              <li class="role" style="--i:3"><b data-en="Designer" data-de="Designer">Designer</b><small data-en="Design system · Figma handoff" data-de="Designsystem · Figma-Übergabe">Design system · Figma handoff</small></li>
+              <li class="role-group" style="--i:4">
+                <span class="plabel" data-en="in parallel" data-de="parallel">in parallel</span>
+                <span class="role"><b data-en="iOS engineer" data-de="iOS-Entwickler">iOS engineer</b><small data-en="Swift" data-de="Swift">Swift</small></span>
+                <span class="role"><b data-en="Android engineer" data-de="Android-Entwickler">Android engineer</b><small data-en="Kotlin" data-de="Kotlin">Kotlin</small></span>
+                <span class="role"><b data-en="Web engineer" data-de="Web-Entwickler">Web engineer</b><small data-en="Web" data-de="Web">Web</small></span>
+              </li>
+              <li class="role" style="--i:5"><b data-en="Code reviewer" data-de="Code-Reviewer">Code reviewer</b><small data-en="Review" data-de="Review">Review</small></li>
+              <li class="role" style="--i:6"><b data-en="QA engineer" data-de="QA-Engineer">QA engineer</b><small data-en="Automated tests" data-de="Automatisierte Tests">Automated tests</small></li>
+              <li class="role gate" style="--i:7"><span class="gate-tag"><span data-en="Your OK" data-de="Ihr OK">Your OK</span></span><b data-en="Release manager" data-de="Release-Manager">Release manager</b><small data-en="Release build" data-de="Release-Build">Release build</small></li>
+              <li class="role gate" style="--i:8"><span class="gate-tag"><span data-en="Your OK" data-de="Ihr OK">Your OK</span></span><b data-en="Store publisher" data-de="Store-Publisher">Store publisher</b><small data-en="App Store · Google Play" data-de="App Store · Google Play">App Store · Google Play</small></li>
+              <li class="role loop" style="--i:9"><b data-en="Monitor" data-de="Monitor">Monitor</b><small data-en="Crashes · reviews · next iteration" data-de="Abstürze · Rezensionen · nächste Iteration">Crashes · reviews · next iteration</small></li>
+            </ol>
+          </div>
+          <div class="fc-facts">
+            <dl>
+              <div><dt data-en="13" data-de="13">13</dt><dd data-en="specialised agents" data-de="spezialisierte Agenten">specialised agents</dd></div>
+              <div><dt data-en="5" data-de="5">5</dt><dd data-en="skill packs" data-de="Skill-Pakete">skill packs</dd></div>
+              <div><dt data-en="1 day" data-de="1 Tag">1 day</dt><dd data-en="from idea validation to a signed product spec and a full design system with 17 screen mockups (1 Oct 2026)" data-de="von der Ideen-Validierung zur freigegebenen Produktspezifikation und einem vollständigen Designsystem mit 17 Screen-Mockups (1. Okt. 2026)">from idea validation to a signed product spec and a full design system with 17 screen mockups (1 Oct 2026)</dd></div>
+              <div><dt data-en="Same evening" data-de="Gleicher Abend">Same evening</dt><dd data-en="first native iOS build with a working video player installed on a device" data-de="erster nativer iOS-Build mit funktionierendem Videoplayer auf einem Gerät installiert">first native iOS build with a working video player installed on a device</dd></div>
+            </dl>
+            <p class="cap" data-en="Measured in our own pipeline, Oct 2026" data-de="In unserer eigenen Pipeline gemessen, Okt. 2026">Measured in our own pipeline, Oct 2026</p>
+          </div>
+          <div class="fc-foot">
+            <div>
+              <h4 data-en="What changes" data-de="Was sich ändert">What changes</h4>
+              <ul class="fc-outcome">
+                <li data-en="One brief, one team — no waiting between strategist, designer, developer and tester." data-de="Ein Briefing, ein Team — kein Warten zwischen Strategie, Design, Entwicklung und Test.">One brief, one team — no waiting between strategist, designer, developer and tester.</li>
+                <li data-en="You decide twice: before the build and before the store submission. Everything else runs." data-de="Sie entscheiden zweimal: vor dem Build und vor der Store-Einreichung. Alles andere läuft.">You decide twice: before the build and before the store submission. Everything else runs.</li>
+                <li data-en="Every stage leaves a state file. What was decided and why is readable later — not remembered." data-de="Jede Stufe hinterlässt eine Zustandsdatei. Was entschieden wurde und warum, ist später lesbar — nicht erinnert.">Every stage leaves a state file. What was decided and why is readable later — not remembered.</li>
+              </ul>
+            </div>
+            <div class="fc-tools">
+              <h4 data-en="Works with" data-de="Funktioniert mit">Works with</h4>
+              <div class="chips"><span>Figma</span><span>Xcode</span><span>Android Studio</span><span>GitHub</span><span>TestFlight</span><span>Play Console</span></div>
+            </div>
+          </div>
+        </article>
+        <article class="fc-panel" id="case-belege" role="tabpanel" aria-labelledby="tab-case-belege" hidden>
+          <div class="kicker"><span data-en="Case 02 · Buchhaltung" data-de="Fall 02 · Buchhaltung">Case 02 · Buchhaltung</span></div>
           <h3 data-en="Every Beleg lands in the books — and open questions become a list, not a pile." data-de="Jeder Beleg landet in der Buchhaltung — und offene Fragen werden eine Liste statt ein Stapel.">Every Beleg lands in the books — and open questions become a list, not a pile.</h3>
           <p class="fc-pain"><span data-en="Receipts arrive by email, photo, post and portal. By law they must be kept for ten years, on paper or electronically — and the Treuhand sector still handles 46 % of its mandates on paper." data-de="Belege kommen per E-Mail, Foto, Post und Portal. Von Gesetzes wegen sind sie zehn Jahre aufzubewahren, auf Papier oder elektronisch — und die Treuhandbranche wickelt noch 46 % ihrer Mandate analog ab.">Receipts arrive by email, photo, post and portal. By law they must be kept for ten years, on paper or electronically — and the Treuhand sector still handles 46 % of its mandates on paper.</span> <a href="https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_958_f" target="_blank" rel="noopener" data-en="Source: OR Art. 958f ↗" data-de="Quelle: OR Art. 958f ↗">Source: OR Art. 958f ↗</a> <a href="https://www.obt.ch/de/infoboard/digitalisierung-des-treuhandbereichs-von-kmu-alles-klar-oder-eben-doch-nicht" target="_blank" rel="noopener" data-en="Source: EXPERTsuisse / OBT 2023 ↗" data-de="Quelle: EXPERTsuisse / OBT 2023 ↗">Source: EXPERTsuisse / OBT 2023 ↗</a></p>
           <ol class="flow" aria-label="Three steps">
@@ -881,7 +1010,7 @@ html:not(.js) .fc-tabs { position: static; }
           </div>
         </article>
         <article class="fc-panel" id="case-zahlungen" role="tabpanel" aria-labelledby="tab-case-zahlungen" hidden>
-          <div class="kicker"><span data-en="Case 02 · Kreditoren" data-de="Fall 02 · Kreditoren">Case 02 · Kreditoren</span></div>
+          <div class="kicker"><span data-en="Case 03 · Kreditoren" data-de="Fall 03 · Kreditoren">Case 03 · Kreditoren</span></div>
           <h3 data-en="Supplier invoices arrive three ways. They leave as one approved payment run." data-de="Lieferantenrechnungen kommen auf drei Wegen. Sie gehen als ein freigegebener Zahlungslauf raus.">Supplier invoices arrive three ways. They leave as one approved payment run.</h3>
           <p class="fc-pain"><span data-en="Paper QR-Rechnung, PDF by email, eBill — three channels, one spreadsheet. eBill alone passed four million users in June 2026, and the federal administration has required e-invoices above CHF 5,000 since 2016." data-de="QR-Rechnung auf Papier, PDF per E-Mail, eBill — drei Kanäle, eine Tabelle. Allein eBill hat im Juni 2026 vier Millionen Nutzer überschritten, und die Bundesverwaltung verlangt seit 2016 E-Rechnungen ab 5&#x27;000 Franken.">Paper QR-Rechnung, PDF by email, eBill — three channels, one spreadsheet. eBill alone passed four million users in June 2026, and the federal administration has required e-invoices above CHF 5,000 since 2016.</span> <a href="https://www.six-group.com/en/newsroom/media-releases/2026/20260826-ebill-surpasses-four-million-user-mark.html" target="_blank" rel="noopener" data-en="Source: SIX 2026 ↗" data-de="Quelle: SIX 2026 ↗">Source: SIX 2026 ↗</a> <a href="https://www.admin.ch/de/nsb?id=54757" target="_blank" rel="noopener" data-en="Source: Bundesrat 2014 ↗" data-de="Quelle: Bundesrat 2014 ↗">Source: Bundesrat 2014 ↗</a></p>
           <ol class="flow" aria-label="Three steps">
@@ -920,7 +1049,7 @@ html:not(.js) .fc-tabs { position: static; }
           </div>
         </article>
         <article class="fc-panel" id="case-mahnwesen" role="tabpanel" aria-labelledby="tab-case-mahnwesen" hidden>
-          <div class="kicker"><span data-en="Case 03 · Debitoren" data-de="Fall 03 · Debitoren">Case 03 · Debitoren</span></div>
+          <div class="kicker"><span data-en="Case 04 · Debitoren" data-de="Fall 04 · Debitoren">Case 04 · Debitoren</span></div>
           <h3 data-en="Late payers get a polite, punctual Mahnung — and you see who still owes what." data-de="Säumige Zahler erhalten eine höfliche, pünktliche Mahnung — und Sie sehen, wer noch was schuldet.">Late payers get a polite, punctual Mahnung — and you see who still owes what.</h3>
           <p class="fc-pain"><span data-en="In the first half of 2024, 17.9 % of Swiss B2B invoices were paid late, on average 15.1 days overdue. Swiss companies surveyed by Intrum report 10.7 hours a week spent chasing open receivables." data-de="Im ersten Halbjahr 2024 wurden 17,9 % der Schweizer B2B-Rechnungen zu spät bezahlt, im Schnitt 15,1 Tage. Von Intrum befragte Schweizer Firmen melden 10,7 Stunden pro Woche fürs Nachfassen offener Forderungen.">In the first half of 2024, 17.9 % of Swiss B2B invoices were paid late, on average 15.1 days overdue. Swiss companies surveyed by Intrum report 10.7 hours a week spent chasing open receivables.</span> <a href="https://www.dnb.com/de-ch/news/zahlungsverhalten-b2b-schweiz-1HJ_2024.html" target="_blank" rel="noopener" data-en="Source: Dun &amp; Bradstreet 2024 ↗" data-de="Quelle: Dun &amp; Bradstreet 2024 ↗">Source: Dun &amp; Bradstreet 2024 ↗</a> <a href="https://www.presseportal.ch/de/pm/100090319/100930598" target="_blank" rel="noopener" data-en="Source: Intrum 2025 ↗" data-de="Quelle: Intrum 2025 ↗">Source: Intrum 2025 ↗</a></p>
           <ol class="flow" aria-label="Three steps">
@@ -959,7 +1088,7 @@ html:not(.js) .fc-tabs { position: static; }
           </div>
         </article>
         <article class="fc-panel" id="case-mwst" role="tabpanel" aria-labelledby="tab-case-mwst" hidden>
-          <div class="kicker"><span data-en="Case 04 · Steuern" data-de="Fall 04 · Steuern">Case 04 · Steuern</span></div>
+          <div class="kicker"><span data-en="Case 05 · Steuern" data-de="Fall 05 · Steuern">Case 05 · Steuern</span></div>
           <h3 data-en="The MWST return is ready for review on day one of the 60-day window." data-de="Die MWST-Abrechnung liegt am ersten Tag der 60-Tage-Frist zur Prüfung bereit.">The MWST return is ready for review on day one of the 60-day window.</h3>
           <p class="fc-pain"><span data-en="Since 1 January 2025 every MWST-liable company files online via the ESTV ePortal — normally per quarter, within 60 days. 420,964 businesses are registered, 28 % of them on Saldosteuersatz." data-de="Seit 1. Januar 2025 rechnen alle MWST-pflichtigen Unternehmen online über das ESTV-ePortal ab — in der Regel pro Quartal, innert 60 Tagen. 420&#x27;964 Betriebe sind registriert, 28 % davon mit Saldosteuersatz.">Since 1 January 2025 every MWST-liable company files online via the ESTV ePortal — normally per quarter, within 60 days. 420,964 businesses are registered, 28 % of them on Saldosteuersatz.</span> <a href="https://www.estv.admin.ch/de/mwst-online-abrechnen" target="_blank" rel="noopener" data-en="Source: ESTV ePortal ↗" data-de="Quelle: ESTV ePortal ↗">Source: ESTV ePortal ↗</a> <a href="https://www.estv.admin.ch/dam/de/sd-web/jMLn6NQyU6-8/statistik-mwst-2023-de.pdf" target="_blank" rel="noopener" data-en="Source: ESTV MWST-Statistik 2023 ↗" data-de="Quelle: ESTV MWST-Statistik 2023 ↗">Source: ESTV MWST-Statistik 2023 ↗</a></p>
           <ol class="flow" aria-label="Three steps">
@@ -994,45 +1123,6 @@ html:not(.js) .fc-tabs { position: static; }
             <div class="fc-tools">
               <h4 data-en="Works with" data-de="Funktioniert mit">Works with</h4>
               <div class="chips"><span>bexio</span><span>Abacus</span><span>Banana</span><span>ESTV ePortal</span><span>Dropbox / Drive</span></div>
-            </div>
-          </div>
-        </article>
-        <article class="fc-panel" id="case-offerten" role="tabpanel" aria-labelledby="tab-case-offerten" hidden>
-          <div class="kicker"><span data-en="Case 05 · Verkauf &amp; Termine" data-de="Fall 05 · Verkauf &amp; Termine">Case 05 · Verkauf &amp; Termine</span></div>
-          <h3 data-en="Every Offerte gets followed up. Every appointment gets a reminder." data-de="Jede Offerte wird nachgefasst. Jeder Termin wird erinnert.">Every Offerte gets followed up. Every appointment gets a reminder.</h3>
-          <p class="fc-pain"><span data-en="We looked for a Swiss statistic on unanswered quotes and missed appointments and found none we would trust — so we print none. Owners describe the pain the same way everywhere: the quote sits unanswered, the reminder never gets sent, the slot stays empty." data-de="Wir haben nach einer Schweizer Statistik zu unbeantworteten Offerten und verpassten Terminen gesucht und keine gefunden, der wir trauen — also drucken wir keine. Inhaber beschreiben das Problem überall gleich: Die Offerte liegt unbeantwortet, die Erinnerung wird nie verschickt, der Termin bleibt leer.">We looked for a Swiss statistic on unanswered quotes and missed appointments and found none we would trust — so we print none. Owners describe the pain the same way everywhere: the quote sits unanswered, the reminder never gets sent, the slot stays empty.</span></p>
-          <ol class="flow" aria-label="Three steps">
-            <li class="flow-step">
-              <span class="flow-node" aria-hidden="true"></span>
-              <b data-en="Track" data-de="Verfolgen">Track</b>
-              <span data-en="Every quote sent from your template and every booked appointment is logged with a date and an owner." data-de="Jede Offerte aus Ihrer Vorlage und jeder gebuchte Termin wird mit Datum und Zuständigem erfasst.">Every quote sent from your template and every booked appointment is logged with a date and an owner.</span>
-              <span class="flow-io">Offerte · Termin</span>
-            </li>
-            <li class="flow-step">
-              <span class="flow-node" aria-hidden="true"></span>
-              <b data-en="Follow up" data-de="Nachfassen">Follow up</b>
-              <span data-en="Day 3 and day 10 after a quote: a short, personal follow-up drafted for your OK. 48 h and 2 h before an appointment: an SMS or email reminder with one-tap rescheduling." data-de="Tag 3 und Tag 10 nach der Offerte: ein kurzes, persönliches Nachfassen als Entwurf zur Freigabe. 48 h und 2 h vor dem Termin: SMS- oder E-Mail-Erinnerung mit Umbuchen per Tipp.">Day 3 and day 10 after a quote: a short, personal follow-up drafted for your OK. 48 h and 2 h before an appointment: an SMS or email reminder with one-tap rescheduling.</span>
-              <span class="flow-io">E-Mail · SMS</span>
-            </li>
-            <li class="flow-step">
-              <span class="flow-node" aria-hidden="true"></span>
-              <b data-en="Close the loop" data-de="Abschliessen">Close the loop</b>
-              <span data-en="Replies are read: accepted → order and invoice prepared; declined → reason captured; silent → one line in your Monday list." data-de="Antworten werden gelesen: angenommen → Auftrag und Rechnung vorbereitet; abgelehnt → Grund erfasst; still → eine Zeile in Ihrer Montagsliste.">Replies are read: accepted → order and invoice prepared; declined → reason captured; silent → one line in your Monday list.</span>
-              <span class="flow-io">Angenommen / Abgelehnt / Offen</span>
-            </li>
-          </ol>
-          <div class="fc-foot">
-            <div>
-              <h4 data-en="What changes" data-de="Was sich ändert">What changes</h4>
-              <ul class="fc-outcome">
-                <li data-en="No quote is forgotten: each one has a next action and a date." data-de="Keine Offerte geht vergessen: Jede hat einen nächsten Schritt und ein Datum.">No quote is forgotten: each one has a next action and a date.</li>
-                <li data-en="Reminders go out without anyone typing them." data-de="Erinnerungen gehen raus, ohne dass sie jemand tippt.">Reminders go out without anyone typing them.</li>
-                <li data-en="Your pipeline on one page: open, won, lost — with reasons." data-de="Ihre Pipeline auf einer Seite: offen, gewonnen, verloren — mit Gründen.">Your pipeline on one page: open, won, lost — with reasons.</li>
-              </ul>
-            </div>
-            <div class="fc-tools">
-              <h4 data-en="Works with" data-de="Funktioniert mit">Works with</h4>
-              <div class="chips"><span>Outlook / Gmail</span><span>Google / Outlook Calendar</span><span>bexio</span><span>SMS</span></div>
             </div>
           </div>
         </article>

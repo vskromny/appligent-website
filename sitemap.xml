@@ -5,17 +5,17 @@
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://appligent.ai/"/>
-    <xhtml:link rel="alternate" hreflang="de-CH" href="https://appligent.ai/de/"/>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://appligent.ai/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://appligent.ai/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://appligent.ai/"/>
   </url>
   <url>
-    <loc>https://appligent.ai/de/</loc>
+    <loc>https://appligent.ai/en/</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://appligent.ai/"/>
-    <xhtml:link rel="alternate" hreflang="de-CH" href="https://appligent.ai/de/"/>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://appligent.ai/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://appligent.ai/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://appligent.ai/"/>
   </url>
   <url>
@@ -23,17 +23,17 @@
     <lastmod>2026-10-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://appligent.ai/impressum.html"/>
-    <xhtml:link rel="alternate" hreflang="de-CH" href="https://appligent.ai/de/impressum.html"/>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://appligent.ai/impressum.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://appligent.ai/en/impressum.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://appligent.ai/impressum.html"/>
   </url>
   <url>
-    <loc>https://appligent.ai/de/impressum.html</loc>
+    <loc>https://appligent.ai/en/impressum.html</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://appligent.ai/impressum.html"/>
-    <xhtml:link rel="alternate" hreflang="de-CH" href="https://appligent.ai/de/impressum.html"/>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://appligent.ai/impressum.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://appligent.ai/en/impressum.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://appligent.ai/impressum.html"/>
   </url>
   <url>
@@ -41,25 +41,25 @@
     <lastmod>2026-10-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://appligent.ai/datenschutz.html"/>
-    <xhtml:link rel="alternate" hreflang="de-CH" href="https://appligent.ai/de/datenschutz.html"/>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://appligent.ai/datenschutz.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://appligent.ai/en/datenschutz.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://appligent.ai/datenschutz.html"/>
   </url>
   <url>
-    <loc>https://appligent.ai/de/datenschutz.html</loc>
+    <loc>https://appligent.ai/en/datenschutz.html</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://appligent.ai/datenschutz.html"/>
-    <xhtml:link rel="alternate" hreflang="de-CH" href="https://appligent.ai/de/datenschutz.html"/>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://appligent.ai/datenschutz.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://appligent.ai/en/datenschutz.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://appligent.ai/datenschutz.html"/>
   </url>
   <url>
-    <loc>https://appligent.ai/de/ki-agentur-zuerich.html</loc>
+    <loc>https://appligent.ai/ki-agentur-zuerich.html</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="de-CH" href="https://appligent.ai/de/ki-agentur-zuerich.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://appligent.ai/de/ki-agentur-zuerich.html"/>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://appligent.ai/ki-agentur-zuerich.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appligent.ai/ki-agentur-zuerich.html"/>
   </url>
 </urlset>

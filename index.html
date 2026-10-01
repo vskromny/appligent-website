@@ -7,7 +7,7 @@
 <meta name="description" content="Appligent AI automates processes for Swiss SMEs: an AI agent team that builds apps from idea to App Store and Google Play, plus back-office automation — Belege and invoice intake, QR-Rechnung and supplier payments, Mahnwesen, MWST preparation. Works with bexio, Abacus, Banana, Outlook and Gmail. Zurich area, no lock-in.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://appligent.ai/">
-<link rel="preload" href="/assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/instrumentsans-latin.woff2" as="font" type="font/woff2" crossorigin>
 
 <!-- Favicons -->
 <link rel="icon" href="/favicon.ico" sizes="any">
@@ -206,18 +206,9 @@
 <style>
 /* Selbst gehostete Schriften — keine Verbindung zu Drittanbietern.
    Self-hosted fonts — no third-party connection. */
-@font-face{font-family:'Archivo';font-style:normal;font-weight:400 750;font-stretch:100%;font-display:swap;
-  src:url('/assets/fonts/archivo-latin-ext.woff2') format('woff2');
-  unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
-@font-face{font-family:'Archivo';font-style:normal;font-weight:400 750;font-stretch:100%;font-display:swap;
-  src:url('/assets/fonts/archivo-latin.woff2') format('woff2');
-  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
-@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:400 700;font-stretch:100%;font-display:swap;
-  src:url('/assets/fonts/bricolage-latin-ext.woff2') format('woff2');
-  unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
-@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:400 700;font-stretch:100%;font-display:swap;
-  src:url('/assets/fonts/bricolage-latin.woff2') format('woff2');
-  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+/* Instrument Sans (OFL) — one variable file, wght 400–700, latin + latin-ext, upright only (no italics used). */
+@font-face{font-family:'Instrument Sans';font-style:normal;font-weight:400 700;font-stretch:100%;font-display:swap;
+  src:url('/assets/fonts/instrumentsans-latin.woff2') format('woff2')}
 @font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;
   src:url('/assets/fonts/plexmono-400-latin-ext.woff2') format('woff2');
   unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
@@ -246,11 +237,12 @@
   --on-accent: #FFFFFF;
   --accent-ink: #5B39F5;
   --accent-on-ink: #B3A6FF;
-  --font-display: "Bricolage Grotesque", "Archivo", system-ui, sans-serif;
-  --font-body: "Archivo", system-ui, sans-serif;
+  --font-display: "Instrument Sans", system-ui, sans-serif;
+  --font-body: "Instrument Sans", system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
-  --disp-track: -0.03em;
-  --disp-weight: 640;
+  --disp-track: -0.025em;   /* ≥48px display headings */
+  --disp-weight: 680;       /* h1/h2 — Instrument Sans reads lighter than Bricolage */
+  --disp-weight-sm: 600;    /* h3 / sub-display */
   --maxw: 1240px;
 
   /* Background: a calm gradient mesh (two accent tints + one cool neutral) over the base colour,
@@ -361,7 +353,7 @@ input, textarea { font-family: var(--font-body); }
   font-family: var(--font-display);
   font-weight: var(--disp-weight);
   letter-spacing: var(--disp-track);
-  line-height: 1.08;
+  line-height: 1.1;
 }
 .section { max-width: var(--maxw); margin: 0 auto; padding: 120px 32px 0; }
 
@@ -411,7 +403,8 @@ html.js .reveal.is-in { opacity: 1; transform: none; }
 .hero { padding-top: 96px; }
 .hero h1 {
   font-size: clamp(42px, 6.4vw, 86px);
-  line-height: 1.02;
+  line-height: 1.04;
+  letter-spacing: -0.03em;
   margin: 28px 0 0;
   max-width: 1050px;
   text-wrap: balance;
@@ -437,14 +430,14 @@ html.js .reveal.is-in { opacity: 1; transform: none; }
   border-top: 1px solid var(--line); margin-top: 40px; padding: 28px 0 0;
 }
 .stat { display: flex; align-items: baseline; gap: 12px; }
-.stat .num { font-family: var(--font-display); font-weight: var(--disp-weight); font-size: 34px; letter-spacing: -0.02em; }
+.stat .num { font-family: var(--font-display); font-weight: var(--disp-weight); font-size: 34px; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
 .stat .lbl { font-size: 13px; color: var(--ink2); line-height: 1.4; }
 
 /* ── Section heads ── */
 .sec-head-row {
   display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-end; justify-content: space-between;
 }
-.sec-title { font-size: clamp(30px, 3.6vw, 46px); margin: 16px 0 0; max-width: 640px; }
+.sec-title { font-size: clamp(30px, 3.6vw, 46px); letter-spacing: -0.02em; margin: 16px 0 0; max-width: 640px; }
 .sec-sub { margin: 0; color: var(--ink2); font-size: 15.5px; max-width: 360px; line-height: 1.55; }
 
 /* ── Cases: tabbed automation flows ──
@@ -482,7 +475,7 @@ html.js .fc-panel[hidden] { display: none; }
 html:not(.js) .fc-panel + .fc-panel { margin-top: 24px; }
 html:not(.js) .fc-tabs { position: static; }
 .fc-panel .kicker { display: flex; align-items: center; gap: 10px; }
-.fc-panel h3 { margin: 14px 0 0; font-size: clamp(24px, 2.6vw, 32px); line-height: 1.1; letter-spacing: -0.025em; font-family: var(--font-display); font-weight: var(--disp-weight); text-wrap: balance; max-width: 640px; }
+.fc-panel h3 { margin: 14px 0 0; font-size: clamp(24px, 2.6vw, 32px); line-height: 1.15; letter-spacing: -0.015em; font-family: var(--font-display); font-weight: var(--disp-weight-sm); text-wrap: balance; max-width: 640px; }
 .fc-pain { margin: 14px 0 0; font-size: 15.5px; line-height: 1.6; color: var(--ink2); max-width: 640px; text-wrap: pretty; }
 .fc-pain a { font-family: var(--font-mono); font-size: 11.5px; white-space: nowrap; margin-left: 6px; border-bottom: 1px dotted currentColor; }
 .fc-pain a:hover { color: var(--accent-ink); }
@@ -509,7 +502,7 @@ html:not(.js) .fc-tabs { position: static; }
   color: var(--ink2); background: var(--bg2); border: 2px solid var(--line);
   transition: color .3s, border-color .3s, background .3s, box-shadow .3s;
 }
-.flow-step b { display: block; margin-top: 14px; font-size: 15px; font-weight: 650; letter-spacing: -0.01em; }
+.flow-step b { display: block; margin-top: 14px; font-size: 15px; font-weight: var(--disp-weight-sm); letter-spacing: -0.01em; }
 .flow-step > span { display: block; margin-top: 6px; font-size: 13.5px; line-height: 1.55; color: var(--ink2); text-wrap: pretty; padding-right: 8px; }
 .flow-step .flow-io { display: inline-block; margin-top: 10px; font-family: var(--font-mono); font-size: 11px; color: var(--accent-ink); }
 
@@ -556,7 +549,7 @@ html:not(.js) .fc-tabs { position: static; }
   border: 1px solid var(--line); background: color-mix(in srgb, var(--bg2) 60%, transparent);
   transition: border-color .3s, box-shadow .3s, background .3s;
 }
-.team .role b { font-size: 13.5px; font-weight: 650; letter-spacing: -0.01em; color: var(--ink); white-space: nowrap; }
+.team .role b { font-size: 13.5px; font-weight: var(--disp-weight-sm); letter-spacing: -0.01em; color: var(--ink); white-space: nowrap; }
 .team .role small { font-family: var(--font-mono); font-size: 10.5px; color: var(--ink2); white-space: nowrap; }
 .team .role.gate { border-color: color-mix(in srgb, var(--accent-ink) 45%, transparent); padding-top: 14px; }
 .team .gate-tag {
@@ -588,7 +581,7 @@ html:not(.js) .fc-tabs { position: static; }
 .fc-facts { margin-top: 22px; }
 .fc-facts dl { margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
 .fc-facts dl > div { background: color-mix(in srgb, var(--bg2) 60%, transparent); padding: 14px 16px; }
-.fc-facts dt { margin: 0; font-family: var(--font-display); font-weight: var(--disp-weight); font-size: 26px; letter-spacing: -0.02em; line-height: 1; color: var(--ink); }
+.fc-facts dt { margin: 0; font-family: var(--font-display); font-weight: var(--disp-weight); font-size: 26px; letter-spacing: -0.015em; line-height: 1; color: var(--ink); }
 .fc-facts dd { margin: 6px 0 0; font-size: 12.5px; line-height: 1.45; color: var(--ink2); text-wrap: pretty; }
 .fc-facts .cap { margin: 8px 0 0; font-family: var(--font-mono); font-size: 11px; color: var(--ink2); }
 
@@ -620,7 +613,7 @@ html:not(.js) .fc-tabs { position: static; }
 /* Services (four-column row) */
 .svc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-top: 32px; }
 .svc { border-top: 2px solid var(--ink); padding-top: 20px; display: flex; flex-direction: column; gap: 12px; }
-.svc h3 { margin: 0; font-size: 18px; font-weight: 650; letter-spacing: -0.015em; }
+.svc h3 { margin: 0; font-size: 18px; font-weight: var(--disp-weight-sm); letter-spacing: -0.01em; }
 .svc p { margin: 0; color: var(--ink2); font-size: 14.5px; line-height: 1.6; flex: 1; text-wrap: pretty; }
 .chips { display: flex; flex-wrap: wrap; gap: 6px; }
 .chips span {
@@ -649,12 +642,12 @@ html:not(.js) .fc-tabs { position: static; }
 .case .thumb img { width: 100%; height: 100%; object-fit: cover; filter: saturate(0.75) contrast(1.05); }
 .case .body { padding: 28px; display: flex; flex-direction: column; gap: 14px; flex: 1; }
 .case .sector { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink2); }
-.case h3 { margin: 0; font-size: 20px; font-weight: 650; letter-spacing: -0.015em; text-wrap: balance; }
+.case h3 { margin: 0; font-size: 20px; font-weight: var(--disp-weight-sm); letter-spacing: -0.01em; text-wrap: balance; }
 .case p { margin: 0; color: var(--ink2); font-size: 14.5px; line-height: 1.6; flex: 1; text-wrap: pretty; }
 .case .metric {
   border-top: 1px solid var(--line); padding-top: 16px;
   font-family: var(--font-display); font-weight: var(--disp-weight); font-size: 26px;
-  letter-spacing: -0.02em; color: var(--accent-ink);
+  letter-spacing: -0.015em; color: var(--accent-ink);
 }
 
 /* ── Why / Zurich ── */
@@ -671,11 +664,11 @@ html:not(.js) .fc-tabs { position: static; }
 .why-band .cap {
   position: relative; margin: 14px 0 0;
   font-family: var(--font-display); font-weight: var(--disp-weight); letter-spacing: var(--disp-track);
-  font-size: clamp(26px, 3.2vw, 44px); line-height: 1.06; max-width: 720px; text-wrap: balance;
+  font-size: clamp(26px, 3.2vw, 44px); line-height: 1.08; max-width: 720px; text-wrap: balance;
 }
 .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; border-top: 1px solid var(--line); padding-top: 48px; }
 .why-item { display: flex; flex-direction: column; gap: 10px; }
-.why-item h3 { margin: 0; font-size: 17px; font-weight: 650; }
+.why-item h3 { margin: 0; font-size: 17px; font-weight: var(--disp-weight-sm); letter-spacing: -0.01em; }
 .why-item h3 .tag { color: var(--accent-ink); font-family: var(--font-mono); font-size: 12px; margin-right: 10px; }
 .why-item p { margin: 0; color: var(--ink2); font-size: 14.5px; line-height: 1.6; text-wrap: pretty; }
 
@@ -701,7 +694,7 @@ html:not(.js) .fc-tabs { position: static; }
   display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 56px;
 }
 .contact-box .kicker { color: var(--accent-on-ink); }
-.contact-box h2 { font-size: clamp(30px, 3.6vw, 48px); line-height: 1.06; margin: 16px 0 0; text-wrap: balance; }
+.contact-box h2 { font-size: clamp(30px, 3.6vw, 48px); line-height: 1.08; margin: 16px 0 0; text-wrap: balance; }
 .contact-box .lead { margin: 24px 0 0; opacity: 0.7; font-size: 15.5px; line-height: 1.6; max-width: 420px; text-wrap: pretty; }
 .contact-links { margin-top: 40px; display: flex; flex-direction: column; gap: 8px; font-family: var(--font-mono); font-size: 13px; }
 .contact-links a { color: var(--accent-on-ink); }

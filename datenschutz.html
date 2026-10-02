@@ -1,12 +1,28 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de-CH">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Datenschutzerklärung — Appligent AI</title>
-<meta name="description" content="Datenschutzerklärung von Appligent AI, Steinmaur (Kanton Zürich) — welche Daten diese Website bearbeitet und welche Rechte Sie haben.">
+<meta name="description" content="Welche Daten diese Website bearbeitet und welche Rechte Sie haben.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://appligent.ai/datenschutz.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Appligent AI">
+<meta property="og:url" content="https://appligent.ai/datenschutz.html">
+<meta property="og:title" content="Datenschutzerklärung — Appligent AI">
+<meta property="og:description" content="Welche Daten diese Website bearbeitet und welche Rechte Sie haben.">
+<meta property="og:image" content="https://appligent.ai/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="de_CH">
+<meta property="og:locale:alternate" content="en_CH">
+<link rel="alternate" hreflang="de-CH" href="https://appligent.ai/datenschutz.html">
+<link rel="alternate" hreflang="en" href="https://appligent.ai/en/datenschutz.html">
+<link rel="alternate" hreflang="x-default" href="https://appligent.ai/datenschutz.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Datenschutzerklärung — Appligent AI">
+<meta name="twitter:image" content="https://appligent.ai/assets/img/og.png">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -15,18 +31,9 @@
 <style>
 /* Selbst gehostete Schriften — keine Verbindung zu Drittanbietern.
    Self-hosted fonts — no third-party connection. */
-@font-face{font-family:'Archivo';font-style:normal;font-weight:400 750;font-stretch:100%;font-display:swap;
-  src:url('/assets/fonts/archivo-latin-ext.woff2') format('woff2');
-  unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
-@font-face{font-family:'Archivo';font-style:normal;font-weight:400 750;font-stretch:100%;font-display:swap;
-  src:url('/assets/fonts/archivo-latin.woff2') format('woff2');
-  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
-@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:400 700;font-stretch:100%;font-display:swap;
-  src:url('/assets/fonts/bricolage-latin-ext.woff2') format('woff2');
-  unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
-@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:400 700;font-stretch:100%;font-display:swap;
-  src:url('/assets/fonts/bricolage-latin.woff2') format('woff2');
-  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+/* Instrument Sans (OFL) — one variable file, wght 400–700, latin + latin-ext, upright only (no italics used). */
+@font-face{font-family:'Instrument Sans';font-style:normal;font-weight:400 700;font-stretch:100%;font-display:swap;
+  src:url('/assets/fonts/instrumentsans-latin.woff2') format('woff2')}
 @font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;
   src:url('/assets/fonts/plexmono-400-latin-ext.woff2') format('woff2');
   unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
@@ -46,10 +53,10 @@
   --bg: #FAFAF7; --bg2: #FFFFFF; --ink: #161816; --ink2: #5D625D; --line: #E5E4DC;
   --accent: #6D4AFF; --accent2: #2FB0FF; --grad: linear-gradient(120deg, #6D4AFF, #2FB0FF);
   --on-accent: #FFFFFF; --accent-ink: #5B39F5;
-  --font-display: "Bricolage Grotesque", "Archivo", system-ui, sans-serif;
-  --font-body: "Archivo", system-ui, sans-serif;
+  --font-display: "Instrument Sans", system-ui, sans-serif;
+  --font-body: "Instrument Sans", system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
-  --disp-track: -0.03em; --disp-weight: 640; --maxw: 820px;
+  --disp-track: -0.025em; --disp-weight: 680; --disp-weight-sm: 600; --maxw: 820px;
 }
 :root[data-theme="dark"] {
   --bg: #0D1311; --bg2: #131B18; --ink: #F2F5F2; --ink2: #B2BDB5; --line: #243029; --accent-ink: #9C8BFF;
@@ -66,12 +73,12 @@ a:hover { color: var(--ink); }
 .brand .ai { color: var(--accent-ink); margin-left: -6px; }
 .toggles { display: flex; align-items: center; gap: 10px; }
 .seg { display: flex; border: 1px solid var(--line); border-radius: 99px; overflow: hidden; font-family: var(--font-mono); font-size: 11px; }
-.seg button { border: none; cursor: pointer; padding: 6px 12px; font-family: var(--font-mono); font-size: 11px; background: transparent; color: var(--ink2); transition: background .15s, color .15s; }
-.seg button.active { background: var(--ink); color: var(--bg); }
+.seg button, .seg a { border: none; cursor: pointer; padding: 6px 12px; font-family: var(--font-mono); font-size: 11px; background: transparent; color: var(--ink2); transition: background .15s, color .15s; }
+.seg button.active, .seg a.active { background: var(--ink); color: var(--bg); }
 main { max-width: var(--maxw); margin: 0 auto; padding: 64px 32px 96px; }
 .kicker { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-ink); }
-h1 { font-family: var(--font-display); font-weight: var(--disp-weight); letter-spacing: var(--disp-track); font-size: clamp(32px, 5vw, 48px); line-height: 1.08; margin: 16px 0 24px; }
-h2 { font-family: var(--font-display); font-weight: var(--disp-weight); letter-spacing: -0.015em; font-size: 21px; margin: 44px 0 12px; }
+h1 { font-family: var(--font-display); font-weight: var(--disp-weight); letter-spacing: var(--disp-track); font-size: clamp(32px, 5vw, 48px); line-height: 1.1; margin: 16px 0 24px; }
+h2 { font-family: var(--font-display); font-weight: var(--disp-weight-sm); letter-spacing: -0.01em; font-size: 21px; margin: 44px 0 12px; }
 h3 { font-size: 16.5px; font-weight: 650; margin: 24px 0 8px; }
 p { margin: 0 0 14px; color: var(--ink2); text-wrap: pretty; }
 p strong, li strong { color: var(--ink); font-weight: 600; }
@@ -111,8 +118,8 @@ th { color: var(--ink); font-weight: 650; font-size: 13px; text-transform: upper
     </a>
     <div class="toggles">
       <div class="seg" role="group" aria-label="Sprache">
-        <button type="button" data-lang="de" class="active">DE</button>
-        <button type="button" data-lang="en">EN</button>
+        <a href="/en/datenschutz.html" hreflang="en" lang="en">EN</a>
+        <a href="/datenschutz.html" hreflang="de-CH" lang="de" class="active" aria-current="page">DE</a>
       </div>
       <div class="seg" role="group" aria-label="Darstellung">
         <button type="button" data-theme-set="light" title="Hell" aria-label="Hell">☀</button>
@@ -127,7 +134,7 @@ th { color: var(--ink); font-weight: 650; font-size: 13px; text-transform: upper
   <div class="kicker" data-de="Rechtliches" data-en="Legal">Rechtliches</div>
   <h1 data-de="Datenschutzerklärung" data-en="Privacy Policy">Datenschutzerklärung</h1>
 
-  <p class="lead" data-de="Diese Website ist bewusst datensparsam gebaut. Sie setzt keine Tracking- oder Werbe-Cookies, bindet keine Analyse-Werkzeuge ein und erstellt keine Nutzerprofile. Nachfolgend erklären wir, welche Daten dennoch anfallen und weshalb." data-en="This website is deliberately built to minimise data collection. It sets no tracking or advertising cookies, embeds no analytics tools and creates no user profiles. Below we explain what data is nevertheless processed, and why.">Diese Website ist bewusst datensparsam gebaut. Sie setzt keine Tracking- oder Werbe-Cookies, bindet keine Analyse-Werkzeuge ein und erstellt keine Nutzerprofile. Nachfolgend erklären wir, welche Daten dennoch anfallen und weshalb.</p>
+  <p class="lead" data-de="Diese Website ist bewusst datensparsam gebaut. Sie setzt keine Tracking- oder Werbe-Cookies, nutzt nur eine cookielose Reichweitenmessung ohne IP-Speicherung und erstellt keine Nutzerprofile. Nachfolgend erklären wir, welche Daten dennoch anfallen und weshalb." data-en="This website is deliberately built to minimise data collection. It sets no tracking or advertising cookies, uses only cookieless reach measurement without IP storage and creates no user profiles. Below we explain what data is nevertheless processed, and why.">Diese Website ist bewusst datensparsam gebaut. Sie setzt keine Tracking- oder Werbe-Cookies, nutzt nur eine cookielose Reichweitenmessung ohne IP-Speicherung und erstellt keine Nutzerprofile. Nachfolgend erklären wir, welche Daten dennoch anfallen und weshalb.</p>
 
   <h2 data-de="1. Verantwortliche Stelle" data-en="1. Controller">1. Verantwortliche Stelle</h2>
   <div class="card">
@@ -157,12 +164,12 @@ th { color: var(--ink); font-weight: 650; font-size: 13px; text-transform: upper
   </ul>
   <p data-de="Diese Bearbeitung ist für den Betrieb und die Sicherheit der Website technisch erforderlich. Wir selbst greifen nicht auf diese Logdateien zu und führen sie nicht mit anderen Daten zusammen. Die Aufbewahrung richtet sich nach den Vorgaben von GitHub." data-en="This processing is technically necessary for the operation and security of the website. We do not access these log files ourselves and do not combine them with other data. Retention is governed by GitHub's own policies.">Diese Bearbeitung ist für den Betrieb und die Sicherheit der Website technisch erforderlich. Wir selbst greifen nicht auf diese Logdateien zu und führen sie nicht mit anderen Daten zusammen. Die Aufbewahrung richtet sich nach den Vorgaben von GitHub.</p>
 
-  <h3 data-de="3.2 Kontaktformular und E-Mail" data-en="3.2 Contact form and email">3.2 Kontaktformular und E-Mail</h3>
-  <p data-de="Das Kontaktformular auf dieser Website überträgt Ihre Eingaben nicht an einen Server. Beim Absenden öffnet sich Ihr eigenes E-Mail-Programm mit einer vorbereiteten Nachricht, die Sie selbst versenden. Wir erhalten Ihre Angaben somit ausschliesslich als gewöhnliche E-Mail." data-en="The contact form on this website does not transmit your entries to a server. When you submit it, your own email application opens with a prepared message that you send yourself. We therefore receive your details solely as an ordinary email.">Das Kontaktformular auf dieser Website überträgt Ihre Eingaben nicht an einen Server. Beim Absenden öffnet sich Ihr eigenes E-Mail-Programm mit einer vorbereiteten Nachricht, die Sie selbst versenden. Wir erhalten Ihre Angaben somit ausschliesslich als gewöhnliche E-Mail.</p>
-  <p data-de="Die von Ihnen mitgeteilten Daten (Name, E-Mail-Adresse, Inhalt der Nachricht) bearbeiten wir ausschliesslich zur Beantwortung Ihrer Anfrage und zur Anbahnung eines allfälligen Vertragsverhältnisses. Bitte übermitteln Sie uns per E-Mail keine besonders schützenswerten Personendaten und keine vertraulichen Geschäftsgeheimnisse; unverschlüsselte E-Mail ist kein sicherer Übertragungsweg." data-en="We process the data you provide (name, email address, content of the message) solely to respond to your enquiry and to initiate any potential contractual relationship. Please do not send us sensitive personal data or confidential business secrets by email; unencrypted email is not a secure transmission channel.">Die von Ihnen mitgeteilten Daten (Name, E-Mail-Adresse, Inhalt der Nachricht) bearbeiten wir ausschliesslich zur Beantwortung Ihrer Anfrage und zur Anbahnung eines allfälligen Vertragsverhältnisses. Bitte übermitteln Sie uns per E-Mail keine besonders schützenswerten Personendaten und keine vertraulichen Geschäftsgeheimnisse; unverschlüsselte E-Mail ist kein sicherer Übertragungsweg.</p>
+  <h3 id="kontaktformular" data-de="3.2 Kontaktformular und E-Mail" data-en="3.2 Contact form and email">3.2 Kontaktformular und E-Mail</h3>
+  <p data-de="Das Kontaktformular auf dieser Website übermittelt Ihre Eingaben — Name, Firma (freiwillig), E-Mail-Adresse und Nachricht — verschlüsselt an den Formulardienst FormSubmit (formsubmit.co, betrieben von Devro LABS), der sie als E-Mail an hello@appligent.ai weiterleitet. FormSubmit handelt dabei in unserem Auftrag; eine Bearbeitung auf Servern ausserhalb der Schweiz und des EWR kann nicht ausgeschlossen werden. Das Formular enthält ein unsichtbares Feld zur Abwehr automatisierter Einsendungen (Honeypot); es werden dafür keine Cookies gesetzt und kein Captcha eines Drittanbieters geladen. Wer das Formular nicht nutzen möchte, kann uns jederzeit direkt per E-Mail schreiben." data-en="The contact form on this website transmits your entries — name, company (optional), email address and message — encrypted to the form service FormSubmit (formsubmit.co, operated by Devro LABS), which forwards them to hello@appligent.ai as an email. FormSubmit acts on our behalf; processing on servers outside Switzerland and the EEA cannot be excluded. The form contains an invisible field to deter automated submissions (honeypot); no cookies are set and no third-party captcha is loaded for this. If you prefer not to use the form, you can always email us directly.">Das Kontaktformular auf dieser Website übermittelt Ihre Eingaben — Name, Firma (freiwillig), E-Mail-Adresse und Nachricht — verschlüsselt an den Formulardienst FormSubmit (formsubmit.co, betrieben von Devro LABS), der sie als E-Mail an hello@appligent.ai weiterleitet. FormSubmit handelt dabei in unserem Auftrag; eine Bearbeitung auf Servern ausserhalb der Schweiz und des EWR kann nicht ausgeschlossen werden. Das Formular enthält ein unsichtbares Feld zur Abwehr automatisierter Einsendungen (Honeypot); es werden dafür keine Cookies gesetzt und kein Captcha eines Drittanbieters geladen. Wer das Formular nicht nutzen möchte, kann uns jederzeit direkt per E-Mail schreiben.</p>
+  <p data-de="Die von Ihnen mitgeteilten Daten bearbeiten wir ausschliesslich zur Beantwortung Ihrer Anfrage und zur Anbahnung eines allfälligen Vertragsverhältnisses. Bitte übermitteln Sie uns über das Formular oder per E-Mail keine besonders schützenswerten Personendaten und keine vertraulichen Geschäftsgeheimnisse; unverschlüsselte E-Mail ist kein sicherer Übertragungsweg." data-en="We process the data you provide solely to respond to your enquiry and to initiate any potential contractual relationship. Please do not send us sensitive personal data or confidential business secrets via the form or by email; unencrypted email is not a secure transmission channel.">Die von Ihnen mitgeteilten Daten bearbeiten wir ausschliesslich zur Beantwortung Ihrer Anfrage und zur Anbahnung eines allfälligen Vertragsverhältnisses. Bitte übermitteln Sie uns über das Formular oder per E-Mail keine besonders schützenswerten Personendaten und keine vertraulichen Geschäftsgeheimnisse; unverschlüsselte E-Mail ist kein sicherer Übertragungsweg.</p>
 
   <h3 data-de="3.3 Lokale Speicherung im Browser" data-en="3.3 Local storage in your browser">3.3 Lokale Speicherung im Browser</h3>
-  <p data-de="Diese Website verwendet keine Cookies. Sie speichert lediglich drei Einstellungen im lokalen Speicher (localStorage) Ihres Browsers. Diese Werte verbleiben auf Ihrem Gerät, werden nicht an uns oder an Dritte übermittelt und erlauben keine Wiedererkennung Ihrer Person:" data-en="This website does not use cookies. It stores only three settings in your browser's local storage. These values remain on your device, are not transmitted to us or to third parties, and do not allow you to be identified:">Diese Website verwendet keine Cookies. Sie speichert lediglich drei Einstellungen im lokalen Speicher (localStorage) Ihres Browsers. Diese Werte verbleiben auf Ihrem Gerät, werden nicht an uns oder an Dritte übermittelt und erlauben keine Wiedererkennung Ihrer Person:</p>
+  <p data-de="Diese Website verwendet keine Cookies. Sie speichert lediglich zwei Einstellungen im lokalen Speicher (localStorage) Ihres Browsers. Diese Werte verbleiben auf Ihrem Gerät, werden nicht an uns oder an Dritte übermittelt und erlauben keine Wiedererkennung Ihrer Person:" data-en="This website does not use cookies. It stores only two settings in your browser's local storage. These values remain on your device, are not transmitted to us or to third parties, and do not allow you to be identified:">Diese Website verwendet keine Cookies. Sie speichert lediglich zwei Einstellungen im lokalen Speicher (localStorage) Ihres Browsers. Diese Werte verbleiben auf Ihrem Gerät, werden nicht an uns oder an Dritte übermittelt und erlauben keine Wiedererkennung Ihrer Person:</p>
   <div class="table-wrap">
     <table>
       <thead>
@@ -172,7 +179,6 @@ th { color: var(--ink); font-weight: 650; font-size: 13px; text-transform: upper
         </tr>
       </thead>
       <tbody>
-        <tr><td><code>ag-lang</code></td><td data-de="Gewählte Sprache (Deutsch oder Englisch)" data-en="Selected language (German or English)">Gewählte Sprache (Deutsch oder Englisch)</td></tr>
         <tr><td><code>ag-theme</code></td><td data-de="Gewählte Darstellung (hell, dunkel oder Systemeinstellung)" data-en="Selected appearance (light, dark or system setting)">Gewählte Darstellung (hell, dunkel oder Systemeinstellung)</td></tr>
         <tr><td><code>ag-cookies</code></td><td data-de="Merkt, dass der Datenschutzhinweis bereits angezeigt wurde" data-en="Records that the privacy notice has already been shown">Merkt, dass der Datenschutzhinweis bereits angezeigt wurde</td></tr>
       </tbody>
@@ -186,7 +192,7 @@ th { color: var(--ink); font-weight: 650; font-size: 13px; text-transform: upper
   <h2 data-de="4. Was wir nicht tun" data-en="4. What we do not do">4. Was wir nicht tun</h2>
   <div class="card">
     <ul>
-      <li data-de="Keine Analyse- oder Statistikdienste (kein Google Analytics, Matomo, Plausible o. Ä.)" data-en="No analytics or statistics services (no Google Analytics, Matomo, Plausible or similar)">Keine Analyse- oder Statistikdienste (kein Google Analytics, Matomo, Plausible o. Ä.)</li>
+      <li data-de="Nur eine cookielose Reichweitenmessung (Cloudflare Web Analytics): keine Cookies, kein Fingerprinting, keine Speicherung von IP-Adressen, keine Nutzerprofile — lediglich aggregierte Seitenaufrufe, Referrer und Gerätetyp." data-en="Only cookieless reach measurement (Cloudflare Web Analytics): no cookies, no fingerprinting, no IP addresses stored, no user profiles — only aggregated page views, referrers and device type.">Nur eine cookielose Reichweitenmessung (Cloudflare Web Analytics): keine Cookies, kein Fingerprinting, keine Speicherung von IP-Adressen, keine Nutzerprofile — lediglich aggregierte Seitenaufrufe, Referrer und Gerätetyp.</li>
       <li data-de="Keine Tracking-, Werbe- oder Social-Media-Pixel" data-en="No tracking, advertising or social media pixels">Keine Tracking-, Werbe- oder Social-Media-Pixel</li>
       <li data-de="Keine externen Schriftarten, Karten oder eingebetteten Videos (Schriften werden selbst gehostet)" data-en="No external fonts, maps or embedded videos (fonts are self-hosted)">Keine externen Schriftarten, Karten oder eingebetteten Videos (Schriften werden selbst gehostet)</li>
       <li data-de="Keine Erstellung von Nutzerprofilen und kein Profiling" data-en="No creation of user profiles and no profiling">Keine Erstellung von Nutzerprofilen und kein Profiling</li>
@@ -200,7 +206,7 @@ th { color: var(--ink); font-weight: 650; font-size: 13px; text-transform: upper
   <p data-de="Wir bearbeiten Personendaten zur Bereitstellung und Sicherheit der Website sowie zur Beantwortung von Anfragen. Nach Schweizer Recht stützt sich die Bearbeitung auf ein überwiegendes berechtigtes Interesse am sicheren Betrieb der Website sowie auf die Anbahnung und Erfüllung vorvertraglicher Beziehungen. Soweit die DSGVO anwendbar ist, sind die Rechtsgrundlagen Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einem sicheren und funktionsfähigen Webauftritt) sowie Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Massnahmen auf Ihre Anfrage hin)." data-en="We process personal data to provide and secure the website and to respond to enquiries. Under Swiss law, processing is based on an overriding legitimate interest in the secure operation of the website and on the initiation and performance of pre-contractual relations. Where the GDPR applies, the legal bases are Art. 6(1)(f) GDPR (legitimate interest in a secure and functional web presence) and Art. 6(1)(b) GDPR (pre-contractual measures at your request).">Wir bearbeiten Personendaten zur Bereitstellung und Sicherheit der Website sowie zur Beantwortung von Anfragen. Nach Schweizer Recht stützt sich die Bearbeitung auf ein überwiegendes berechtigtes Interesse am sicheren Betrieb der Website sowie auf die Anbahnung und Erfüllung vorvertraglicher Beziehungen. Soweit die DSGVO anwendbar ist, sind die Rechtsgrundlagen Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einem sicheren und funktionsfähigen Webauftritt) sowie Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Massnahmen auf Ihre Anfrage hin).</p>
 
   <h2 data-de="6. Bekanntgabe an Dritte und Auslandbekanntgabe" data-en="6. Disclosure to third parties and transfers abroad">6. Bekanntgabe an Dritte und Auslandbekanntgabe</h2>
-  <p data-de="Wir setzen bewusst nur einen einzigen externen Dienstleister ein: den Hosting-Anbieter. Weitere Inhalte Dritter — etwa Schriftarten, Karten, Videos oder Analysewerkzeuge — bindet diese Website nicht ein. Der Anbieter hat seinen Sitz bzw. Serverstandorte unter anderem in den Vereinigten Staaten, weshalb es zu einer Bekanntgabe ins Ausland kommen kann." data-en="We deliberately use only a single external service provider: the hosting provider. This website embeds no other third-party content — no fonts, maps, videos or analytics tools. The provider is based or operates servers, among other locations, in the United States, which may result in a transfer abroad.">Wir setzen bewusst nur einen einzigen externen Dienstleister ein: den Hosting-Anbieter. Weitere Inhalte Dritter — etwa Schriftarten, Karten, Videos oder Analysewerkzeuge — bindet diese Website nicht ein. Der Anbieter hat seinen Sitz bzw. Serverstandorte unter anderem in den Vereinigten Staaten, weshalb es zu einer Bekanntgabe ins Ausland kommen kann.</p>
+  <p data-de="Wir setzen bewusst nur drei externe Dienstleister ein: den Hosting-Anbieter, eine cookielose Reichweitenmessung (Ziffer 6a) und den Formulardienst für das Kontaktformular (Ziffer 3.2). Weitere Inhalte Dritter — etwa Schriftarten, Karten oder Videos — bindet diese Website nicht ein. Die Anbieter haben ihren Sitz bzw. Serverstandorte unter anderem ausserhalb der Schweiz und des EWR, weshalb es zu einer Bekanntgabe ins Ausland kommen kann." data-en="We deliberately use only three external service providers: the hosting provider, a cookieless reach-measurement service (section 6a) and the form service for the contact form (section 3.2). This website embeds no other third-party content — no fonts, maps or videos. The providers are based or operate servers, among other locations, outside Switzerland and the EEA, which may result in a transfer abroad.">Wir setzen bewusst nur drei externe Dienstleister ein: den Hosting-Anbieter, eine cookielose Reichweitenmessung (Ziffer 6a) und den Formulardienst für das Kontaktformular (Ziffer 3.2). Weitere Inhalte Dritter — etwa Schriftarten, Karten oder Videos — bindet diese Website nicht ein. Die Anbieter haben ihren Sitz bzw. Serverstandorte unter anderem ausserhalb der Schweiz und des EWR, weshalb es zu einer Bekanntgabe ins Ausland kommen kann.</p>
   <div class="table-wrap">
     <table>
       <thead>
@@ -216,11 +222,24 @@ th { color: var(--ink); font-weight: 650; font-size: 13px; text-transform: upper
           <td data-de="Hosting der Website" data-en="Website hosting">Hosting der Website</td>
           <td data-de="IP-Adresse, Zugriffsdaten" data-en="IP address, access data">IP-Adresse, Zugriffsdaten</td>
         </tr>
+        <tr>
+          <td>Cloudflare, Inc.</td>
+          <td data-de="Cookielose Reichweitenmessung (Web Analytics)" data-en="Cookieless reach measurement (Web Analytics)">Cookielose Reichweitenmessung (Web Analytics)</td>
+          <td data-de="Aggregierte Seitenaufrufe, Referrer, Gerätetyp, Land — keine IP-Speicherung" data-en="Aggregated page views, referrers, device type, country — no IP storage">Aggregierte Seitenaufrufe, Referrer, Gerätetyp, Land — keine IP-Speicherung</td>
+        </tr>
+        <tr>
+          <td>FormSubmit (Devro LABS)</td>
+          <td data-de="Weiterleitung des Kontaktformulars als E-Mail" data-en="Forwarding of the contact form as email">Weiterleitung des Kontaktformulars als E-Mail</td>
+          <td data-de="Name, Firma, E-Mail-Adresse, Nachricht, IP-Adresse" data-en="Name, company, email address, message, IP address">Name, Firma, E-Mail-Adresse, Nachricht, IP-Adresse</td>
+        </tr>
       </tbody>
     </table>
   </div>
   <p data-de="Die Bekanntgabe erfolgt gestützt auf anerkannte Übermittlungsmechanismen, insbesondere die Angemessenheitsbeschlüsse für das Schweizerisch-Amerikanische bzw. EU-Amerikanische Datenschutzrahmenwerk oder Standardvertragsklauseln. Trotz dieser Massnahmen kann nicht in jedem Fall ausgeschlossen werden, dass Behörden im Empfängerstaat auf Daten zugreifen." data-en="Transfers are based on recognised transfer mechanisms, in particular the adequacy decisions for the Swiss–U.S. and EU–U.S. Data Privacy Frameworks, or standard contractual clauses. Despite these measures, access to data by authorities in the recipient country cannot be excluded in every case.">Die Bekanntgabe erfolgt gestützt auf anerkannte Übermittlungsmechanismen, insbesondere die Angemessenheitsbeschlüsse für das Schweizerisch-Amerikanische bzw. EU-Amerikanische Datenschutzrahmenwerk oder Standardvertragsklauseln. Trotz dieser Massnahmen kann nicht in jedem Fall ausgeschlossen werden, dass Behörden im Empfängerstaat auf Daten zugreifen.</p>
   <p data-de="Darüber hinaus geben wir Personendaten nur bekannt, wenn wir gesetzlich dazu verpflichtet sind oder wenn dies zur Durchsetzung unserer Rechte erforderlich ist." data-en="Beyond this, we disclose personal data only where we are legally obliged to do so or where it is necessary to enforce our rights.">Darüber hinaus geben wir Personendaten nur bekannt, wenn wir gesetzlich dazu verpflichtet sind oder wenn dies zur Durchsetzung unserer Rechte erforderlich ist.</p>
+
+  <h2 data-de="6a. Reichweitenmessung (Cloudflare Web Analytics)" data-en="6a. Reach measurement (Cloudflare Web Analytics)">6a. Reichweitenmessung (Cloudflare Web Analytics)</h2>
+  <p data-de="Zur Messung der Reichweite dieser Website nutzen wir Cloudflare Web Analytics der Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, USA. Der Dienst arbeitet ohne Cookies, ohne Fingerprinting und ohne Speicherung von IP-Adressen; erfasst werden ausschliesslich aggregierte Angaben wie Seitenaufrufe, Referrer, Gerätetyp und Land. Eine Zuordnung zu einzelnen Personen ist uns nicht möglich. Rechtsgrundlage ist unser berechtigtes Interesse an einer datensparsamen Reichweitenmessung. Weitere Informationen: https://www.cloudflare.com/web-analytics/ und https://www.cloudflare.com/privacypolicy/." data-en="To measure the reach of this website we use Cloudflare Web Analytics by Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, USA. The service works without cookies, without fingerprinting and without storing IP addresses; only aggregated data such as page views, referrers, device type and country are collected. We cannot attribute any of it to individual persons. The legal basis is our legitimate interest in privacy-preserving reach measurement. More information: https://www.cloudflare.com/web-analytics/ and https://www.cloudflare.com/privacypolicy/.">Zur Messung der Reichweite dieser Website nutzen wir Cloudflare Web Analytics der Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, USA. Der Dienst arbeitet ohne Cookies, ohne Fingerprinting und ohne Speicherung von IP-Adressen; erfasst werden ausschliesslich aggregierte Angaben wie Seitenaufrufe, Referrer, Gerätetyp und Land. Eine Zuordnung zu einzelnen Personen ist uns nicht möglich. Rechtsgrundlage ist unser berechtigtes Interesse an einer datensparsamen Reichweitenmessung. Weitere Informationen: https://www.cloudflare.com/web-analytics/ und https://www.cloudflare.com/privacypolicy/.</p>
 
   <h2 data-de="7. Aufbewahrungsdauer" data-en="7. Retention period">7. Aufbewahrungsdauer</h2>
   <p data-de="Wir bewahren Personendaten nur so lange auf, wie es für den jeweiligen Zweck erforderlich ist oder gesetzliche Aufbewahrungsfristen es verlangen. E-Mail-Korrespondenz zu Anfragen, die zu keinem Auftrag führen, löschen wir in der Regel spätestens zwölf Monate nach dem letzten Kontakt. Für Server-Logdateien gelten die Fristen des Hosting-Anbieters." data-en="We retain personal data only for as long as necessary for the respective purpose or as required by statutory retention periods. Email correspondence relating to enquiries that do not lead to an engagement is generally deleted no later than twelve months after the last contact. Server log files are subject to the hosting provider's retention periods.">Wir bewahren Personendaten nur so lange auf, wie es für den jeweiligen Zweck erforderlich ist oder gesetzliche Aufbewahrungsfristen es verlangen. E-Mail-Korrespondenz zu Anfragen, die zu keinem Auftrag führen, löschen wir in der Regel spätestens zwölf Monate nach dem letzten Kontakt. Für Server-Logdateien gelten die Fristen des Hosting-Anbieters.</p>
@@ -243,12 +262,12 @@ th { color: var(--ink); font-weight: 650; font-size: 13px; text-transform: upper
   <h2 data-de="10. Änderungen dieser Erklärung" data-en="10. Changes to this policy">10. Änderungen dieser Erklärung</h2>
   <p data-de="Wir können diese Datenschutzerklärung jederzeit anpassen, insbesondere wenn wir die Website um neue Funktionen erweitern. Massgebend ist die jeweils auf dieser Seite veröffentlichte Fassung." data-en="We may amend this privacy policy at any time, in particular if we extend the website with new functionality. The version published on this page is the authoritative one.">Wir können diese Datenschutzerklärung jederzeit anpassen, insbesondere wenn wir die Website um neue Funktionen erweitern. Massgebend ist die jeweils auf dieser Seite veröffentlichte Fassung.</p>
 
-  <div class="updated" data-de="Stand: August 2026" data-en="Last updated: August 2026">Stand: August 2026</div>
+  <div class="updated" data-de="Stand: Oktober 2026" data-en="Last updated: October 2026">Stand: Oktober 2026</div>
 </main>
 
 <footer class="site-footer">
   <div class="bar">
-    <span data-en="© 2026 Appligent AI · Kanton Zürich, Switzerland" data-de="© 2026 Appligent AI · Kanton Zürich, Schweiz">© 2026 Appligent AI · Kanton Zürich, Switzerland</span>
+    <span data-en="© 2026 Appligent AI · Kanton Zürich, Switzerland" data-de="© 2026 Appligent AI · Kanton Zürich, Schweiz">© 2026 Appligent AI · Kanton Zürich, Schweiz</span>
     <div class="links">
       <a href="/" data-de="Startseite" data-en="Home">Startseite</a>
       <a href="/impressum.html">Impressum</a>
@@ -262,7 +281,7 @@ th { color: var(--ink); font-weight: 650; font-size: 13px; text-transform: upper
 (function () {
   "use strict";
   var root = document.documentElement;
-  var THEME_KEY = "ag-theme", LANG_KEY = "ag-lang";
+  var THEME_KEY = "ag-theme";
   var mq = window.matchMedia("(prefers-color-scheme: dark)");
   var themeButtons = document.querySelectorAll("[data-theme-set]");
   var theme = localStorage.getItem(THEME_KEY) || "auto";
@@ -282,29 +301,12 @@ th { color: var(--ink); font-weight: 650; font-size: 13px; text-transform: upper
   });
   mq.addEventListener("change", function () { if (theme === "auto") applyTheme("auto", false); });
   applyTheme(theme, false);
-
-  var langButtons = document.querySelectorAll("[data-lang]");
-  var i18nNodes = document.querySelectorAll("[data-de]");
-  var lang = localStorage.getItem(LANG_KEY) || "de";
-
-  function applyLang(next, persist) {
-    lang = next;
-    if (persist) localStorage.setItem(LANG_KEY, next);
-    root.setAttribute("lang", next);
-    i18nNodes.forEach(function (el) {
-      var val = el.getAttribute("data-" + next);
-      if (val !== null) el.textContent = val;
-    });
-    langButtons.forEach(function (b) {
-      b.classList.toggle("active", b.getAttribute("data-lang") === next);
-    });
-  }
-  langButtons.forEach(function (b) {
-    b.addEventListener("click", function () { applyLang(b.getAttribute("data-lang"), true); });
-  });
-  applyLang(lang, false);
 })();
 </script>
+
+<!-- ANALYTICS placeholder — see the full note in index.html. Inert until CF_BEACON_TOKEN is set;
+     -->
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "9fe30427e7ef46089eeb8ecf58b21b11"}'></script>
 
 </body>
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de-CH">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +7,22 @@
 <meta name="description" content="Impressum und rechtliche Hinweise von Appligent AI, Steinmaur (Kanton Zürich).">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://appligent.ai/impressum.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Appligent AI">
+<meta property="og:url" content="https://appligent.ai/impressum.html">
+<meta property="og:title" content="Impressum — Appligent AI">
+<meta property="og:description" content="Impressum und rechtliche Hinweise von Appligent AI, Steinmaur (Kanton Zürich).">
+<meta property="og:image" content="https://appligent.ai/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="de_CH">
+<meta property="og:locale:alternate" content="en_CH">
+<link rel="alternate" hreflang="de-CH" href="https://appligent.ai/impressum.html">
+<link rel="alternate" hreflang="en" href="https://appligent.ai/en/impressum.html">
+<link rel="alternate" hreflang="x-default" href="https://appligent.ai/impressum.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Impressum — Appligent AI">
+<meta name="twitter:image" content="https://appligent.ai/assets/img/og.png">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -15,18 +31,9 @@
 <style>
 /* Selbst gehostete Schriften — keine Verbindung zu Drittanbietern.
    Self-hosted fonts — no third-party connection. */
-@font-face{font-family:'Archivo';font-style:normal;font-weight:400 750;font-stretch:100%;font-display:swap;
-  src:url('/assets/fonts/archivo-latin-ext.woff2') format('woff2');
-  unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
-@font-face{font-family:'Archivo';font-style:normal;font-weight:400 750;font-stretch:100%;font-display:swap;
-  src:url('/assets/fonts/archivo-latin.woff2') format('woff2');
-  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
-@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:400 700;font-stretch:100%;font-display:swap;
-  src:url('/assets/fonts/bricolage-latin-ext.woff2') format('woff2');
-  unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
-@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:400 700;font-stretch:100%;font-display:swap;
-  src:url('/assets/fonts/bricolage-latin.woff2') format('woff2');
-  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+/* Instrument Sans (OFL) — one variable file, wght 400–700, latin + latin-ext, upright only (no italics used). */
+@font-face{font-family:'Instrument Sans';font-style:normal;font-weight:400 700;font-stretch:100%;font-display:swap;
+  src:url('/assets/fonts/instrumentsans-latin.woff2') format('woff2')}
 @font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;
   src:url('/assets/fonts/plexmono-400-latin-ext.woff2') format('woff2');
   unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
@@ -46,10 +53,10 @@
   --bg: #FAFAF7; --bg2: #FFFFFF; --ink: #161816; --ink2: #5D625D; --line: #E5E4DC;
   --accent: #6D4AFF; --accent2: #2FB0FF; --grad: linear-gradient(120deg, #6D4AFF, #2FB0FF);
   --on-accent: #FFFFFF; --accent-ink: #5B39F5;
-  --font-display: "Bricolage Grotesque", "Archivo", system-ui, sans-serif;
-  --font-body: "Archivo", system-ui, sans-serif;
+  --font-display: "Instrument Sans", system-ui, sans-serif;
+  --font-body: "Instrument Sans", system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
-  --disp-track: -0.03em; --disp-weight: 640; --maxw: 820px;
+  --disp-track: -0.025em; --disp-weight: 680; --disp-weight-sm: 600; --maxw: 820px;
 }
 :root[data-theme="dark"] {
   --bg: #0D1311; --bg2: #131B18; --ink: #F2F5F2; --ink2: #B2BDB5; --line: #243029; --accent-ink: #9C8BFF;
@@ -66,12 +73,12 @@ a:hover { color: var(--ink); }
 .brand .ai { color: var(--accent-ink); margin-left: -6px; }
 .toggles { display: flex; align-items: center; gap: 10px; }
 .seg { display: flex; border: 1px solid var(--line); border-radius: 99px; overflow: hidden; font-family: var(--font-mono); font-size: 11px; }
-.seg button { border: none; cursor: pointer; padding: 6px 12px; font-family: var(--font-mono); font-size: 11px; background: transparent; color: var(--ink2); transition: background .15s, color .15s; }
-.seg button.active { background: var(--ink); color: var(--bg); }
+.seg button, .seg a { border: none; cursor: pointer; padding: 6px 12px; font-family: var(--font-mono); font-size: 11px; background: transparent; color: var(--ink2); transition: background .15s, color .15s; }
+.seg button.active, .seg a.active { background: var(--ink); color: var(--bg); }
 main { max-width: var(--maxw); margin: 0 auto; padding: 64px 32px 96px; }
 .kicker { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-ink); }
-h1 { font-family: var(--font-display); font-weight: var(--disp-weight); letter-spacing: var(--disp-track); font-size: clamp(32px, 5vw, 48px); line-height: 1.08; margin: 16px 0 32px; }
-h2 { font-family: var(--font-display); font-weight: var(--disp-weight); letter-spacing: -0.015em; font-size: 21px; margin: 40px 0 12px; }
+h1 { font-family: var(--font-display); font-weight: var(--disp-weight); letter-spacing: var(--disp-track); font-size: clamp(32px, 5vw, 48px); line-height: 1.1; margin: 16px 0 32px; }
+h2 { font-family: var(--font-display); font-weight: var(--disp-weight-sm); letter-spacing: -0.01em; font-size: 21px; margin: 40px 0 12px; }
 p { margin: 0 0 14px; color: var(--ink2); text-wrap: pretty; }
 p strong, li strong { color: var(--ink); font-weight: 600; }
 ul { margin: 0 0 14px; padding-left: 20px; color: var(--ink2); }
@@ -105,8 +112,8 @@ li { margin-bottom: 6px; }
     </a>
     <div class="toggles">
       <div class="seg" role="group" aria-label="Sprache">
-        <button type="button" data-lang="de" class="active">DE</button>
-        <button type="button" data-lang="en">EN</button>
+        <a href="/en/impressum.html" hreflang="en" lang="en">EN</a>
+        <a href="/impressum.html" hreflang="de-CH" lang="de" class="active" aria-current="page">DE</a>
       </div>
       <div class="seg" role="group" aria-label="Darstellung">
         <button type="button" data-theme-set="light" title="Hell" aria-label="Hell">☀</button>
@@ -160,7 +167,7 @@ li { margin-bottom: 6px; }
 
 <footer class="site-footer">
   <div class="bar">
-    <span data-en="© 2026 Appligent AI · Kanton Zürich, Switzerland" data-de="© 2026 Appligent AI · Kanton Zürich, Schweiz">© 2026 Appligent AI · Kanton Zürich, Switzerland</span>
+    <span data-en="© 2026 Appligent AI · Kanton Zürich, Switzerland" data-de="© 2026 Appligent AI · Kanton Zürich, Schweiz">© 2026 Appligent AI · Kanton Zürich, Schweiz</span>
     <div class="links">
       <a href="/" data-de="Startseite" data-en="Home">Startseite</a>
       <a href="/impressum.html">Impressum</a>
@@ -174,7 +181,7 @@ li { margin-bottom: 6px; }
 (function () {
   "use strict";
   var root = document.documentElement;
-  var THEME_KEY = "ag-theme", LANG_KEY = "ag-lang";
+  var THEME_KEY = "ag-theme";
   var mq = window.matchMedia("(prefers-color-scheme: dark)");
   var themeButtons = document.querySelectorAll("[data-theme-set]");
   var theme = localStorage.getItem(THEME_KEY) || "auto";
@@ -194,29 +201,11 @@ li { margin-bottom: 6px; }
   });
   mq.addEventListener("change", function () { if (theme === "auto") applyTheme("auto", false); });
   applyTheme(theme, false);
-
-  var langButtons = document.querySelectorAll("[data-lang]");
-  var i18nNodes = document.querySelectorAll("[data-de]");
-  var lang = localStorage.getItem(LANG_KEY) || "de";
-
-  function applyLang(next, persist) {
-    lang = next;
-    if (persist) localStorage.setItem(LANG_KEY, next);
-    root.setAttribute("lang", next);
-    i18nNodes.forEach(function (el) {
-      var val = el.getAttribute("data-" + next);
-      if (val !== null) el.textContent = val;
-    });
-    langButtons.forEach(function (b) {
-      b.classList.toggle("active", b.getAttribute("data-lang") === next);
-    });
-  }
-  langButtons.forEach(function (b) {
-    b.addEventListener("click", function () { applyLang(b.getAttribute("data-lang"), true); });
-  });
-  applyLang(lang, false);
 })();
 </script>
+
+<!-- ANALYTICS placeholder — see the full note in index.html. Inert until CF_BEACON_TOKEN is set. -->
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "9fe30427e7ef46089eeb8ecf58b21b11"}'></script>
 
 </body>
 </html>

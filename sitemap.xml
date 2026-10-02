@@ -1,21 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://appligent.ai/</loc>
-    <lastmod>2026-08-03</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://appligent.ai/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://appligent.ai/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appligent.ai/"/>
+  </url>
+  <url>
+    <loc>https://appligent.ai/en/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://appligent.ai/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://appligent.ai/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appligent.ai/"/>
   </url>
   <url>
     <loc>https://appligent.ai/impressum.html</loc>
-    <lastmod>2026-08-03</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://appligent.ai/impressum.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://appligent.ai/en/impressum.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appligent.ai/impressum.html"/>
+  </url>
+  <url>
+    <loc>https://appligent.ai/en/impressum.html</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://appligent.ai/impressum.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://appligent.ai/en/impressum.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appligent.ai/impressum.html"/>
   </url>
   <url>
     <loc>https://appligent.ai/datenschutz.html</loc>
-    <lastmod>2026-08-03</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://appligent.ai/datenschutz.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://appligent.ai/en/datenschutz.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appligent.ai/datenschutz.html"/>
+  </url>
+  <url>
+    <loc>https://appligent.ai/en/datenschutz.html</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://appligent.ai/datenschutz.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://appligent.ai/en/datenschutz.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appligent.ai/datenschutz.html"/>
+  </url>
+  <url>
+    <loc>https://appligent.ai/ki-agentur-zuerich.html</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://appligent.ai/ki-agentur-zuerich.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appligent.ai/ki-agentur-zuerich.html"/>
   </url>
 </urlset>

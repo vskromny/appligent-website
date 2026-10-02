@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de-CH">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,6 +17,9 @@
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="de_CH">
 <meta property="og:locale:alternate" content="en_CH">
+<link rel="alternate" hreflang="de-CH" href="https://appligent.ai/impressum.html">
+<link rel="alternate" hreflang="en" href="https://appligent.ai/en/impressum.html">
+<link rel="alternate" hreflang="x-default" href="https://appligent.ai/impressum.html">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Impressum — Appligent AI">
 <meta name="twitter:image" content="https://appligent.ai/assets/img/og.png">
@@ -70,8 +73,8 @@ a:hover { color: var(--ink); }
 .brand .ai { color: var(--accent-ink); margin-left: -6px; }
 .toggles { display: flex; align-items: center; gap: 10px; }
 .seg { display: flex; border: 1px solid var(--line); border-radius: 99px; overflow: hidden; font-family: var(--font-mono); font-size: 11px; }
-.seg button { border: none; cursor: pointer; padding: 6px 12px; font-family: var(--font-mono); font-size: 11px; background: transparent; color: var(--ink2); transition: background .15s, color .15s; }
-.seg button.active { background: var(--ink); color: var(--bg); }
+.seg button, .seg a { border: none; cursor: pointer; padding: 6px 12px; font-family: var(--font-mono); font-size: 11px; background: transparent; color: var(--ink2); transition: background .15s, color .15s; }
+.seg button.active, .seg a.active { background: var(--ink); color: var(--bg); }
 main { max-width: var(--maxw); margin: 0 auto; padding: 64px 32px 96px; }
 .kicker { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-ink); }
 h1 { font-family: var(--font-display); font-weight: var(--disp-weight); letter-spacing: var(--disp-track); font-size: clamp(32px, 5vw, 48px); line-height: 1.1; margin: 16px 0 32px; }
@@ -109,8 +112,8 @@ li { margin-bottom: 6px; }
     </a>
     <div class="toggles">
       <div class="seg" role="group" aria-label="Sprache">
-        <button type="button" data-lang="de" class="active">DE</button>
-        <button type="button" data-lang="en">EN</button>
+        <a href="/en/impressum.html" hreflang="en" lang="en">EN</a>
+        <a href="/impressum.html" hreflang="de-CH" lang="de" class="active" aria-current="page">DE</a>
       </div>
       <div class="seg" role="group" aria-label="Darstellung">
         <button type="button" data-theme-set="light" title="Hell" aria-label="Hell">☀</button>
@@ -164,7 +167,7 @@ li { margin-bottom: 6px; }
 
 <footer class="site-footer">
   <div class="bar">
-    <span data-en="© 2026 Appligent AI · Kanton Zürich, Switzerland" data-de="© 2026 Appligent AI · Kanton Zürich, Schweiz">© 2026 Appligent AI · Kanton Zürich, Switzerland</span>
+    <span data-en="© 2026 Appligent AI · Kanton Zürich, Switzerland" data-de="© 2026 Appligent AI · Kanton Zürich, Schweiz">© 2026 Appligent AI · Kanton Zürich, Schweiz</span>
     <div class="links">
       <a href="/" data-de="Startseite" data-en="Home">Startseite</a>
       <a href="/impressum.html">Impressum</a>
@@ -178,7 +181,7 @@ li { margin-bottom: 6px; }
 (function () {
   "use strict";
   var root = document.documentElement;
-  var THEME_KEY = "ag-theme", LANG_KEY = "ag-lang";
+  var THEME_KEY = "ag-theme";
   var mq = window.matchMedia("(prefers-color-scheme: dark)");
   var themeButtons = document.querySelectorAll("[data-theme-set]");
   var theme = localStorage.getItem(THEME_KEY) || "auto";
@@ -198,27 +201,6 @@ li { margin-bottom: 6px; }
   });
   mq.addEventListener("change", function () { if (theme === "auto") applyTheme("auto", false); });
   applyTheme(theme, false);
-
-  var langButtons = document.querySelectorAll("[data-lang]");
-  var i18nNodes = document.querySelectorAll("[data-de]");
-  var lang = localStorage.getItem(LANG_KEY) || "de";
-
-  function applyLang(next, persist) {
-    lang = next;
-    if (persist) localStorage.setItem(LANG_KEY, next);
-    root.setAttribute("lang", next);
-    i18nNodes.forEach(function (el) {
-      var val = el.getAttribute("data-" + next);
-      if (val !== null) el.textContent = val;
-    });
-    langButtons.forEach(function (b) {
-      b.classList.toggle("active", b.getAttribute("data-lang") === next);
-    });
-  }
-  langButtons.forEach(function (b) {
-    b.addEventListener("click", function () { applyLang(b.getAttribute("data-lang"), true); });
-  });
-  applyLang(lang, false);
 })();
 </script>
 

@@ -524,7 +524,7 @@ html:not(.js) .fc-tabs { position: static; }
   transition: color .3s, border-color .3s, background .3s, box-shadow .3s;
 }
 .flow-step b { display: block; margin-top: 14px; font-size: 15px; font-weight: var(--disp-weight-sm); letter-spacing: -0.01em; }
-.flow-step > span { display: block; margin-top: 6px; font-size: 13.5px; line-height: 1.55; color: var(--ink2); text-wrap: pretty; padding-right: 8px; }
+.flow-step > span:not(.flow-node) { display: block; margin-top: 6px; font-size: 13.5px; line-height: 1.55; color: var(--ink2); text-wrap: pretty; padding-right: 8px; }
 .flow-step .flow-io { display: inline-block; margin-top: 10px; font-family: var(--font-mono); font-size: 11px; color: var(--accent-ink); }
 
 @keyframes flowLine { to { transform: scaleX(1); } }
